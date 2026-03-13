@@ -139,7 +139,6 @@ nav.scrolled .profile-icon svg { color: var(--gray-500); }
   aspect-ratio: 16 / 7;
   min-height: 540px;
   background-color: #313131;
-  background-image: url('../assets/images/chicago-hero.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
