@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movewell — Wireframe</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Bitter:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Learn</a>
+  </div>
+
+  <div class="nav-center">
+    <a href="#" class="logo">movewell</a>
+  </div>
+
+  <div class="nav-right">
+    <div class="search-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span>Search</span>
+    </div>
+    <div class="profile-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M20 21c0-4.418-3.582-7-8-7s-8 2.582-8 7"/></svg>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-placeholder">
+    <span>Hero Image</span>
+  </div>
+  <div class="hero-text">
+    <h1 class="hero-headline">A Body That Keeps Up</h1>
+    <p class="hero-sub">Sports Medicine & Performance</p>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="what-we-do">
+  <p class="section-label">What We Do</p>
+  <div class="what-we-do-content">
+    <p>Most physical therapy stops at getting you out of pain with day-to-day demands. Most training programs assume you're completely healthy without any aches or pains.</p>
+    <p>At <strong style="color:#194e6e;">Movewell</strong>, we are equipped to support you across the entire spectrum of recovery, training, and performance. As physical therapists and strength coaches, we guide clients from injury and limitation to strength, resilience, and high performance through individualized care and progressive training.</p>
+    <p>You don't need to be acutely injured to work with us. Whether you're dealing with active pain, transitioning beyond traditional big-box physical therapy after discharge toward your goals, or simply looking to move and train at a higher level — there's an entry point for you here.</p>
+  </div>
+</section>
+
+<!-- OUR APPROACH -->
+<section class="our-approach">
+  <p class="section-label" style="margin-bottom: 20px;">Our Approach</p>
+  <a href="#" class="approach-link">Learn More</a>
+  <div class="approach-grid">
+    <div class="approach-card">
+      <div class="approach-card-img"><span>Image</span></div>
+      <p class="approach-card-title">Title Placeholder</p>
+      <div class="approach-card-excerpt placeholder"></div>
+    </div>
+    <div class="approach-card">
+      <div class="approach-card-img"><span>Image</span></div>
+      <p class="approach-card-title">Title Placeholder</p>
+      <div class="approach-card-excerpt placeholder"></div>
+    </div>
+    <div class="approach-card">
+      <div class="approach-card-img"><span>Image</span></div>
+      <p class="approach-card-title">Title Placeholder</p>
+      <div class="approach-card-excerpt placeholder"></div>
+    </div>
+    <div class="approach-card">
+      <div class="approach-card-img"><span>Image</span></div>
+      <p class="approach-card-title">Title Placeholder</p>
+      <div class="approach-card-excerpt placeholder"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <p class="section-label" style="margin-bottom: 12px;">What It's Like To Work Together</p>
+  </div>
+  <div class="testimonials-topbar">
+    <a href="#" class="testimonials-see-all">See all reviews</a>
+  </div>
+  <div class="testimonial-carousel">
+    <button class="testimonial-arrow prev" onclick="scrollTestimonials(-1)" aria-label="Previous">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="testimonial-track" id="testimonials">
+
+      <div class="testimonial-card">
+        <div class="review-top">
+          <div><span class="review-author">Name</span><span class="review-verified">&#10003; Verified</span></div>
+          <span class="review-date">MM/DD/YY</span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-title">Review Title Placeholder</p>
+        <div class="review-body placeholder"></div>
+        <div class="review-tag placeholder"></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="review-top">
+          <div><span class="review-author">Name</span><span class="review-verified">&#10003; Verified</span></div>
+          <span class="review-date">MM/DD/YY</span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-title">Review Title Placeholder</p>
+        <div class="review-body placeholder"></div>
+        <div class="review-tag placeholder"></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="review-top">
+          <div><span class="review-author">Name</span><span class="review-verified">&#10003; Verified</span></div>
+          <span class="review-date">MM/DD/YY</span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-title">Review Title Placeholder</p>
+        <div class="review-body placeholder"></div>
+        <div class="review-tag placeholder"></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="review-top">
+          <div><span class="review-author">Name</span><span class="review-verified">&#10003; Verified</span></div>
+          <span class="review-date">MM/DD/YY</span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-title">Review Title Placeholder</p>
+        <div class="review-body placeholder"></div>
+        <div class="review-tag placeholder"></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="review-top">
+          <div><span class="review-author">Name</span><span class="review-verified">&#10003; Verified</span></div>
+          <span class="review-date">MM/DD/YY</span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-title">Review Title Placeholder</p>
+        <div class="review-body placeholder"></div>
+        <div class="review-tag placeholder"></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="review-top">
+          <div><span class="review-author">Name</span><span class="review-verified">&#10003; Verified</span></div>
+          <span class="review-date">MM/DD/YY</span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-title">Review Title Placeholder</p>
+        <div class="review-body placeholder"></div>
+        <div class="review-tag placeholder"></div>
+      </div>
+
+    </div>
+    <button class="testimonial-arrow next" onclick="scrollTestimonials(1)" aria-label="Next">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location">
+  <p class="section-label">Where We Are Located</p>
+  <div class="location-map">
+    <div id="map"></div>
+  </div>
+</section>
+
+<!-- BOTTOM PLACEHOLDER -->
+<section class="bottom-section">
+  <span>Additional Sections</span>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
