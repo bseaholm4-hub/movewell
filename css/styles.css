@@ -524,22 +524,38 @@ section {
   font-weight: 300;
 }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
-  nav { padding: 0 20px; }
-  .nav-left { gap: 20px; }
-  .nav-left a { font-size: 12px; }
-  .search-bar span { display: none; }
-  .hero-text { padding: 0 28px 32px; }
-  section { padding: 60px 20px; }
-  .approach-grid { grid-template-columns: repeat(2, 1fr); }
-  .approach-link { margin-bottom: 32px; }
-  .testimonial-card { flex: 0 0 calc(50% - 10px); min-width: 260px; }
-  .location-map { height: 360px; }
+/* ─── ABOUT HERO ─── */
+.about-hero {
+  background-color: #313131;
+  background-image: none;
 }
 
-@media (max-width: 480px) {
-  .nav-left a:nth-child(n+3) { display: none; }
-  .approach-grid { grid-template-columns: 1fr; }
-  .testimonial-card { flex: 0 0 85%; min-width: 0; }
+/* ─── ABOUT US ─── */
+.about-us {
+  border-top: 1px solid var(--gray-200);
+  text-align: center;
 }
+.about-us-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-us-content p {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--gray-500);
+  margin-bottom: 28px;
+}
+.about-us-content p:last-child {
+  margin-bottom: 0;
+}
+.about-us-content p strong {
+  font-weight: 500;
+  color: var(--black);
+}
+
+/* ─── TEAM SECTION ─── */
+.team-section {
+  bord
