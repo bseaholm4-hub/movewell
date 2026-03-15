@@ -1,13 +1,21 @@
 /* ─── ABOUT HERO ─── */
 .about-hero {
-  background-color: #313131;
+  background-color: var(--midnight);
   background-image: none;
+}
+
+/* ─── GLOBAL UTILS FOR ABOUT ─── */
+.capability-line {
+  width: 1px;
+  height: 60px;
+  background-color: var(--silver);
+  margin: 0 auto 30px;
 }
 
 /* ─── ABOUT US ─── */
 .about-us {
-  border-top: 1px solid var(--gray-200);
   text-align: center;
+  padding-top: 60px;
 }
 .about-us-content {
   max-width: 720px;
@@ -16,10 +24,10 @@
 }
 .about-us-content p {
   font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--gray-500);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--stone);
   margin-bottom: 28px;
 }
 .about-us-content p:last-child {
@@ -32,13 +40,15 @@
 
 /* ─── TEAM SECTION ─── */
 .team-section {
-  border-top: 1px solid var(--gray-200);
+  text-align: center;
+  padding-top: 60px;
 }
 
 .team-bio {
   display: flex;
   gap: 48px;
   align-items: flex-start;
+  text-align: left;
   max-width: 960px;
   margin: 0 auto 64px;
 }
@@ -60,10 +70,9 @@
 
 .team-bio-name {
   font-family: var(--serif);
-  font-size: clamp(22px, 2vw, 30px);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--black);
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 600;
+  color: var(--midnight);
   margin-bottom: 6px;
 }
 
@@ -73,20 +82,16 @@
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #194e6e;
+  color: var(--stone);
   margin-bottom: 24px;
 }
 
 .team-bio-body {
   font-family: var(--sans);
   font-size: 15px;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--gray-500);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--stone);
 }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
-  .team-bio { flex-direction: column; gap: 32px; }
-  .team-bio-img { flex: none; width: 100%; max-width: 400px; }
-}
+/* ─── RESPONSIVE ──�
