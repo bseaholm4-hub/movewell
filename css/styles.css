@@ -558,4 +558,77 @@ section {
 
 /* ─── TEAM SECTION ─── */
 .team-section {
-  bord
+  border-top: 1px solid var(--gray-200);
+}
+
+.team-bio {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 960px;
+  margin: 0 auto 64px;
+}
+.team-bio:last-child {
+  margin-bottom: 0;
+}
+
+.team-bio-img {
+  flex: 0 0 360px;
+  aspect-ratio: 3 / 4;
+  background: var(--gray-200);
+  border-radius: 4px;
+}
+
+.team-bio-text {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.team-bio-name {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+.team-bio-role {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #194e6e;
+  margin-bottom: 24px;
+}
+
+.team-bio-body {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--gray-500);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-left { gap: 20px; }
+  .nav-left a { font-size: 12px; }
+  .search-bar span { display: none; }
+  .hero-text { padding: 0 28px 32px; }
+  section { padding: 60px 20px; }
+  .approach-grid { grid-template-columns: repeat(2, 1fr); }
+  .approach-link { margin-bottom: 32px; }
+  .testimonial-card { flex: 0 0 calc(50% - 10px); min-width: 260px; }
+  .location-map { height: 360px; }
+  .team-bio { flex-direction: column; gap: 32px; }
+  .team-bio-img { flex: none; width: 100%; max-width: 400px; }
+}
+
+@media (max-width: 480px) {
+  .nav-left a:nth-child(n+3) { display: none; }
+  .approach-grid { grid-template-columns: 1fr; }
+  .testimonial-card { flex: 0 0 85%; min-width: 0; }
+}
