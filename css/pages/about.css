@@ -4,13 +4,6 @@
   background-image: none;
 }
 
-/* ─── GLOBAL UTILS FOR ABOUT ─── */
-.capability-line {
-  width: 1px;
-  height: 60px;
-  background-color: var(--silver);
-  margin: 0 auto 30px;
-}
 
 /* ─── ABOUT US ─── */
 .about-us {
@@ -94,4 +87,16 @@
   color: var(--stone);
 }
 
-/* ─── RESPONSIVE ──�
+.team-bio-img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.team-bio-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+/* ─── RESPONSIVE ──�

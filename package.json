@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test:e2e": "playwright test",
+    "test": "npm run test:e2e",
+    "serve": "serve . -p 3000",
     "prepare": "husky"
   },
   "repository": {
@@ -20,7 +22,8 @@
   },
   "homepage": "https://github.com/bseaholm4-hub/movewell#readme",
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "husky": "^9.1.7",
-    "jest": "^30.3.0"
+    "serve": "^14.2.6"
   }
 }

@@ -1,1 +1,1 @@
-npm test
+# npm test - moved to pre-push to avoid slow commits
