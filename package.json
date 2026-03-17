@@ -1,0 +1,26 @@
+{
+  "name": "movewell",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bseaholm4-hub/movewell.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bseaholm4-hub/movewell/issues"
+  },
+  "homepage": "https://github.com/bseaholm4-hub/movewell#readme",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "jest": "^30.3.0"
+  }
+}
