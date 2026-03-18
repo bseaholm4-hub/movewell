@@ -55,3 +55,57 @@ test.describe('Movewell UI Tests', () => {
   });
 
 });
+
+test.describe('FAQ Page', () => {
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/faq.html');
+  });
+
+  test('FAQ page loads and hero is visible', async ({ page }) => {
+    const hero = page.locator('section.hero.faq-hero');
+    await expect(hero).toBeVisible();
+    await expect(page.locator('h1.hero-headline')).toHaveText('FAQ');
+  });
+
+  test('All four category section labels are present', async ({ page }) => {
+    const labels = page.locator('.section-label');
+    await expect(labels).toHaveCount(4);
+    await expect(labels.nth(0)).toContainText('About');
+    await expect(labels.nth(1)).toContainText('Services');
+    await expect(labels.nth(2)).toContainText('Payment');
+    await expect(labels.nth(3)).toContainText('Treatment');
+  });
+
+  test('Accordion items are collapsed by default', async ({ page }) => {
+    const firstItem = page.locator('.faq-item').first();
+    await expect(firstItem).not.toHaveAttribute('open', '');
+  });
+
+  test('Clicking an accordion item opens it', async ({ page }) => {
+    const firstItem = page.locator('.faq-item').first();
+    const summary = firstItem.locator('summary');
+    await summary.click();
+    await expect(firstItem).toHaveAttribute('open', '');
+    const answer = firstItem.locator('.faq-answer');
+    await expect(answer).toBeVisible();
+  });
+
+  test('Clicking an open accordion item closes it', async ({ page }) => {
+    const firstItem = page.locator('.faq-item').first();
+    const summary = firstItem.locator('summary');
+    await summary.click();
+    await expect(firstItem).toHaveAttribute('open', '');
+    await summary.click();
+    await expect(firstItem).not.toHaveAttribute('open', '');
+  });
+
+  test('Nav link to FAQ is present on the homepage', async ({ page }) => {
+    await page.goto('/');
+    const faqLink = page.locator('nav a[href="faq.html"]');
+    await expect(faqLink).toBeVisible();
+    await expect(faqLink).toHaveText('FAQ');
+  });
+
+});
+
