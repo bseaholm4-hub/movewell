@@ -46,7 +46,7 @@ nav.scrolled .nav-left a.active { color: var(--black); }
   transform: translateX(-50%);
 }
 .logo {
-  font-family: 'Bitter', Georgia, serif;
+  font-family: 'Averia Serif Libre', Georgia, serif;
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.3px;
