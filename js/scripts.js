@@ -1,3 +1,7 @@
+// Slow down hero video for cinematic feel
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) heroVideo.playbackRate = 0.7;
+
 // Nav scroll state
 const navEl = document.querySelector('nav');
 window.addEventListener('scroll', () => {
