@@ -52,7 +52,6 @@
 .team-bio-img {
   flex: 0 0 360px;
   aspect-ratio: 3 / 4;
-  background: var(--gray-200);
   border-radius: 4px;
 }
 
