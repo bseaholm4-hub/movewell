@@ -21,7 +21,7 @@
 .hero-headline {
   font-family: var(--serif);
   font-size: clamp(40px, 5.5vw, 80px);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.1;
   color: var(--midnight);
   margin-bottom: 12px;
@@ -42,6 +42,27 @@
   font-weight: 400;
   font-style: italic;
   color: rgba(0,0,0,0.7);
+}
+
+/* ─── OUR STANDARD ─── */
+.our-standard {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  text-align: center;
+}
+.our-standard .section-label {
+  margin-bottom: 32px;
+}
+.our-standard-content p {
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.8;
+  color: rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+}
+.our-standard-content strong {
+  color: var(--midnight);
 }
 
 /* ─── THE DIFFERENTIATOR ─── */
