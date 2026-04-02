@@ -1,5 +1,6 @@
 /* ─── TESTIMONIALS ─── */
 .testimonials {
+  background-color: #fff;
   border-top: 1px solid var(--gray-200);
   overflow: hidden;
   position: relative;
@@ -50,8 +51,9 @@
   scroll-snap-align: start;
   user-select: none;
   background: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1px solid #000;
   border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
   padding: 28px;
   display: flex;
   flex-direction: column;

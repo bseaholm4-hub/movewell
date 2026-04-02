@@ -3,28 +3,14 @@
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 7;
-  min-height: 540px;
+  height: 100vh;
   background-color: #c8c8c8;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
 }
-/* Dark cinematic overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.3) 0%,
-    rgba(0,0,0,0.15) 40%,
-    rgba(0,0,0,0.4) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-}
+
 .hero-image {
   position: absolute;
   top: 0;
@@ -33,11 +19,11 @@
   height: 100%;
   object-fit: cover;
   object-position: center bottom;
-  filter: blur(1px) saturate(0.85);
 }
 
 .hero-text {
   position: relative;
+  top: 15vh;
   z-index: 3;
   text-align: right;
   padding: 0 56px 40px;
@@ -70,13 +56,16 @@
 
 /* ─── OUR STANDARD ─── */
 .our-standard {
-  max-width: 720px;
-  margin: 0 auto;
+  background-color: #fff;
   padding: 80px 24px 60px;
   text-align: center;
 }
 .our-standard .section-label {
   margin-bottom: 32px;
+}
+.our-standard-content {
+  max-width: 720px;
+  margin: 0 auto;
 }
 .our-standard-content p {
   font-family: var(--sans);
@@ -118,8 +107,13 @@
 
 /* ─── OUR APPROACH ─── */
 .our-approach {
+  background: var(--midnight);
   text-align: center;
   padding-top: 80px;
+}
+.our-approach .section-label {
+  color: #fff;
+  letter-spacing: 4px;
 }
 
 .approach-link {
@@ -145,12 +139,19 @@
   text-align: left;
 }
 
+.approach-card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
 .approach-card-img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   background: var(--gray-200);
-  margin-bottom: 20px;
+  margin-bottom: 0;
   overflow: hidden;
+  border-bottom: 1px solid var(--midnight);
 }
 .approach-card-img img {
   width: 100%;
@@ -172,10 +173,11 @@
 .approach-card-title {
   font-family: var(--sans);
   font-size: clamp(16px, 1.4vw, 18px);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.3;
   color: var(--midnight);
   margin-bottom: 8px;
+  padding: 24px 24px 0 24px;
 }
 
 .approach-card-excerpt {
@@ -189,6 +191,7 @@
   line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  padding: 0 24px 32px 24px;
 }
 .approach-card-excerpt.placeholder {
   height: 60px;

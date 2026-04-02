@@ -27,15 +27,15 @@ nav.scrolled {
 .nav-left a {
   font-family: var(--sans);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.3px;
   text-transform: none;
   text-decoration: none;
-  color: rgba(255,255,255,0.8);
-  transition: color 0.3s;
+  color: #000;
+  transition: all 0.3s;
 }
 .nav-left a:hover,
-.nav-left a.active { color: #fff; }
+.nav-left a.active { color: #000; opacity: 0.6; }
 nav.scrolled .nav-left a { color: var(--gray-500); }
 nav.scrolled .nav-left a:hover,
 nav.scrolled .nav-left a.active { color: var(--black); }
@@ -68,24 +68,24 @@ nav.scrolled .logo { color: #194e6e; }
   align-items: center;
   gap: 8px;
   padding: 7px 14px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  border: 1px solid #000;
   border-radius: 100px;
   cursor: text;
   transition: all 0.3s;
 }
-.search-bar:hover { border-color: rgba(255,255,255,0.5); }
+.search-bar:hover { background: rgba(0,0,0,0.05); }
 nav.scrolled .search-bar {
   background: var(--gray-100);
   border-color: var(--gray-200);
 }
 nav.scrolled .search-bar:hover { border-color: var(--gray-300); }
-.search-bar svg { flex-shrink: 0; color: rgba(255,255,255,0.7); transition: color 0.3s; }
+.search-bar svg { flex-shrink: 0; color: #000; transition: color 0.3s; }
 nav.scrolled .search-bar svg { color: var(--gray-400); }
 .search-bar span {
   font-size: 13px;
-  color: rgba(255,255,255,0.6);
-  font-weight: 300;
+  color: #000;
+  font-weight: 500;
   user-select: none;
   transition: color 0.3s;
 }
@@ -95,17 +95,18 @@ nav.scrolled .search-bar span { color: var(--gray-400); }
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
+  background: transparent;
+  border: 1px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
 }
-.profile-icon:hover { background: rgba(255,255,255,0.25); }
-nav.scrolled .profile-icon { background: var(--gray-200); }
+.profile-icon:hover { background: rgba(0,0,0,0.05); }
+nav.scrolled .profile-icon { background: var(--gray-200); border: none; }
 nav.scrolled .profile-icon:hover { background: var(--gray-300); }
-.profile-icon svg { color: rgba(255,255,255,0.8); transition: color 0.3s; }
+.profile-icon svg { color: #000; transition: color 0.3s; }
 nav.scrolled .profile-icon svg { color: var(--gray-500); }
 
 /* ─── SECTIONS ─── */
@@ -126,6 +127,7 @@ section {
 
 /* ─── LOCATION ─── */
 .location {
+  background-color: #fff;
   border-top: 1px solid var(--gray-200);
   text-align: center;
 }
