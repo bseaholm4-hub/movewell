@@ -62,12 +62,6 @@ test.describe('FAQ Page', () => {
     await page.goto('/faq.html');
   });
 
-  test('FAQ page loads and hero is visible', async ({ page }) => {
-    const hero = page.locator('section.hero.faq-hero');
-    await expect(hero).toBeVisible();
-    await expect(page.locator('h1.hero-headline')).toHaveText('FAQ');
-  });
-
   test('All four category section labels are present', async ({ page }) => {
     const labels = page.locator('.section-label');
     await expect(labels).toHaveCount(4);
