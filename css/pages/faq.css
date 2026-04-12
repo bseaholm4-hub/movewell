@@ -6,6 +6,7 @@
 
 .faq-section:first-of-type {
   border-top: none;
+  padding-top: calc(var(--nav-height) + 60px);
 }
 
 

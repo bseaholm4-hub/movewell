@@ -4,8 +4,15 @@ if (heroVideo) heroVideo.playbackRate = 0.7;
 
 // Nav scroll state
 const navEl = document.querySelector('nav');
+const hasHero = document.querySelector('.hero');
+
+// On subpages without a full hero, start nav in scrolled (dark) state
+if (!hasHero) {
+  navEl.classList.add('scrolled');
+}
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
+  if (!hasHero || window.scrollY > 60) {
     navEl.classList.add('scrolled');
   } else {
     navEl.classList.remove('scrolled');
