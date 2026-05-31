@@ -26,11 +26,11 @@
   top: 15vh;
   z-index: 3;
   text-align: right;
-  padding: 0 56px 40px;
+  padding: 0 40px 40px;
 }
 .hero-headline {
   font-family: var(--serif);
-  font-size: clamp(40px, 5.5vw, 80px);
+  font-size: clamp(32px, 4.5vw, 72px);
   font-weight: 300;
   line-height: 1.1;
   color: #fff;

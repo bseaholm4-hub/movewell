@@ -8,9 +8,9 @@
 
 .services-headline {
   font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: clamp(28px, 3vw, 42px);
   font-weight: 400;
-  letter-spacing: 6px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--black);
   margin-bottom: 16px;
@@ -113,6 +113,122 @@
 }
 
 
+
+/* ─── CONDITIONS WE TREAT ─── */
+.conditions-section {
+  padding: 80px 40px;
+  border-top: 1px solid var(--gray-200);
+  background: var(--canvas);
+}
+
+.conditions-layout {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.conditions-left {
+  position: sticky;
+  top: calc(var(--nav-height) + 32px);
+}
+
+.conditions-headline {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.conditions-desc {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--stone);
+}
+
+.conditions-right {
+  border-top: 1px solid var(--gray-200);
+}
+
+.condition-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.condition-title {
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.3vw, 17px);
+  font-weight: 500;
+  color: var(--midnight);
+  padding: 22px 8px 22px 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.2s;
+}
+
+.condition-title:hover {
+  color: var(--petrol);
+}
+
+.condition-title::-webkit-details-marker { display: none; }
+
+.condition-title::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--gray-400);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, color 0.2s;
+}
+
+details[open] .condition-title::after {
+  transform: rotate(45deg);
+  color: var(--midnight);
+}
+
+.condition-body {
+  padding: 0 8px 24px 0;
+  animation: fadeIn 0.2s ease;
+}
+
+.condition-body p {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--stone);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .conditions-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .conditions-left {
+    position: static;
+  }
+  .conditions-section {
+    padding: 60px 20px;
+  }
+}
+
+
 /* ─── DIFFERENCE TABLE ─── */
 .difference-section {
   padding: 80px 40px;
@@ -123,7 +239,7 @@
   font-family: var(--serif);
   font-size: clamp(28px, 3vw, 42px);
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--black);
   margin-bottom: 12px;
@@ -191,13 +307,13 @@
   line-height: 1.5;
 }
 
-/* MoveWell column highlight */
+/* Movewell column highlight */
 .diff-mw-col,
 .diff-mw {
   background: rgba(26, 77, 92, 0.06);
 }
 
-/* Apply border to the MoveWell column */
+/* Apply border to the Movewell column */
 .diff-table thead .diff-mw-col {
   border-left: 1px solid var(--gray-200);
   border-right: 1px solid var(--gray-200);
@@ -421,7 +537,7 @@
   }
 
   .diff-mw::before {
-    content: "MoveWell";
+    content: "Movewell";
     display: block;
     font-size: 10px;
     font-weight: 600;
