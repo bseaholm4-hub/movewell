@@ -7,7 +7,7 @@
 <meta name="description" content="Explore Movewell's services: 1-on-1 physical therapy, performance training, online rehab coaching, and virtual performance programming in Chicago.">
 <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Bitter:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
-<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
 
@@ -22,16 +22,13 @@
 
   <div class="nav-center">
     <a href="index.html" class="logo">movewell</a>
+    <div class="nav-sub">Sports Medicine and Performance</div>
   </div>
 
   <div class="nav-right">
-    <div class="search-bar">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <span>Search</span>
-    </div>
-    <div class="profile-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M20 21c0-4.418-3.582-7-8-7s-8 2.582-8 7"/></svg>
-    </div>
+
+    <a href="contact.html" class="nav-pill">Get Started</a>
+
   </div>
 </nav>
 
@@ -376,7 +373,9 @@
   <div class="footer-content">
     <div class="footer-brand">
       <a href="index.html" class="logo">movewell</a>
-      <p>Building bodies that last through individualized care and progressive training. Chicago-based physical therapy &amp; performance.</p>
+      <p>Sports Physical Therapy and Performance Training.</p>
+      <p>In‑person services – Chicago, IL.</p>
+      <p>Online services – Anywhere.</p>
     </div>
     <div class="footer-links">
       <h5>Navigate</h5>
@@ -391,8 +390,8 @@
       <h5>Social</h5>
       <ul>
         <li><a href="https://www.instagram.com/movewellsmp" target="_blank">Instagram</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Google Reviews</a></li>
+
+        <li><a href="https://g.page/r/CdeXJPS6-jxtEAE/review">Leave us a review</a></li>
       </ul>
     </div>
   </div>
@@ -404,5 +403,16 @@
 
 <script src="js/scripts.js"></script>
 
+  <!-- SEARCH MODAL -->
+  <div id="search-modal" class="search-modal">
+    <div class="search-modal-content">
+      <div class="search-header">
+        <input type="text" id="search-input" placeholder="What are you looking for?" oninput="performSearch(this.value)">
+        <button class="close-search" onclick="closeSearch()">&times;</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+  <script src="js/search.js"></script>
 </body>
 </html>

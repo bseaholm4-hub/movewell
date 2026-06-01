@@ -1,0 +1,130 @@
+/* Contact Page Styles */
+
+/* ─── CONTACT HERO ─── */
+.contact-hero {
+  background-color: #ffffff;
+  padding: 8rem 1rem 1rem 1rem; /* Added large top padding to clear the fixed navbar */
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-header {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-headline {
+  color: var(--midnight);
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(32px, 4.5vw, 48px);
+  margin-bottom: 1rem;
+}
+
+.contact-subhead {
+  font-family: var(--sans);
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: var(--stone);
+}
+
+/* Container for the contact section */
+.contact-section {
+  padding: 1rem 1rem 4rem 1rem;
+  background-color: #ffffff;
+}
+
+.contact-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--stone);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--midnight);
+}
+
+.form-divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 1rem 0;
+}
+
+.btn-apply {
+  background-color: transparent;
+  color: var(--midnight);
+  border: 1px solid #d1d5db;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-apply:hover {
+  background-color: #f9fafb;
+  border-color: var(--midnight);
+}
+
+.form-footer-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--stone);
+  margin-top: -0.5rem;
+}
+
+/* Adjust for small screens */
+@media (max-width: 599px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

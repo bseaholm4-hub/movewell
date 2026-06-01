@@ -37,6 +37,30 @@
   margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
+
+.hero-pill-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.hero-pill-btn:hover {
+  background-color: #fff;
+  color: var(--midnight);
+  border-color: #fff;
+}
 .hero-sub {
   font-family: var(--sans);
   font-size: clamp(14px, 1.4vw, 18px);

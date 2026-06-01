@@ -1,0 +1,121 @@
+<!DOCTYPE html
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact • Movewell</title>
+  <meta name="description" content="Get in touch with Movewell. Tell us how we can help you achieve peak performance.">
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Bitter:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/contact.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+  <!-- NAV (reuse existing navigation) -->
+  <nav>
+    <div class="nav-left">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">movewell</a>
+      <div class="nav-sub">Sports Medicine and Performance</div>
+    </div>
+    <div class="nav-right">
+
+
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="contact-hero">
+    <div class="contact-header">
+      <h1 class="contact-headline">LET'S GET STARTED</h1>
+      <p class="contact-subhead">We're ready to help you move better. Fill out the form below and we'll respond promptly.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+      <form class="contact-form" action="https://formspree.io/f/xykvqejv" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">FIRST NAME</label>
+            <input type="text" id="first-name" name="first-name" placeholder="First" required />
+          </div>
+          <div class="form-group">
+            <label for="last-name">LAST NAME</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Last" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">PHONE</label>
+          <input type="tel" id="phone" name="phone" placeholder="(312) 000-0000" />
+        </div>
+        
+        <hr class="form-divider" />
+
+        <div class="form-group">
+          <label for="help">WHAT CAN WE BEST HELP YOU WITH?</label>
+          <textarea id="help" name="help" rows="3" placeholder="Describe your needs, goals, or any injury details..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-apply">APPLY</button>
+        <p class="form-footer-note">We'll be in touch within 24 hours.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER (reuse existing footer) -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">movewell</a>
+      <p>Sports Physical Therapy and Performance Training.</p>
+      <p>In‑person services – Chicago, IL.</p>
+      <p>Online services – Anywhere.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Social</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/movewellsmp?utm_source=qr" target="_blank">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Google Reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Movewell. All rights reserved.</span>
+      <span>River North, Chicago</span>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+  <!-- SEARCH MODAL -->
+  <div id="search-modal" class="search-modal">
+    <div class="search-modal-content">
+      <div class="search-header">
+        <input type="text" id="search-input" placeholder="What are you looking for?" oninput="performSearch(this.value)">
+        <button class="close-search" onclick="closeSearch()">&times;</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+  <script src="js/search.js"></script>
+</body>
+</html>
