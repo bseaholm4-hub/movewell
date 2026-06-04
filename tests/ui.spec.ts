@@ -51,7 +51,7 @@ test.describe('Movewell UI Tests', () => {
 
   test('Favicon is linked in the head', async ({ page }) => {
     const favicon = page.locator('link[rel="icon"]');
-    await expect(favicon).toHaveAttribute('href', 'assets/images/favicon.png');
+    await expect(favicon).toHaveAttribute('href', 'assets/images/favicon.svg');
   });
 
 });

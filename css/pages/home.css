@@ -49,17 +49,14 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 50px;
-  background-color: transparent;
-  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 100px;
+  background-color: #001f3f;
   transition: all 0.3s ease;
 }
 
 .hero-pill-btn:hover {
-  background-color: #fff;
-  color: var(--midnight);
-  border-color: #fff;
+  opacity: 0.8;
 }
 .hero-sub {
   font-family: var(--sans);

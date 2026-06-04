@@ -18,9 +18,9 @@
 }
 
 .contact-headline {
-  color: var(--midnight);
+  color: #194e6e;
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: 600;
   font-size: clamp(32px, 4.5vw, 48px);
   margin-bottom: 1rem;
 }
@@ -72,7 +72,8 @@
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   padding: 0.8rem 1rem;
   border: 1px solid #e2e8f0;
   border-radius: 4px;
@@ -80,10 +81,12 @@
   font-family: inherit;
   transition: border-color 0.2s ease;
   background: #fff;
+  color: var(--midnight);
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   border-color: var(--midnight);
 }
@@ -95,10 +98,10 @@
 }
 
 .btn-apply {
-  background-color: transparent;
-  color: var(--midnight);
-  border: 1px solid #d1d5db;
-  padding: 1rem;
+  background-color: var(--electric);
+  color: #fff;
+  border: none;
+  padding: 1.25rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 8px;
@@ -110,8 +113,8 @@
 }
 
 .btn-apply:hover {
-  background-color: #f9fafb;
-  border-color: var(--midnight);
+  background-color: #051d8c;
+  color: #fff;
 }
 
 .form-footer-note {
