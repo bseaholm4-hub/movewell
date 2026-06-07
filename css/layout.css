@@ -187,31 +187,40 @@ section {
     flex-wrap: nowrap;
     justify-content: space-between;
     height: var(--nav-height);
-    padding: 0 16px;
+    padding: 0 8px;
     gap: 0;
   }
+  /* Logo stays centered; nav links sit on the left, pill on the right */
   .nav-center {
-    position: static;
-    transform: none;
-    order: -1;
-  }
-  .logo { font-size: 20px; }
-  .nav-left {
-    gap: 16px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     order: 0;
   }
-  .nav-left a { font-size: 12px; }
-  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .logo { font-size: 17px; }
+  .nav-sub { font-size: 5px; letter-spacing: 0.4px; margin-top: -2px; }
+  .nav-left {
+    gap: 5px;
+    order: 0;
+  }
+  .nav-left a { font-size: 8.5px; letter-spacing: 0.2px; }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    order: 0;
+  }
+  .nav-pill { font-size: 9px; padding: 5px 10px; }
   section { padding: 60px 20px; }
   .location-map { height: 300px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
 
 @media (max-width: 480px) {
-  nav { padding: 0 12px; }
-  .nav-left { gap: 12px; }
-  .nav-left a { font-size: 11px; }
-  .logo { font-size: 18px; }
+  nav { padding: 0 8px; }
+  .nav-left { gap: 5px; }
+  .nav-left a { font-size: 8.5px; }
+  .logo { font-size: 17px; }
   section { padding: 48px 16px; }
 }
 

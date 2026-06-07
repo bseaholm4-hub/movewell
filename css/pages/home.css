@@ -342,6 +342,12 @@
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .hero-text { padding: 0 28px 32px; }
+  .hero-pill-btn {
+    margin-top: 0.75rem;
+    padding: 0.55rem 1.3rem;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
   .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
   .approach-link { margin-bottom: 32px; }
@@ -360,6 +366,10 @@
   .approach-grid { grid-template-columns: 1fr; gap: 16px; }
   .pricing-grid { grid-template-columns: 1fr; }
   .hero-text { padding: 0 16px 24px; }
+  .hero-pill-btn {
+    padding: 0.5rem 1.15rem;
+    font-size: 10px;
+  }
   .approach-card-title { font-size: 15px; padding: 16px 16px 0; }
   .approach-card-excerpt { font-size: 13px; padding: 0 16px 24px; }
   .our-standard-content p { font-size: 14px; }
