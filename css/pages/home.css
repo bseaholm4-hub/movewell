@@ -357,7 +357,24 @@
     font-size: 13.5px;
     letter-spacing: 0.7px;
   }
-  .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  /* Horizontal swipe carousel — a peek of the next card cues the scroll */
+  .approach-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -20px;
+    padding: 4px 20px 10px;
+    scroll-padding-left: 20px;
+  }
+  .approach-grid::-webkit-scrollbar { display: none; }
+  .approach-card {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
   .approach-link { margin-bottom: 32px; }
   .approach-card-excerpt {
@@ -372,7 +389,7 @@
 }
 
 @media (max-width: 480px) {
-  .approach-grid { grid-template-columns: 1fr; gap: 16px; }
+  .approach-grid { margin: 0 -16px; padding: 4px 16px 10px; scroll-padding-left: 16px; }
   .pricing-grid { grid-template-columns: 1fr; }
   .hero-text { width: 100%; top: 8vh; padding: 0 0 24px; }
   .hero-pill-btn {
