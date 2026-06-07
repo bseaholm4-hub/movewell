@@ -343,11 +343,12 @@
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  .hero-text { width: 100%; padding: 0 22px 32px; }
+  .hero { padding-left: 12px; padding-right: 12px; }
+  .hero-text { width: 100%; padding: 0 0 32px; }
   .hero-headline {
-    font-size: clamp(48px, 17.5vw, 88px);
-    line-height: 1.02;
-    margin-bottom: 22px;
+    font-size: clamp(40px, calc((100vw - 24px) * 0.135), 62px);
+    line-height: 1.04;
+    margin-bottom: 20px;
   }
   .hero-break { display: inline; }
   .hero-pill-btn {
@@ -373,7 +374,7 @@
 @media (max-width: 480px) {
   .approach-grid { grid-template-columns: 1fr; gap: 16px; }
   .pricing-grid { grid-template-columns: 1fr; }
-  .hero-text { width: 100%; padding: 0 18px 24px; }
+  .hero-text { width: 100%; padding: 0 0 24px; }
   .hero-pill-btn {
     padding: 0.8rem 1.75rem;
     font-size: 14px;
