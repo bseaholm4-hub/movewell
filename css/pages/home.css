@@ -42,7 +42,7 @@
 /* Italic "Lifelong" — add a touch of space so the slant doesn't crowd "Performance" */
 .hero-headline em {
   font-style: italic;
-  margin-right: 0.12em;
+  margin-right: 0.05em;
 }
 
 .hero-pill-btn {
