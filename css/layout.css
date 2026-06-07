@@ -218,11 +218,10 @@ section {
     padding: 0 8px;
     gap: 0;
   }
-  /* Logo stays centered; nav links sit on the left, pill on the right */
+  /* In-flow so space-between gives equal gaps: hamburger | logo | pill */
   .nav-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
     order: 0;
   }
   .logo { font-size: 26px; }
