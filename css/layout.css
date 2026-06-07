@@ -263,12 +263,20 @@ section {
   }
   .nav-links a {
     font-size: 14px !important;
+    /* Light text over the hero sky… */
     color: #fff !important;
     letter-spacing: 0.2px;
     padding: 11px 20px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    transition: color 0.25s ease, text-shadow 0.25s ease;
   }
   .nav-links a:hover { background: rgba(255, 255, 255, 0.14); opacity: 1; }
+  /* …dark text once the page is scrolled onto a light background */
+  nav.scrolled .nav-links a {
+    color: #16263a !important;
+    text-shadow: none;
+  }
+  nav.scrolled .nav-links a:hover { background: rgba(0, 0, 0, 0.06); }
   /* Animate hamburger into an X when open */
   .nav-left.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav-left.open .nav-toggle span:nth-child(2) { opacity: 0; }
