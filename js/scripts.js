@@ -59,11 +59,12 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Interactive map — River North, Chicago
+// Interactive map — 820 N Orleans St, Suite 100, Chicago, IL 60610
 if (document.getElementById('map')) {
+  const movewellLatLng = [41.8966, -87.6366];
   const map = L.map('map', {
-    center: [41.8925, -87.6310],
-    zoom: 15,
+    center: movewellLatLng,
+    zoom: 16,
     scrollWheelZoom: false
   });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -77,8 +78,9 @@ if (document.getElementById('map')) {
     iconSize: [32, 32],
     iconAnchor: [16, 32]
   });
-  L.marker([41.8925, -87.6310], { icon: pin }).addTo(map)
-    .bindPopup('<strong style="font-family:DM Sans,sans-serif;font-size:13px;color:#194e6e;">Movewell</strong><br><span style="font-family:DM Sans,sans-serif;font-size:12px;color:#777;">River North, Chicago</span>');
+  L.marker(movewellLatLng, { icon: pin }).addTo(map)
+    .bindPopup('<strong style="font-family:DM Sans,sans-serif;font-size:13px;color:#194e6e;">Movewell</strong><br><span style="font-family:DM Sans,sans-serif;font-size:12px;color:#777;">820 N Orleans St, Suite 100<br>Chicago, IL 60610</span>')
+    .openPopup();
 }
 
 // Testimonial carousel scroll
