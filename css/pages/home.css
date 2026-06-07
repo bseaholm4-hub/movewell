@@ -356,6 +356,10 @@
     padding: 0.72rem 1.7rem;
     font-size: 13.5px;
     letter-spacing: 0.7px;
+    /* Outlined / ghost style */
+    background: transparent;
+    border: 2px solid #001f3f;
+    color: #001f3f;
   }
   .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
