@@ -90,7 +90,7 @@ nav.scrolled .logo { color: #194e6e; }
   font-family: var(--sans);
   font-size: 7.2px;
   font-weight: 500;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
   color: #fff;
   margin-top: -4px;
@@ -228,7 +228,7 @@ section {
     order: 0;
   }
   .logo { font-size: 26px; }
-  .nav-sub { font-size: 6.6px; letter-spacing: 0.45px; margin-top: -2px; }
+  .nav-sub { font-size: 6.6px; letter-spacing: -0.28px; margin-top: -2px; }
   .nav-left {
     position: relative;
     gap: 0;
@@ -307,12 +307,14 @@ section {
   nav { padding: 0 8px; }
   .nav-left { gap: 0; }
   .logo { font-size: 25px; }
+  /* tagline tracked to match the 25px logo width exactly */
+  .nav-sub { letter-spacing: -0.42px; }
   section { padding: 48px 16px; }
 }
 
 /* Very narrow phones (e.g. 320px): shrink the tagline so it clears the pill */
 @media (max-width: 340px) {
-  .nav-sub { font-size: 5.6px; letter-spacing: 0.3px; }
+  .nav-sub { font-size: 5.6px; letter-spacing: -0.13px; }
   .logo { font-size: 23px; }
 }
 
