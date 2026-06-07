@@ -344,7 +344,7 @@
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .hero { padding-left: 12px; padding-right: 12px; }
-  .hero-text { width: 100%; padding: 0 0 32px; }
+  .hero-text { width: 100%; top: 9vh; padding: 0 0 32px; }
   .hero-headline {
     font-size: clamp(40px, calc((100vw - 24px) * 0.135), 62px);
     line-height: 1.04;
@@ -353,9 +353,9 @@
   .hero-break { display: inline; }
   .hero-pill-btn {
     margin-top: 0.5rem;
-    padding: 0.85rem 2rem;
-    font-size: 15px;
-    letter-spacing: 0.8px;
+    padding: 0.72rem 1.7rem;
+    font-size: 13.5px;
+    letter-spacing: 0.7px;
   }
   .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
@@ -374,10 +374,10 @@
 @media (max-width: 480px) {
   .approach-grid { grid-template-columns: 1fr; gap: 16px; }
   .pricing-grid { grid-template-columns: 1fr; }
-  .hero-text { width: 100%; padding: 0 0 24px; }
+  .hero-text { width: 100%; top: 8vh; padding: 0 0 24px; }
   .hero-pill-btn {
-    padding: 0.8rem 1.75rem;
-    font-size: 14px;
+    padding: 0.68rem 1.55rem;
+    font-size: 13px;
   }
   .approach-card-title { font-size: 15px; padding: 16px 16px 0; }
   .approach-card-excerpt { font-size: 13px; padding: 0 16px 24px; }
