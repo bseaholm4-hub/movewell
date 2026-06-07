@@ -201,6 +201,7 @@
   color: var(--midnight);
   margin-bottom: 8px;
   padding: 24px 24px 0 24px;
+  text-transform: uppercase;
 }
 
 .approach-card-excerpt {
