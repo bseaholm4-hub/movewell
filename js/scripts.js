@@ -40,6 +40,12 @@ if (navLeft && !navLeft.querySelector('.nav-toggle')) {
   });
 }
 
+// Stack the "Get Started" pill onto two lines (mobile shows the break via CSS)
+const navPill = document.querySelector('.nav-pill');
+if (navPill && navPill.textContent.trim() === 'Get Started') {
+  navPill.innerHTML = 'Get <br class="pill-break">Started';
+}
+
 // On subpages without a full hero, start nav in scrolled (dark) state
 if (!hasHero) {
   navEl.classList.add('scrolled');
