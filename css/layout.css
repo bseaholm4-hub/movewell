@@ -296,10 +296,6 @@ section {
     text-align: center;
     line-height: 1.15;
     border-radius: 14px;
-    /* Outlined / ghost style */
-    background: transparent;
-    border: 1.5px solid #001f3f;
-    color: #001f3f;
   }
   .pill-break { display: inline; }
   section { padding: 60px 20px; }
