@@ -39,6 +39,11 @@
 }
 /* Forced line break only kicks in on mobile (see responsive rules) */
 .hero-break { display: none; }
+/* Italic "Lifelong" — add a touch of space so the slant doesn't crowd "Performance" */
+.hero-headline em {
+  font-style: italic;
+  margin-right: 0.16em;
+}
 
 .hero-pill-btn {
   display: inline-block;
