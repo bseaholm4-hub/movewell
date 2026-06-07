@@ -1,7 +1,7 @@
-@import 'base.css';
-@import 'layout.css';
-@import 'components.css';
-@import 'pages/home.css';
-@import 'pages/about.css';
-@import 'pages/faq.css';
-@import 'pages/services.css';
+@import 'base.css?v=2';
+@import 'layout.css?v=2';
+@import 'components.css?v=2';
+@import 'pages/home.css?v=2';
+@import 'pages/about.css?v=2';
+@import 'pages/faq.css?v=2';
+@import 'pages/services.css?v=2';
