@@ -6,6 +6,40 @@ if (heroVideo) heroVideo.playbackRate = 0.7;
 const navEl = document.querySelector('nav');
 const hasHero = document.querySelector('.hero');
 
+// Mobile nav dropdown — wrap the nav links and add a hamburger toggle.
+// Done in JS so every page (incl. nested /pricing pages) gets it without
+// touching their markup.
+const navLeft = document.querySelector('.nav-left');
+if (navLeft && !navLeft.querySelector('.nav-toggle')) {
+  const links = document.createElement('div');
+  links.className = 'nav-links';
+  while (navLeft.firstChild) links.appendChild(navLeft.firstChild);
+
+  const toggle = document.createElement('button');
+  toggle.className = 'nav-toggle';
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Menu');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+
+  navLeft.appendChild(toggle);
+  navLeft.appendChild(links);
+
+  const setOpen = (open) => {
+    navLeft.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setOpen(!navLeft.classList.contains('open'));
+  });
+  // Close when tapping outside the menu
+  document.addEventListener('click', (e) => {
+    if (!navLeft.contains(e.target)) setOpen(false);
+  });
+}
+
 // On subpages without a full hero, start nav in scrolled (dark) state
 if (!hasHero) {
   navEl.classList.add('scrolled');
