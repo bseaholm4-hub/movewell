@@ -343,17 +343,17 @@
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  .hero-text { width: 100%; padding: 0 28px 32px; }
+  .hero-text { width: 100%; padding: 0 22px 32px; }
   .hero-headline {
-    font-size: clamp(34px, 10.6vw, 52px);
-    line-height: 1.04;
-    margin-bottom: 18px;
+    font-size: clamp(48px, 17.5vw, 88px);
+    line-height: 1.02;
+    margin-bottom: 22px;
   }
   .hero-break { display: inline; }
   .hero-pill-btn {
     margin-top: 0.5rem;
-    padding: 0.7rem 1.7rem;
-    font-size: 12.5px;
+    padding: 0.85rem 2rem;
+    font-size: 15px;
     letter-spacing: 0.8px;
   }
   .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -373,10 +373,10 @@
 @media (max-width: 480px) {
   .approach-grid { grid-template-columns: 1fr; gap: 16px; }
   .pricing-grid { grid-template-columns: 1fr; }
-  .hero-text { width: 100%; padding: 0 20px 24px; }
+  .hero-text { width: 100%; padding: 0 18px 24px; }
   .hero-pill-btn {
-    padding: 0.65rem 1.5rem;
-    font-size: 12px;
+    padding: 0.8rem 1.75rem;
+    font-size: 14px;
   }
   .approach-card-title { font-size: 15px; padding: 16px 16px 0; }
   .approach-card-excerpt { font-size: 13px; padding: 0 16px 24px; }
