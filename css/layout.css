@@ -243,9 +243,13 @@ section {
     gap: 0;
     min-width: 175px;
     padding: 6px 0;
-    background: #fff;
+    /* Transparent glass so the hero sky photo shows through */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(4px) saturate(120%);
+    -webkit-backdrop-filter: blur(4px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -258,11 +262,12 @@ section {
   }
   .nav-links a {
     font-size: 14px !important;
-    color: #194e6e !important;
+    color: #fff !important;
     letter-spacing: 0.2px;
     padding: 11px 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
   }
-  .nav-links a:hover { background: var(--gray-100); opacity: 1; }
+  .nav-links a:hover { background: rgba(255, 255, 255, 0.14); opacity: 1; }
   /* Animate hamburger into an X when open */
   .nav-left.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav-left.open .nav-toggle span:nth-child(2) { opacity: 0; }
