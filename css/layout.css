@@ -125,9 +125,8 @@ nav.scrolled .nav-sub { color: #194e6e; }
    fall back to a readable white pill with navy text + outline. */
 nav.scrolled .nav-pill {
   mix-blend-mode: normal;
-  background: #fff;
-  color: #001f3f;
-  border: 1px solid #001f3f;
+  background: #001f3f;
+  color: #fff;
 }
 /* The pill's line break only shows on mobile */
 .pill-break { display: none; }
