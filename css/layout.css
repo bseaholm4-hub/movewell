@@ -108,10 +108,8 @@ nav.scrolled .nav-sub { color: #194e6e; }
 /* ─── NAV PILL ─── */
 .nav-pill {
   display: inline-block;
-  /* White pill with knocked-out text: letters show whatever is behind the pill */
-  background: #fff;
-  color: #000;
-  mix-blend-mode: screen;
+  background: #001f3f;
+  color: #fff;
   font-family: var(--sans);
   font-weight: 500;
   font-size: 13px;
@@ -121,12 +119,22 @@ nav.scrolled .nav-sub { color: #194e6e; }
   transition: opacity 0.3s;
   white-space: nowrap;
 }
-/* Once scrolled the nav turns solid white, so the knockout would vanish —
-   fall back to a readable white pill with navy text + outline. */
-nav.scrolled .nav-pill {
-  mix-blend-mode: normal;
-  background: #001f3f;
-  color: #fff;
+/* Homepage hero (before you scroll): white pill with the hero photo showing
+   through the letters. Once scrolled the nav turns white and the pill falls
+   back to the default solid navy above. */
+body.home nav:not(.scrolled) .nav-pill {
+  background: #fff;
+}
+body.home nav:not(.scrolled) .nav-pill .ko {
+  background-image: url('../assets/images/Tezza-8422-new.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 /* The pill's line break only shows on mobile */
 .pill-break { display: none; }

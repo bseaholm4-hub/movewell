@@ -52,9 +52,6 @@
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 500;
-  /* White pill with knocked-out text: letters show the hero image behind the pill */
-  color: #000;
-  mix-blend-mode: screen;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -62,6 +59,19 @@
   border-radius: 100px;
   background-color: #fff;
   transition: all 0.3s ease;
+}
+/* The letters are filled with the hero photo, aligned to the viewport so they
+   read as the exact pixels sitting behind the pill (true see-through look). */
+.hero-pill-btn .ko {
+  background-image: url('../../assets/images/Tezza-8422-new.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-pill-btn:hover {
