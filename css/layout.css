@@ -108,8 +108,10 @@ nav.scrolled .nav-sub { color: #194e6e; }
 /* ─── NAV PILL ─── */
 .nav-pill {
   display: inline-block;
-  background: #001f3f;
-  color: #fff;
+  /* White pill with knocked-out text: letters show whatever is behind the pill */
+  background: #fff;
+  color: #000;
+  mix-blend-mode: screen;
   font-family: var(--sans);
   font-weight: 500;
   font-size: 13px;
@@ -118,6 +120,14 @@ nav.scrolled .nav-sub { color: #194e6e; }
   text-decoration: none;
   transition: opacity 0.3s;
   white-space: nowrap;
+}
+/* Once scrolled the nav turns solid white, so the knockout would vanish —
+   fall back to a readable white pill with navy text + outline. */
+nav.scrolled .nav-pill {
+  mix-blend-mode: normal;
+  background: #fff;
+  color: #001f3f;
+  border: 1px solid #001f3f;
 }
 /* The pill's line break only shows on mobile */
 .pill-break { display: none; }

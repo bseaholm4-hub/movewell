@@ -52,13 +52,15 @@
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  /* White pill with knocked-out text: letters show the hero image behind the pill */
+  color: #000;
+  mix-blend-mode: screen;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
   border-radius: 100px;
-  background-color: #001f3f;
+  background-color: #fff;
   transition: all 0.3s ease;
 }
 
