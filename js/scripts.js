@@ -40,10 +40,11 @@ if (navLeft && !navLeft.querySelector('.nav-toggle')) {
   });
 }
 
-// Stack the "Get Started" pill onto two lines (mobile shows the break via CSS)
+// Stack the "Get Started" pill onto two lines (mobile shows the break via CSS).
+// Keep the .ko span so the see-through/knockout letter styling still applies.
 const navPill = document.querySelector('.nav-pill');
 if (navPill && navPill.textContent.trim() === 'Get Started') {
-  navPill.innerHTML = 'Get <br class="pill-break">Started';
+  navPill.innerHTML = '<span class="ko">Get <br class="pill-break">Started</span>';
 }
 
 // On subpages without a full hero, start nav in scrolled (dark) state
