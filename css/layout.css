@@ -128,9 +128,10 @@ body.home nav:not(.scrolled) .nav-pill {
 body.home nav:not(.scrolled) .nav-pill .ko {
   background-image: url('../assets/images/Tezza-8422-new.jpeg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* Viewport-locked (fixed) backgrounds don't paint inside a position:fixed
+     nav, so use a normal background showing the same light-blue sky. */
   background-size: cover;
-  background-position: center bottom;
+  background-position: center top;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
