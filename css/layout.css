@@ -119,16 +119,25 @@ nav.scrolled .nav-sub { color: #194e6e; }
   transition: opacity 0.3s;
   white-space: nowrap;
 }
-/* Homepage hero (before you scroll): white pill with navy letters. (A photo
-   see-through doesn't work here — the pill sits over near-white sky, so
-   transparent letters are invisible on the white pill.) Once scrolled the nav
-   turns white and the pill falls back to the default solid navy above. */
+/* Homepage hero (before you scroll): white pill with the photo showing through
+   the letters. We pull from the middle of the photo (medium-blue sky) so the
+   letters stay visible — the top edge is near-white and would disappear. A
+   normal (scroll) background is used because viewport-fixed ones don't paint
+   inside a position:fixed nav. Once scrolled, the pill falls back to solid navy. */
 body.home nav:not(.scrolled) .nav-pill {
   background: #fff;
 }
 body.home nav:not(.scrolled) .nav-pill .ko {
-  color: #001f3f;
-  -webkit-text-fill-color: #001f3f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: url('../assets/images/Tezza-8422-new.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 /* The pill's line break only shows on mobile */
 .pill-break { display: none; }
