@@ -10,7 +10,7 @@
   var API_KEY = 'AIzaSyBlVKo0Z1wgFTxY7wDsVJi3CpIoAtRLHCc';
   // Optional: paste the Place ID to skip the name lookup (faster + cheaper).
   var PLACE_ID = '';
-  var PLACE_QUERY = 'Movewell Sports Medicine and Performance, 820 N Orleans St, Chicago, IL';
+  var PLACE_QUERY = 'Movewell Sports Medicine and Performance, Chicago';
   var MAX_REVIEWS = 5;
   // ─────────────────────────────────────────────────────────────────────────
 
