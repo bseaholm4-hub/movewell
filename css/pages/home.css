@@ -80,6 +80,12 @@
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
 }
+/* On hover, swap the photo-fill letters for a clean navy. */
+.hero-pill-btn:hover .ko {
+  background-image: none;
+  color: #001f3f;
+  -webkit-text-fill-color: #001f3f;
+}
 .hero-sub {
   font-family: var(--sans);
   font-size: clamp(14px, 1.4vw, 18px);
