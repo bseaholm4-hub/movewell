@@ -25,19 +25,25 @@
       if (!placeId) {
         var search = await Place.searchByText({
           textQuery: PLACE_QUERY,
-          fields: ['id'],
+          fields: ['id', 'displayName'],
           maxResultCount: 1
         });
+        console.log('[MW] search result:', search);
         if (search && search.places && search.places.length) {
           placeId = search.places[0].id;
         }
       }
-      if (!placeId) return;
+      console.log('[MW] placeId:', placeId);
+      if (!placeId) { console.log('[MW] no place found'); return; }
 
       var place = new Place({ id: placeId });
       await place.fetchFields({ fields: ['reviews', 'rating', 'userRatingCount'] });
+      console.log('[MW] rating:', place.rating, 'count:', place.userRatingCount, 'reviews:', place.reviews);
       if (place.reviews && place.reviews.length) {
         renderReviews(place.reviews);
+        console.log('[MW] rendered', Math.min(place.reviews.length, MAX_REVIEWS), 'reviews');
+      } else {
+        console.log('[MW] no reviews returned — keeping static cards');
       }
     } catch (e) {
       // Keep the static cards on any failure.
