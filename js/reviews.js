@@ -1,32 +1,60 @@
 // Google Reviews — pulls the latest reviews from Google (new Places API) and
 // renders them into the existing testimonial cards (exact same styling). Falls
-// back to the static cards already in the HTML if it's not configured yet or the
-// request fails, so the section is never empty.
-//
-// STATUS: waiting on a valid PLACE_ID. Movewell's Google Business Profile isn't
-// currently in Google's Places index (confirmed — it doesn't appear in name or
-// location search), so reviews can't be pulled yet. Once the Google Business
-// Profile is verified/published and findable, drop its Place ID into PLACE_ID
-// below and this turns on automatically (a single, cheap Place Details call).
+// back to the static cards already in the HTML if it can't find/load reviews,
+// so the section is never empty.
 (function () {
   // ── CONFIG ───────────────────────────────────────────────────────────────
-  // Maps JavaScript API key. Client-side Maps keys are public by design — the
-  // protection is the HTTP-referrer restriction set on the key in Google Cloud.
+  // Maps JavaScript API key (referrer-restricted to the movewell domain).
   var API_KEY = 'AIzaSyBlVKo0Z1wgFTxY7wDsVJi3CpIoAtRLHCc';
-  var PLACE_ID = '';   // <-- paste the Google Place ID here once the profile is live
+  // Once we know the Place ID, paste it here to skip discovery (cheaper + faster).
+  var PLACE_ID = '';
+  var PLACE_QUERY = 'Movewell Sports Medicine and Performance, Chicago';
+  var GEO = { lat: 41.8966, lng: -87.6366 };
   var MAX_REVIEWS = 5;
   // ─────────────────────────────────────────────────────────────────────────
 
-  // No key or no Place ID yet → leave the static cards in place (and make no
-  // billable API calls).
-  if (!API_KEY || !PLACE_ID) return;
+  if (!API_KEY) return;
 
   window.__initGoogleReviews = async function () {
     try {
       var placesLib = await google.maps.importLibrary('places');
       var Place = placesLib.Place;
-      var place = new Place({ id: PLACE_ID });
+
+      var placeId = PLACE_ID;
+
+      // 1) Try name search (biased to Movewell's location).
+      if (!placeId) {
+        var byName = await Place.searchByText({
+          textQuery: PLACE_QUERY,
+          fields: ['id', 'displayName'],
+          maxResultCount: 5,
+          locationBias: { center: GEO, radius: 8000 }
+        });
+        console.log('[MW] name matches:', byName && byName.places ? byName.places.map(function (p) { return { name: p.displayName, id: p.id }; }) : byName);
+        if (byName && byName.places && byName.places.length) {
+          placeId = byName.places[0].id;
+        }
+      }
+
+      // 2) Fall back to a location search right at the address.
+      if (!placeId) {
+        var near = await Place.searchNearby({
+          fields: ['id', 'displayName'],
+          locationRestriction: { center: GEO, radius: 250 },
+          maxResultCount: 20
+        });
+        var mw = (near && near.places ? near.places : []).filter(function (p) {
+          return (p.displayName || '').toLowerCase().indexOf('movewell') !== -1;
+        })[0];
+        if (mw) placeId = mw.id;
+      }
+
+      console.log('[MW] using placeId:', placeId);
+      if (!placeId) { console.log('[MW] listing not findable yet'); return; }
+
+      var place = new Place({ id: placeId });
       await place.fetchFields({ fields: ['reviews', 'rating', 'userRatingCount'] });
+      console.log('[MW] reviews:', place.reviews);
       if (place.reviews && place.reviews.length) {
         renderReviews(place.reviews);
       }
@@ -77,7 +105,6 @@
     }).join('');
   }
 
-  // Load the Maps JS API, then init via the callback.
   var s = document.createElement('script');
   s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(API_KEY) +
           '&libraries=places&callback=__initGoogleReviews&loading=async&v=weekly';
