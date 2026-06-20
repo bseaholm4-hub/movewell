@@ -25,10 +25,20 @@
       if (!placeId) {
         var search = await Place.searchByText({
           textQuery: PLACE_QUERY,
-          fields: ['id', 'displayName'],
-          maxResultCount: 1
+          fields: ['id', 'displayName', 'formattedAddress'],
+          maxResultCount: 5,
+          // Bias the search to Movewell's location so the local listing surfaces.
+          locationBias: {
+            center: { lat: 41.8966, lng: -87.6366 },
+            radius: 8000
+          }
         });
         console.log('[MW] search result:', search);
+        if (search && search.places) {
+          console.log('[MW] matches:', search.places.map(function (p) {
+            return { name: p.displayName, id: p.id, address: p.formattedAddress };
+          }));
+        }
         if (search && search.places && search.places.length) {
           placeId = search.places[0].id;
         }
