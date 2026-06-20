@@ -21,39 +21,23 @@
       var placesLib = await google.maps.importLibrary('places');
       var Place = placesLib.Place;
 
-      // TEMP control test: does the API return ANY place near this location?
-      try {
-        var ctrl = await Place.searchByText({
-          textQuery: 'Starbucks',
-          fields: ['displayName'],
-          maxResultCount: 3,
-          locationBias: { center: { lat: 41.8966, lng: -87.6366 }, radius: 8000 }
-        });
-        console.log('[MW] CONTROL (Starbucks) matches:', ctrl && ctrl.places ? ctrl.places.map(function (p) { return p.displayName; }) : ctrl);
-      } catch (ce) {
-        console.log('[MW] CONTROL error:', ce);
-      }
-
       var placeId = PLACE_ID;
       if (!placeId) {
-        var search = await Place.searchByText({
-          textQuery: PLACE_QUERY,
-          fields: ['id', 'displayName', 'formattedAddress'],
-          maxResultCount: 5,
-          // Bias the search to Movewell's location so the local listing surfaces.
-          locationBias: {
-            center: { lat: 41.8966, lng: -87.6366 },
-            radius: 8000
-          }
+        // Location-based lookup: list everything right at Movewell's coordinates
+        // (catches listings that name-search misses).
+        var near = await Place.searchNearby({
+          fields: ['id', 'displayName'],
+          locationRestriction: { center: { lat: 41.8966, lng: -87.6366 }, radius: 250 },
+          maxResultCount: 20
         });
-        console.log('[MW] search result:', search);
-        if (search && search.places) {
-          console.log('[MW] matches:', search.places.map(function (p) {
-            return { name: p.displayName, id: p.id, address: p.formattedAddress };
-          }));
-        }
-        if (search && search.places && search.places.length) {
-          placeId = search.places[0].id;
+        console.log('[MW] nearby places:', near && near.places ? near.places.map(function (p) {
+          return { name: p.displayName, id: p.id };
+        }) : near);
+        if (near && near.places && near.places.length) {
+          var mw = near.places.filter(function (p) {
+            return (p.displayName || '').toLowerCase().indexOf('movewell') !== -1;
+          })[0];
+          if (mw) placeId = mw.id;
         }
       }
       console.log('[MW] placeId:', placeId);
