@@ -7,7 +7,7 @@
   // Maps JavaScript API key. Client-side Maps keys are public by design — the
   // protection is the HTTP-referrer restriction you set on the key in Google
   // Cloud (limit it to movewellsportsmed.com / www.movewellsportsmed.com).
-  var API_KEY = '';   // <-- paste your Google Maps API key here
+  var API_KEY = 'AIzaSyBlVKo0Z1wgFTxY7wDsVJi3CpIoAtRLHCc';   // Google Maps API key (restrict to the movewell domain in Google Cloud)
   // Optional: paste the Place ID to skip the name lookup (faster + cheaper).
   var PLACE_ID = '';
   var PLACE_QUERY = 'Movewell Sports Medicine and Performance, 820 N Orleans St, Chicago, IL';
