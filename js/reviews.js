@@ -1,59 +1,36 @@
 // Google Reviews — pulls the latest reviews from Google (new Places API) and
 // renders them into the existing testimonial cards (exact same styling). Falls
-// back to the static cards already in the HTML if the key isn't set yet or the
+// back to the static cards already in the HTML if it's not configured yet or the
 // request fails, so the section is never empty.
+//
+// STATUS: waiting on a valid PLACE_ID. Movewell's Google Business Profile isn't
+// currently in Google's Places index (confirmed — it doesn't appear in name or
+// location search), so reviews can't be pulled yet. Once the Google Business
+// Profile is verified/published and findable, drop its Place ID into PLACE_ID
+// below and this turns on automatically (a single, cheap Place Details call).
 (function () {
   // ── CONFIG ───────────────────────────────────────────────────────────────
   // Maps JavaScript API key. Client-side Maps keys are public by design — the
-  // protection is the HTTP-referrer restriction you set on the key in Google
-  // Cloud (limit it to movewellsportsmed.com / www.movewellsportsmed.com).
+  // protection is the HTTP-referrer restriction set on the key in Google Cloud.
   var API_KEY = 'AIzaSyBlVKo0Z1wgFTxY7wDsVJi3CpIoAtRLHCc';
-  // Optional: paste the Place ID to skip the name lookup (faster + cheaper).
-  var PLACE_ID = '';
-  var PLACE_QUERY = 'Movewell Sports Medicine and Performance, Chicago';
+  var PLACE_ID = '';   // <-- paste the Google Place ID here once the profile is live
   var MAX_REVIEWS = 5;
   // ─────────────────────────────────────────────────────────────────────────
 
-  if (!API_KEY) return; // No key yet → leave the static cards in place.
+  // No key or no Place ID yet → leave the static cards in place (and make no
+  // billable API calls).
+  if (!API_KEY || !PLACE_ID) return;
 
   window.__initGoogleReviews = async function () {
     try {
       var placesLib = await google.maps.importLibrary('places');
       var Place = placesLib.Place;
-
-      var placeId = PLACE_ID;
-      if (!placeId) {
-        // Location-based lookup: list everything right at Movewell's coordinates
-        // (catches listings that name-search misses).
-        var near = await Place.searchNearby({
-          fields: ['id', 'displayName'],
-          locationRestriction: { center: { lat: 41.8966, lng: -87.6366 }, radius: 250 },
-          maxResultCount: 20
-        });
-        console.log('[MW] nearby places:', near && near.places ? near.places.map(function (p) {
-          return { name: p.displayName, id: p.id };
-        }) : near);
-        if (near && near.places && near.places.length) {
-          var mw = near.places.filter(function (p) {
-            return (p.displayName || '').toLowerCase().indexOf('movewell') !== -1;
-          })[0];
-          if (mw) placeId = mw.id;
-        }
-      }
-      console.log('[MW] placeId:', placeId);
-      if (!placeId) { console.log('[MW] no place found'); return; }
-
-      var place = new Place({ id: placeId });
+      var place = new Place({ id: PLACE_ID });
       await place.fetchFields({ fields: ['reviews', 'rating', 'userRatingCount'] });
-      console.log('[MW] rating:', place.rating, 'count:', place.userRatingCount, 'reviews:', place.reviews);
       if (place.reviews && place.reviews.length) {
         renderReviews(place.reviews);
-        console.log('[MW] rendered', Math.min(place.reviews.length, MAX_REVIEWS), 'reviews');
-      } else {
-        console.log('[MW] no reviews returned — keeping static cards');
       }
     } catch (e) {
-      // Keep the static cards on any failure.
       console.warn('Google reviews could not load:', e);
     }
   };
