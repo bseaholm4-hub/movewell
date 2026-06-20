@@ -15,6 +15,12 @@
 
   if (!API_KEY) return;
 
+  // Normal visitors make no API calls until we've hardcoded a PLACE_ID. To check
+  // whether Google has indexed the listing yet, load the page with
+  // "?reviews=discover" — that runs the lookup and logs the Place ID if found.
+  var DISCOVER = new URLSearchParams(location.search).get('reviews') === 'discover';
+  if (!PLACE_ID && !DISCOVER) return;
+
   window.__initGoogleReviews = async function () {
     try {
       var placesLib = await google.maps.importLibrary('places');
@@ -22,7 +28,8 @@
 
       var placeId = PLACE_ID;
 
-      // 1) Try name search (biased to Movewell's location).
+      // Discovery (only when no hardcoded ID): find the listing by name, then
+      // fall back to a location search at the address.
       if (!placeId) {
         var byName = await Place.searchByText({
           textQuery: PLACE_QUERY,
