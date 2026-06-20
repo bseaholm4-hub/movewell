@@ -21,6 +21,19 @@
       var placesLib = await google.maps.importLibrary('places');
       var Place = placesLib.Place;
 
+      // TEMP control test: does the API return ANY place near this location?
+      try {
+        var ctrl = await Place.searchByText({
+          textQuery: 'Starbucks',
+          fields: ['displayName'],
+          maxResultCount: 3,
+          locationBias: { center: { lat: 41.8966, lng: -87.6366 }, radius: 8000 }
+        });
+        console.log('[MW] CONTROL (Starbucks) matches:', ctrl && ctrl.places ? ctrl.places.map(function (p) { return p.displayName; }) : ctrl);
+      } catch (ce) {
+        console.log('[MW] CONTROL error:', ce);
+      }
+
       var placeId = PLACE_ID;
       if (!placeId) {
         var search = await Place.searchByText({
