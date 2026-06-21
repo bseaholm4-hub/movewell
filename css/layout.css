@@ -108,15 +108,17 @@ nav.scrolled .nav-sub { color: #194e6e; }
 /* ─── NAV PILL ─── */
 .nav-pill {
   display: inline-block;
-  /* Plain navy text link (no pill) to mirror the left-hand nav links */
+  /* Outlined ("ghost") pill: transparent inside, navy border + navy text */
   background: transparent;
   color: #001f3f;
+  border: 1px solid #001f3f;
   font-family: var(--sans);
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 0;
+  padding: 8px 20px;
+  border-radius: 100px;
   text-decoration: none;
   transition: opacity 0.3s;
   white-space: nowrap;
