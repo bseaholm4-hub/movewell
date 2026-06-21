@@ -47,6 +47,25 @@ if (navPill && navPill.textContent.trim() === 'Get Started') {
   navPill.innerHTML = '<span class="ko">Get <br class="pill-break">Started</span>';
 }
 
+// Private "Education" tab — only appears on browsers where it's been enabled,
+// so the public never sees it while it's being built out.
+//   Enable:  visit any page with ?edu=on   (remembered in this browser)
+//   Disable: visit any page with ?edu=off
+(function () {
+  const p = new URLSearchParams(location.search);
+  if (p.get('edu') === 'on') localStorage.setItem('mw_edu', 'on');
+  if (p.get('edu') === 'off') localStorage.removeItem('mw_edu');
+  if (localStorage.getItem('mw_edu') !== 'on') return;
+  const linksContainer = document.querySelector('.nav-links') || document.querySelector('.nav-left');
+  if (!linksContainer || linksContainer.querySelector('.nav-edu')) return;
+  const inPricing = location.pathname.indexOf('/pricing/') !== -1;
+  const edu = document.createElement('a');
+  edu.href = inPricing ? '../education.html' : 'education.html';
+  edu.textContent = 'Education';
+  edu.className = 'nav-edu';
+  linksContainer.appendChild(edu);
+})();
+
 // On subpages without a full hero, start nav in scrolled (dark) state
 if (!hasHero) {
   navEl.classList.add('scrolled');
