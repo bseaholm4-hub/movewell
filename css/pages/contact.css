@@ -98,8 +98,8 @@
 }
 
 .btn-apply {
-  background-color: var(--electric);
-  color: #fff;
+  background-color: #74b4db;
+  color: #001f3f;
   border: none;
   padding: 1.25rem;
   font-size: 1rem;
@@ -113,8 +113,8 @@
 }
 
 .btn-apply:hover {
-  background-color: #051d8c;
-  color: #fff;
+  background-color: #5fa6cd;
+  color: #001f3f;
 }
 
 .form-footer-note {
