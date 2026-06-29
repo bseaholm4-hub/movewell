@@ -66,6 +66,24 @@ if (navPill && navPill.textContent.trim() === 'Get Started') {
   linksContainer.appendChild(edu);
 })();
 
+// Private "Programs" tab — same gating as Education.
+//   Enable:  visit any page with ?programs=on   (remembered in this browser)
+//   Disable: visit any page with ?programs=off
+(function () {
+  const p = new URLSearchParams(location.search);
+  if (p.get('programs') === 'on') localStorage.setItem('mw_programs', 'on');
+  if (p.get('programs') === 'off') localStorage.removeItem('mw_programs');
+  if (localStorage.getItem('mw_programs') !== 'on') return;
+  const linksContainer = document.querySelector('.nav-links') || document.querySelector('.nav-left');
+  if (!linksContainer || linksContainer.querySelector('.nav-programs')) return;
+  const inPricing = location.pathname.indexOf('/pricing/') !== -1;
+  const prog = document.createElement('a');
+  prog.href = inPricing ? '../programs.html' : 'programs.html';
+  prog.textContent = 'Programs';
+  prog.className = 'nav-programs';
+  linksContainer.appendChild(prog);
+})();
+
 // On subpages without a full hero, start nav in scrolled (dark) state
 if (!hasHero) {
   navEl.classList.add('scrolled');
