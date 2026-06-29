@@ -123,6 +123,14 @@
   color: var(--stone);
   margin-top: -0.5rem;
 }
+.form-spam-note {
+  text-align: center;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--silver);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
 
 /* Adjust for small screens */
 @media (max-width: 599px) {
