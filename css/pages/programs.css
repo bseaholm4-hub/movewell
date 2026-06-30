@@ -87,13 +87,20 @@
   color: #001f3f;
   margin-bottom: 6px;
 }
+.prog-tagline {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: #194e6e;
+  margin-bottom: 3px;
+}
 .prog-duration {
   font-family: var(--sans);
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #194e6e;
+  color: var(--gray-400);
   margin-bottom: 14px;
 }
 .prog-desc {
