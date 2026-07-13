@@ -57,9 +57,11 @@ if (navPill && navPill.textContent.trim() === 'Get Started') {
   if (localStorage.getItem('mw_programs') !== 'on') return;
   const linksContainer = document.querySelector('.nav-links') || document.querySelector('.nav-left');
   if (!linksContainer || linksContainer.querySelector('.nav-programs')) return;
-  const inPricing = location.pathname.indexOf('/pricing/') !== -1;
+  // Resolve the right relative prefix from however deep the current page sits.
+  const depth = location.pathname.replace(/\/[^/]*$/, '').split('/').filter(Boolean).length;
+  const prefix = '../'.repeat(depth);
   const prog = document.createElement('a');
-  prog.href = inPricing ? '../programs.html' : 'programs.html';
+  prog.href = prefix + 'programs.html';
   prog.textContent = 'Programs';
   prog.className = 'nav-programs';
   linksContainer.appendChild(prog);
