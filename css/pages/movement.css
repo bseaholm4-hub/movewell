@@ -451,3 +451,30 @@ body.mv-doc { background: #eceff3; }
     padding: 30px 22px 26px;
   }
 }
+
+/* ---- "The short version" TL;DR callout ---- */
+.mv-tldr {
+  background: var(--mv-tint);
+  border: 1px solid rgba(25,78,110,0.12);
+  border-radius: 12px;
+  padding: 22px 26px 24px;
+  margin: 6px 0 4px;
+}
+.mv-tldr .mv-eyebrow { margin-bottom: 13px; }
+.mv-tldr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.mv-tldr li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #3a4653;
+}
+.mv-tldr li::before {
+  content: "";
+  position: absolute;
+  left: 2px; top: 8px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--mv-sky);
+}
+.mv-tldr li strong { color: var(--mv-navy); font-weight: 700; }
