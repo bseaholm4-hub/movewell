@@ -118,7 +118,9 @@
 }
 
 /* ---- Section spacing ---- */
-.mv-sec { margin: 26px 0; }
+/* Neutralize the global `section { padding: 80px 40px }` so our sections
+   align flush and spacing comes only from these margins. */
+.mv-sec { margin: 30px 0; padding: 0; }
 .mv-title { margin-bottom: 10px; }
 
 /* ---- Figure / image placeholder ---- */
@@ -426,4 +428,26 @@
   .edu-tile svg { width: 26px; height: 26px; }
   .edu-row-arrow { display: none; }
   .edu-row-title { font-size: 25px; }
+}
+
+/* ============================================================
+   "Paper" document treatment — makes an article read like a
+   printed sheet sitting on a soft background. Opt in per page
+   with <body class="mv-doc"> + <article class="mv mv-paper">.
+   ============================================================ */
+body.mv-doc { background: #eceff3; }
+.mv.mv-paper {
+  --mv-measure: 100%;          /* align every element to one paper width */
+  background: #fff;
+  max-width: 860px;
+  margin: calc(var(--nav-height) + 30px) auto 52px;
+  padding: 58px 62px 46px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(13,31,60,0.07), 0 14px 38px rgba(13,31,60,0.11);
+}
+@media (max-width: 720px) {
+  .mv.mv-paper {
+    margin: calc(var(--nav-height) + 12px) 12px 28px;
+    padding: 30px 22px 26px;
+  }
 }
