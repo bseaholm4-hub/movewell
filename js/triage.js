@@ -221,14 +221,11 @@
   function resultProgram() {
     var prog = computeProgram();
     var online = answers.access === 'online';
-    var r2pType = answers.p1 === 'surgery' ||
-      answers.p2 === 'sport' || answers.p2 === 'exercise' || answers.p2 === 'postsurg';
 
     if (online) {
       resultShell({
         head: 'Online Rehab Coaching looks like your starting point',
         why: 'Since in-person isn’t the fit right now, our fully-online coaching gives you a Doctor of Physical Therapy building and progressing your plan, wherever you are. It’s expert guidance and structured programming without needing to be in the room.',
-        soft: r2pType ? 'One honest note: what you’re describing, a post-surgical or return-to-sport goal, really benefits from in-person testing and hands-on work. If you can get to Chicago even periodically, the hybrid <strong>Return to Performance</strong> program is the stronger fit. Either way, let’s talk it through.' : '',
         disclaimer: 'This is a starting point, not a diagnosis or a commitment. Online coaching begins with a video consultation where we confirm it’s the right fit for you.',
         cta: [{ label: 'Explore Online Rehab Coaching', href: LINK_ONLINE }, { label: 'Get in touch', href: LINK_CONTACT, kind: 'ghost' }]
       });
