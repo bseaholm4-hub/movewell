@@ -225,7 +225,7 @@
     if (online) {
       resultShell({
         head: 'Online Rehab Coaching looks like your starting point',
-        why: 'Most rehab sells you an hour in a room and treats getting out of pain as the finish line. For a lot of people, it isn’t. Pain-free is maybe a quarter of the picture. Staying better, and not landing right back here in six months, means rebuilding real capacity, and that gets built in the days between sessions. Online Rehab Coaching is built around exactly that part: a plan that progresses as you do, honest accountability between check-ins, and a direct line to a Doctor of Physical Therapy when something flares.',
+        why: 'Most rehab happens in a clinic for an hour and treats getting out of pain as the finish line, when for a lot of people that is really where the work starts. Getting out of pain matters, but on its own it is closer to a quarter of what it takes to actually be better and stay that way. The rest is the capacity you rebuild underneath it, and most of that gets built in the days between your sessions. Online Rehab Coaching is built around exactly that part, with a plan that keeps progressing as you do, real accountability between check-ins, and a direct line to a Doctor of Physical Therapy when something flares up.',
         soft: 'Getting out of pain is a quarter of the picture. Rebuilt capacity, built between sessions, is the rest.',
         disclaimer: 'This is a starting point, not a diagnosis or a commitment. Online coaching begins with a video consultation where we confirm it’s the right fit for you.',
         cta: [{ label: 'Explore Online Rehab Coaching', href: LINK_ONLINE }, { label: 'Get in touch', href: LINK_CONTACT, kind: 'ghost' }]
