@@ -169,6 +169,16 @@
   color: #001f3f;
   white-space: nowrap;
 }
+.prog-price-pre {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-right: 3px;
+  vertical-align: 2px;
+}
 
 /* ─── BANNER ─── */
 .prog-banner {
