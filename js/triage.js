@@ -239,8 +239,8 @@
         why: 'What you’ve described sounds acute and fairly contained, the kind of thing a focused, front-loaded block is built to close out and get you back to full capacity.'
       },
       build: {
-        head: 'Build looks like your starting point',
-        why: 'Something recurring, or that took real capacity away, usually needs genuine rebuilding rather than just calming down. That’s exactly what Build is for, with the testing to prove the capacity is actually there this time.'
+        head: 'Rebuild looks like your starting point',
+        why: 'Something recurring, or that took real capacity away, usually needs genuine rebuilding rather than just calming down. That is exactly what Rebuild is for, with the testing to prove the capacity is actually there this time.'
       },
       r2p: {
         head: 'Return to Performance looks like your starting point',
