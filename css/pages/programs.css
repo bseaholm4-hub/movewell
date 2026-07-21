@@ -39,6 +39,15 @@
   max-width: 840px;
 }
 .programs-lede strong { color: var(--black); font-weight: 600; }
+.programs-headline .hl-sky { color: #5aa6dd; font-style: italic; }
+
+/* Split line before the Real Examples section */
+.prog-split {
+  max-width: 1160px;
+  margin: 10px auto 0;
+  border: none;
+  border-top: 1px solid var(--gray-200);
+}
 
 /* ─── GRID + CARDS ─── */
 .programs-section { max-width: 1160px; margin: 0 auto; padding: 34px 24px; }
@@ -198,25 +207,25 @@
 }
 .prog-banner p span { color: #74b4db; }
 
-/* ─── FOOT NOTE ─── */
+/* ─── FOOT NOTE (navy) ─── */
 .prog-foot {
-  margin-top: 12px;
-  background: #f1efe8;
-  border: 1px solid var(--gray-200);
+  margin-top: 26px;
+  background: #001f3f;
+  border: none;
   border-radius: 14px;
-  padding: 18px 24px;
+  padding: 24px 28px;
   font-family: var(--sans);
   font-size: 13.5px;
-  color: var(--gray-500);
-  line-height: 1.7;
+  color: #cddcec;
+  line-height: 1.75;
 }
-.prog-foot strong { color: var(--black); }
+.prog-foot strong { color: #74b4db; font-weight: 600; }
 .prog-eval-pill {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   color: #001f3f;
   background: #fff;
-  border: 1px solid var(--gray-200);
+  border: none;
   padding: 2px 9px;
   border-radius: 20px;
   white-space: nowrap;
