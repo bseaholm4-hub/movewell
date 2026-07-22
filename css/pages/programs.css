@@ -20,7 +20,7 @@
   line-height: 1.12;
   letter-spacing: -0.01em;
   color: var(--black);
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 }
 .programs-sub {
   font-family: var(--sans);
@@ -58,7 +58,7 @@
 }
 
 /* ─── GRID + CARDS ─── */
-.programs-section { max-width: 1460px; margin: 0 auto; padding: 34px 24px; }
+.programs-section { max-width: 1460px; margin: 0 auto; padding: 52px 24px 34px; }
 .prog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
