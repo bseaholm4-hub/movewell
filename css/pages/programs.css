@@ -15,13 +15,12 @@
 }
 .programs-headline {
   font-family: var(--serif);
-  font-size: clamp(30px, 4.2vw, 54px);
+  font-size: clamp(30px, 3.4vw, 50px);
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.01em;
   color: var(--black);
   margin-bottom: 14px;
-  max-width: 920px;
 }
 .programs-sub {
   font-family: var(--sans);
