@@ -99,14 +99,13 @@
 }
 .prog-name {
   font-family: var(--serif);
-  font-size: 42px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.01em;
   color: #001f3f;
   margin-bottom: 6px;
 }
-.prog-name--rtp { font-size: clamp(16px, 1.9vw, 30px); white-space: nowrap; }
 .prog-tagline {
   font-family: var(--sans);
   font-size: 13px;
@@ -145,6 +144,10 @@
 /* On desktop, cap each card to the viewport and scroll the body inside it,
    keeping the program name pinned at the top and the price at the bottom. */
 @media (min-width: 821px) {
+  /* All titles share the largest size that keeps 'Return to Performance'
+     on one line in the column, scaling down together on narrower widths. */
+  .prog-name { font-size: clamp(16px, 2.1vw, 30px); }
+  .prog-name--rtp { white-space: nowrap; }
   .prog-card { max-height: calc(100vh - 104px); }
   .prog-scroll {
     flex: 1;
