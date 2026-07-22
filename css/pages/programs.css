@@ -139,7 +139,23 @@
   margin-bottom: 10px;
 }
 .prog-divider { border: none; border-top: 1px solid var(--gray-200); margin-bottom: 16px; }
-.prog-feat { list-style: none; padding: 0; margin: 0; flex: 1; }
+.prog-scroll { min-height: 0; }
+
+/* On desktop, cap each card to the viewport and scroll the body inside it,
+   keeping the program name pinned at the top and the price at the bottom. */
+@media (min-width: 821px) {
+  .prog-card { max-height: calc(100vh - 104px); }
+  .prog-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-right: -6px;
+    scrollbar-width: thin;
+  }
+  .prog-scroll::-webkit-scrollbar { width: 6px; }
+  .prog-scroll::-webkit-scrollbar-thumb { background: rgba(25,78,110,0.22); border-radius: 6px; }
+}
+.prog-feat { list-style: none; padding: 0; margin: 0; }
 .prog-feat li {
   font-family: var(--sans);
   font-size: 13.5px;
