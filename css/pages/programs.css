@@ -1,6 +1,6 @@
 /* ─── PROGRAMS PAGE (private) ─── */
 .programs-intro {
-  max-width: 1160px;
+  max-width: 1540px;
   margin: 0 auto;
   padding: calc(var(--nav-height) + 56px) 24px 4px;
 }
@@ -53,14 +53,14 @@
 
 /* Split line before the Real Examples section */
 .prog-split {
-  max-width: 1160px;
+  max-width: 1540px;
   margin: 10px auto 0;
   border: none;
   border-top: 1px solid var(--gray-200);
 }
 
 /* ─── GRID + CARDS ─── */
-.programs-section { max-width: 1160px; margin: 0 auto; padding: 34px 24px; }
+.programs-section { max-width: 1540px; margin: 0 auto; padding: 34px 24px; }
 .prog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -144,10 +144,10 @@
 /* On desktop, cap each card to the viewport and scroll the body inside it,
    keeping the program name pinned at the top and the price at the bottom. */
 @media (min-width: 821px) {
-  /* All titles share the largest size that keeps 'Return to Performance'
-     on one line in the column, scaling down together on narrower widths. */
-  .prog-name { font-size: clamp(16px, 2.1vw, 30px); }
-  .prog-name--rtp { white-space: nowrap; }
+  /* All titles share one size (up to 42px on a wide window); the wider
+     columns let 'Return to Performance' sit on one line. It wraps on
+     its own if the window gets too narrow. */
+  .prog-name { font-size: clamp(24px, 2.6vw, 42px); }
   .prog-card { max-height: calc(100vh - 104px); }
   .prog-scroll {
     flex: 1;
@@ -263,7 +263,7 @@
 .prog-cta { text-align: center; margin-top: 30px; }
 
 /* ─── JOURNEYS ─── */
-.journeys-section { max-width: 1160px; margin: 0 auto; padding: 24px 24px 80px; }
+.journeys-section { max-width: 1540px; margin: 0 auto; padding: 24px 24px 80px; }
 .journeys-section h2 {
   font-family: var(--serif);
   font-size: clamp(24px, 3vw, 36px);
