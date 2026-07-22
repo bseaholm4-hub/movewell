@@ -109,7 +109,7 @@
 .prog-name--rtp { font-size: clamp(16px, 1.9vw, 27px); white-space: nowrap; }
 .prog-tagline {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   color: #194e6e;
   margin-bottom: 3px;
