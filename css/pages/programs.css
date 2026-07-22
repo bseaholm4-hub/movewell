@@ -106,7 +106,7 @@
   color: #001f3f;
   margin-bottom: 6px;
 }
-.prog-name--rtp { font-size: clamp(16px, 1.9vw, 27px); white-space: nowrap; }
+.prog-name--rtp { font-size: clamp(16px, 1.9vw, 30px); white-space: nowrap; }
 .prog-tagline {
   font-family: var(--sans);
   font-size: 13px;
