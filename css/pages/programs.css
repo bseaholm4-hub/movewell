@@ -35,7 +35,6 @@
   font-size: 15px;
   line-height: 1.7;
   color: var(--gray-500);
-  max-width: 840px;
 }
 .programs-lede strong { color: var(--black); font-weight: 600; }
 .programs-headline .hl-sky {
