@@ -39,7 +39,17 @@
   max-width: 840px;
 }
 .programs-lede strong { color: var(--black); font-weight: 600; }
-.programs-headline .hl-sky { color: #5aa6dd; font-style: italic; }
+.programs-headline .hl-sky {
+  color: inherit;
+  font-style: italic;
+  background-image: linear-gradient(rgba(122, 180, 219, 0.55), rgba(122, 180, 219, 0.55));
+  background-repeat: no-repeat;
+  background-size: 100% 58%;
+  background-position: 0 72%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 0.04em;
+}
 
 /* Split line before the Real Examples section */
 .prog-split {
