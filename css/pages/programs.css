@@ -170,7 +170,6 @@
   border-bottom: 1px solid var(--gray-200);
 }
 .prog-feat li:last-child { border-bottom: none; }
-.prog-feat li.lead { font-weight: 600; }
 .prog-ck {
   width: 17px; height: 17px;
   border-radius: 50%;
