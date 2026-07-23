@@ -262,6 +262,45 @@
 
 /* ─── JOURNEYS ─── */
 .journeys-section { max-width: 1460px; margin: 0 auto; padding: 24px 24px 80px; }
+
+/* Collapsible "Real examples" */
+.journeys-collapse > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.journeys-collapse > summary::-webkit-details-marker { display: none; }
+.journeys-heading .programs-eyebrow { margin-bottom: 8px; }
+.journeys-heading h2 { margin: 0; }
+.journeys-toggle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #194e6e;
+  background: #eef4fa;
+  border: 1px solid rgba(25, 78, 110, 0.16);
+  padding: 10px 18px;
+  border-radius: 100px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.journeys-collapse > summary:hover .journeys-toggle { background: #e2eef8; border-color: rgba(25, 78, 110, 0.3); }
+.jt-label::before { content: "Show examples"; }
+.journeys-collapse[open] .jt-label::before { content: "Hide examples"; }
+.jt-chev { transition: transform 0.2s ease; }
+.journeys-collapse[open] .jt-chev { transform: rotate(180deg); }
+.journeys-body { padding-top: 18px; }
+@media (max-width: 560px) {
+  .journeys-collapse > summary { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
 .journeys-section h2 {
   font-family: var(--serif);
   font-size: clamp(24px, 3vw, 36px);
