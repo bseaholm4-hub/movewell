@@ -130,10 +130,10 @@
 .prog-syshead {
   font-family: var(--sans);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gray-500);
+  color: var(--black);
   margin-bottom: 10px;
 }
 .prog-divider { border: none; border-top: 1px solid var(--gray-200); margin-bottom: 16px; }
