@@ -285,14 +285,14 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #194e6e;
-  background: #eef4fa;
-  border: 1px solid rgba(25, 78, 110, 0.16);
-  padding: 10px 18px;
+  color: #001f3f;
+  background: #74b4db;
+  border: none;
+  padding: 11px 18px;
   border-radius: 100px;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: opacity 0.2s ease;
 }
-.journeys-collapse > summary:hover .journeys-toggle { background: #e2eef8; border-color: rgba(25, 78, 110, 0.3); }
+.journeys-collapse > summary:hover .journeys-toggle { opacity: 0.8; }
 .jt-label::before { content: "Show examples"; }
 .journeys-collapse[open] .jt-label::before { content: "Hide examples"; }
 .jt-chev { transition: transform 0.2s ease; }
