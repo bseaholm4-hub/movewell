@@ -168,6 +168,19 @@
   line-height: 1.6;
   max-width: 300px;
 }
+.footer-brand a[href^="mailto:"] {
+  display: inline-block;
+  margin-top: 8px;
+  background: #fff;
+  color: #194e6e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  transition: opacity 0.15s ease;
+}
+.footer-brand a[href^="mailto:"]:hover { opacity: 0.85; }
 
 .footer-links h5 {
   font-family: var(--sans);
