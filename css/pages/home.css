@@ -154,6 +154,55 @@
   font-weight: 400;
 }
 
+/* ─── WHAT TO EXPECT ON YOUR FIRST VISIT ─── */
+.first-visit {
+  background: #fff;
+  padding: 80px 24px 60px;
+  text-align: center;
+}
+.first-visit .section-label { margin-bottom: 44px; }
+.first-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+.fv-num {
+  font-family: var(--serif);
+  font-size: 30px;
+  color: #74b4db;
+  display: block;
+  margin-bottom: 8px;
+}
+.fv-step h3 {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--midnight);
+  margin: 0 0 8px;
+}
+.fv-step p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--stone);
+  margin: 0;
+}
+.first-visit-note {
+  max-width: 720px;
+  margin: 44px auto 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--stone);
+}
+@media (max-width: 768px) {
+  .first-visit { padding: 60px 20px 40px; }
+  .first-visit-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
 /* ─── OUR APPROACH ─── */
 .our-approach {
   background: var(--midnight);
