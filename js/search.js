@@ -28,6 +28,24 @@ const searchIndex = [
     url: "contact.html",
     description: "Ready to move better? Fill out our form to get in touch and start your journey.",
     keywords: ["contact", "apply", "get started", "book", "email", "phone", "schedule", "reach out"]
+  },
+  {
+    title: "Education",
+    url: "education.html",
+    description: "The Movement Series: practical movement guides from the Movewell team.",
+    keywords: ["education", "guides", "movement", "series", "learn", "articles", "resources"]
+  },
+  {
+    title: "The Shoulder Press",
+    url: "education/shoulder-press.html",
+    description: "The vertical push: how to press overhead well, screen yourself, fix faults, and scale it.",
+    keywords: ["shoulder press", "overhead press", "vertical push", "press", "shoulder", "mobility", "guide"]
+  },
+  {
+    title: "The Chest Press",
+    url: "education/chest-press.html",
+    description: "The horizontal push: how to bench and push-up well, screen yourself, fix faults, and scale it.",
+    keywords: ["chest press", "bench press", "push up", "pushup", "horizontal push", "press", "chest", "guide"]
   }
 ];
 
