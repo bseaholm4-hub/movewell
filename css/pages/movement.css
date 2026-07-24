@@ -123,6 +123,39 @@
 .mv-sec { margin: 54px 0; padding: 0; }
 .mv-title { margin-bottom: 10px; }
 
+/* ---- Collapsible reference sections ---- */
+/* The reference-heavy sections (faults, variations, scaling, notes) fold
+   away so the page opens short and the reader expands what they want. */
+details.mv-collapse {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--mv-line);
+}
+details.mv-collapse:first-of-type { margin-top: 40px; }
+details.mv-collapse > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 2px 22px;
+}
+details.mv-collapse[open] > summary { padding-bottom: 4px; }
+details.mv-collapse > summary::-webkit-details-marker { display: none; }
+details.mv-collapse > summary .mv-eyebrow { margin: 0; }
+details.mv-collapse > summary .mv-chev {
+  flex: none;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--mv-sky);
+  border-bottom: 2px solid var(--mv-sky);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+  margin-right: 4px;
+}
+details.mv-collapse[open] > summary .mv-chev { transform: rotate(-135deg); }
+.mv-collapse-body { padding: 6px 0 30px; }
+
 /* ---- Figure / image placeholder ---- */
 .mv-fig {
   position: relative;
@@ -197,6 +230,22 @@
   gap: 0;
 }
 .mv-panel-split .mv-fig { margin: 0; border-radius: 12px; aspect-ratio: auto; }
+
+/* Light variant — used for the self-screen panels so only one dark
+   "anchor" block (the checklist) sits on each page. */
+.mv-panel--light {
+  background: var(--mv-tint);
+  border: 1px solid rgba(25,78,110,0.12);
+  color: #3a4653;
+}
+.mv-panel--light .mv-eyebrow { color: var(--gray-400); }
+.mv-panel--light .mv-panel-lead { color: var(--mv-logo); }
+.mv-panel--light .mv-subcols { border-color: rgba(25,78,110,0.14); }
+.mv-panel--light .mv-sub { border-right-color: rgba(25,78,110,0.14); }
+.mv-panel--light .mv-sub p { color: #55636f; }
+.mv-panel--light .mv-sub.pass h4 { color: var(--mv-pass); }
+.mv-panel--light .mv-sub.warn h4 { color: var(--mv-warn); }
+.mv-panel--light .mv-sub.bad  h4 { color: var(--mv-bad); }
 
 /* numbered checklist inside a panel */
 .mv-check { display: grid; gap: 18px; }
@@ -362,6 +411,7 @@
   .mv-panel-split .mv-fig { margin-top: 18px; min-height: 160px; }
   .mv-subcols, .mv-subcols.two { grid-template-columns: 1fr; }
   .mv-sub { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .mv-panel--light .mv-sub { border-bottom-color: rgba(25,78,110,0.14); }
   .mv-sub:last-child { border-bottom: none; }
   .mv-duo, .mv-vgrid, .mv-notes { grid-template-columns: 1fr; }
   .mv { padding-left: 18px; padding-right: 18px; }
