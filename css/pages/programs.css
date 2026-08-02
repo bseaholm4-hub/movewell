@@ -67,6 +67,12 @@
 }
 @media (max-width: 820px) { .prog-grid { grid-template-columns: 1fr; } }
 
+/* Two- and one-card layouts (Performance Training, Online Rehab) reuse the
+   same card system but stay centered at a comfortable column width. */
+.prog-grid.two { grid-template-columns: repeat(2, 1fr); max-width: 920px; margin-left: auto; margin-right: auto; }
+.prog-grid.one { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+@media (max-width: 820px) { .prog-grid.two, .prog-grid.one { grid-template-columns: 1fr; } }
+
 .prog-card {
   background: #f3f8fd;
   border: 1px solid rgba(25, 78, 110, 0.10);
