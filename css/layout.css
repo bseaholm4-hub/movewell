@@ -13,8 +13,8 @@ nav {
   transition: background 0.35s, border-color 0.35s, backdrop-filter 0.35s;
 }
 nav.scrolled {
-  background: #001f3f;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .nav-left {
@@ -49,7 +49,7 @@ nav.scrolled {
   background: #000;
   transition: background 0.3s, transform 0.3s, opacity 0.3s;
 }
-nav.scrolled .nav-toggle span { background: #fff; }
+nav.scrolled .nav-toggle span { background: var(--gray-500); }
 .nav-left a {
   font-family: var(--sans);
   font-size: 13px;
@@ -62,9 +62,9 @@ nav.scrolled .nav-toggle span { background: #fff; }
 }
 .nav-left a:hover,
 .nav-left a.active { color: #000; opacity: 0.6; }
-nav.scrolled .nav-left a { color: rgba(255, 255, 255, 0.82); }
+nav.scrolled .nav-left a { color: var(--gray-500); }
 nav.scrolled .nav-left a:hover,
-nav.scrolled .nav-left a.active { color: #fff; opacity: 1; }
+nav.scrolled .nav-left a.active { color: var(--black); }
 
 .nav-center {
   position: absolute;
@@ -84,7 +84,7 @@ nav.scrolled .nav-left a.active { color: #fff; opacity: 1; }
   text-transform: lowercase;
   transition: color 0.3s;
 }
-nav.scrolled .logo { color: #fff; }
+nav.scrolled .logo { color: #194e6e; }
 
 .nav-sub {
   font-family: var(--sans);
@@ -97,7 +97,7 @@ nav.scrolled .logo { color: #fff; }
   white-space: nowrap;
   transition: color 0.3s;
 }
-nav.scrolled .nav-sub { color: rgba(255, 255, 255, 0.72); }
+nav.scrolled .nav-sub { color: #194e6e; }
 
 .nav-right {
   display: flex;
@@ -128,8 +128,6 @@ nav.scrolled .nav-sub { color: rgba(255, 255, 255, 0.72); }
 .nav-pill:hover {
   opacity: 0.8;
 }
-/* On the dark navy (scrolled) bar, the ghost pill goes white */
-nav.scrolled .nav-pill { color: #fff; border-color: rgba(255, 255, 255, 0.55); }
 
 .search-bar {
   display: flex;
