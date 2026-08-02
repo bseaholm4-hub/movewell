@@ -219,6 +219,13 @@
   margin-right: 3px;
   vertical-align: 2px;
 }
+.prog-price-suf {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray-400);
+  margin-left: 1px;
+}
 
 /* ─── BANNER ─── */
 .prog-banner {
