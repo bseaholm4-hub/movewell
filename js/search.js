@@ -32,20 +32,32 @@ const searchIndex = [
   {
     title: "Education",
     url: "education.html",
-    description: "The Movement Series: practical movement guides from the Movewell team.",
-    keywords: ["education", "guides", "movement", "series", "learn", "articles", "resources"]
+    description: "The Movewell Guides: practical write-ups on running, training, and movement.",
+    keywords: ["education", "guides", "running", "training", "series", "learn", "articles", "resources"]
   },
   {
-    title: "The Shoulder Press",
-    url: "education/shoulder-press.html",
-    description: "The vertical push: how to press overhead well, screen yourself, fix faults, and scale it.",
-    keywords: ["shoulder press", "overhead press", "vertical push", "press", "shoulder", "mobility", "guide"]
+    title: "The Types of Runs",
+    url: "education/run-types.html",
+    description: "Why easy, threshold, and hard runs each exist, and how much of each belongs in your week.",
+    keywords: ["running", "run types", "easy run", "tempo", "threshold", "intervals", "long run", "fartlek", "strides", "hills", "guide"]
   },
   {
-    title: "The Chest Press",
-    url: "education/chest-press.html",
-    description: "The horizontal push: how to bench and push-up well, screen yourself, fix faults, and scale it.",
-    keywords: ["chest press", "bench press", "push up", "pushup", "horizontal push", "press", "chest", "guide"]
+    title: "Gauging Intensity",
+    url: "education/run-intensity.html",
+    description: "Effort, pace, and heart rate, and why pace lies to you on a hot day.",
+    keywords: ["running", "intensity", "effort", "rpe", "heart rate", "pace", "talk test", "zones", "guide"]
+  },
+  {
+    title: "Building the Base",
+    url: "education/run-base.html",
+    description: "Volume, frequency, and the 80/20 split that makes your hard days actually hard.",
+    keywords: ["running", "base", "volume", "mileage", "frequency", "80/20", "consistency", "base building", "guide"]
+  },
+  {
+    title: "The Long Run",
+    url: "education/run-long-run.html",
+    description: "The anchor of a marathon week: what it trains, how long, how fast, and how to fuel it.",
+    keywords: ["running", "long run", "marathon", "fueling", "fatigue resistance", "endurance", "guide"]
   }
 ];
 
