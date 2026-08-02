@@ -14,8 +14,8 @@
   --mv-bad:  #bf3b2c;
   --mv-measure: 720px;   /* comfortable reading width for running text */
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 36px 32px 8px;
+  margin: 0;             /* left-aligned; the paper guide pages re-center below */
+  padding: calc(var(--nav-height) + 30px) 40px 8px;
   color: #263341;
   font-family: var(--sans);
   font-size: 16px;
