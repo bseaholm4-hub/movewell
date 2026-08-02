@@ -84,7 +84,7 @@ nav.scrolled .nav-left a.active { color: var(--black); }
   text-transform: lowercase;
   transition: color 0.3s;
 }
-nav.scrolled .logo { color: #194e6e; }
+nav.scrolled .logo { color: #001f3f; }
 
 .nav-sub {
   font-family: var(--sans);
@@ -97,7 +97,7 @@ nav.scrolled .logo { color: #194e6e; }
   white-space: nowrap;
   transition: color 0.3s;
 }
-nav.scrolled .nav-sub { color: #194e6e; }
+nav.scrolled .nav-sub { color: #001f3f; }
 
 .nav-right {
   display: flex;
