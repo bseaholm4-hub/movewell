@@ -6,7 +6,7 @@
    INTERNAL NOTE: the two safety screens below are a distilled,
    patient-facing stand-in for the full clinical red-flag
    differential. They are intentionally short. The real screen
-   is the in-person Performance & Injury Assessment.
+   is the in-person Recovery & Performance Assessment.
    ============================================================ */
 (function () {
   var root = document.getElementById('triage');
@@ -201,7 +201,7 @@
   }
 
   /* ---------- Results ---------- */
-  var DISCLAIMER = 'This is a starting point, not a diagnosis or a commitment. Every path begins with an in-person Performance &amp; Injury Assessment, where we confirm the right fit together. Nothing is locked in until then.';
+  var DISCLAIMER = 'This is a starting point, not a diagnosis or a commitment. Every path begins with an in-person Recovery &amp; Performance Assessment, where we confirm the right fit together. Nothing is locked in until then.';
 
   function resultShell(opts) {
     var cta = (opts.cta || []).map(function (c) {
