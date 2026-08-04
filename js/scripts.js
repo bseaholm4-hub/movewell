@@ -67,6 +67,22 @@ if (navPill && navPill.textContent.trim() === 'Get Started') {
   linksContainer.appendChild(prog);
 })();
 
+// Private education guides — hidden from the public while under review.
+//   Unlock: visit education.html?edu=on   (remembered in this browser)
+//   Re-hide: visit education.html?edu=off
+(function () {
+  const content = document.getElementById('edu-content');
+  const params = new URLSearchParams(location.search);
+  if (params.get('edu') === 'on') localStorage.setItem('mw_edu', 'on');
+  if (params.get('edu') === 'off') localStorage.removeItem('mw_edu');
+  if (!content) return;
+  if (localStorage.getItem('mw_edu') === 'on') {
+    content.hidden = false;
+    const note = document.getElementById('edu-locked-note');
+    if (note) note.hidden = true;
+  }
+})();
+
 // On subpages without a full hero, start nav in scrolled (dark) state
 if (!hasHero) {
   navEl.classList.add('scrolled');

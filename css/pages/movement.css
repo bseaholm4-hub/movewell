@@ -428,8 +428,17 @@ details.mv-collapse[open] > summary .mv-chev { transform: rotate(-135deg); }
 .edu-series > .mv-eyebrow { margin-bottom: 6px; }
 .edu-series-note { font-size: 14.5px; color: var(--gray-500); margin: 0 0 16px; max-width: var(--mv-measure); }
 
+/* Public placeholder shown while the guides are gated for review */
+.edu-locked-note {
+  margin-top: 40px;
+  font-size: 15px;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
 /* ---- Folder tabs: each series is a folder you open to reveal its articles ---- */
 .edu-folders { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.edu-folders[hidden] { display: none; }  /* honor the review gate (display:flex would defeat [hidden]) */
 .edu-folder {
   position: relative;
   border: 1px solid var(--mv-line);
