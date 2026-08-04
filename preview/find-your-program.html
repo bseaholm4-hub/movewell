@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Program (Preview) | Movewell</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Bitter:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css?v=112">
+<link rel="stylesheet" href="../css/pages/programs.css?v=112">
+<link rel="stylesheet" href="../css/pages/find-your-program.css?v=112">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../services.html">Services</a>
+    <a href="../education.html">Education</a>
+    <a href="../faq.html">FAQ</a>
+  </div>
+  <div class="nav-center">
+    <a href="../index.html" class="logo">movewell</a>
+    <div class="nav-sub">SPORTS MEDICINE AND PERFORMANCE</div>
+  </div>
+  <div class="nav-right">
+    <a href="../contact.html" class="nav-pill">Get Started</a>
+  </div>
+</nav>
+
+<!-- PRIVATE PREVIEW GATE -->
+<div id="fyp-gate" class="fyp-gate" hidden>
+  <div class="fyp-gate-inner">
+    <p class="fyp-gate-eyebrow">Private preview</p>
+    <h1>This page is not public yet.</h1>
+    <p>The Find Your Program flow is in internal review. If you have the review link, open it with the access key appended.</p>
+  </div>
+</div>
+
+<main class="fyp" id="fyp-app" hidden>
+
+  <!-- ─── SCREEN 1: INTRO (public-facing step) ─── -->
+  <section class="fyp-screen" id="screen-intro">
+    <div class="fyp-intro">
+      <p class="fyp-preview-tag">Internal preview &middot; not live</p>
+      <h1 class="programs-headline"><em class="hl-sky">We are here to help you achieve your desired result,</em> other clinics just sell you sessions.</h1>
+      <p class="programs-lede">Most people think of physical therapy as a room you visit and an hour you pay for until the pain settles down. That version gets you out of pain and then stops, right when the work that keeps you better should be starting. <strong>Getting out of pain is the beginning of the job, not the end of it</strong>, and what holds is the capacity you rebuild in the weeks between your visits. We do that through a small set of committed programs, each matched to where you are and how far you want to go. Programs start at $1,695 and are paid upfront.</p>
+      <p class="programs-lede" style="margin-top:14px;">Every path begins with a Performance &amp; Injury Assessment, a $249 visit of 60 to 90 minutes that includes baseline testing so we can scope the right program for you. When your plan of care wraps up, graduates can keep the momentum going with Continuity Care.</p>
+      <div class="fyp-intro-cta">
+        <button type="button" class="btn-electric" id="fyp-start">Find your program</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCREEN 2: TRIAGE (rendered by JS) ─── -->
+  <section class="fyp-screen" id="screen-triage" hidden>
+    <div class="fyp-triage">
+      <div class="fyp-progress"><span class="fyp-bar" id="fyp-bar"></span></div>
+      <p class="fyp-qnum" id="fyp-qnum" aria-live="polite"></p>
+      <h2 class="fyp-question" id="fyp-question"></h2>
+      <div class="fyp-options" id="fyp-options" role="radiogroup" aria-labelledby="fyp-question"></div>
+      <button type="button" class="fyp-back" id="fyp-back">&larr; Back</button>
+    </div>
+  </section>
+
+  <!-- ─── SCREEN 3: RESULT (rendered by JS) ─── -->
+  <section class="fyp-screen" id="screen-result" hidden></section>
+
+  <!-- ─── SCREEN 4: APPLICATION ─── -->
+  <section class="fyp-screen" id="screen-application" hidden>
+    <div class="fyp-apply">
+      <button type="button" class="fyp-back" id="fyp-apply-back">&larr; Back</button>
+      <p class="fyp-eyebrow" id="fyp-apply-eyebrow">Your recommended program</p>
+      <h2 class="fyp-apply-title">Let's get your application in.</h2>
+      <p class="fyp-apply-sub">A few details so your provider can prepare before your assessment. We already have your answers from the last step.</p>
+
+      <form class="fyp-form" id="fyp-form" action="https://formspree.io/f/xykvqejv" method="POST">
+        <div class="fyp-field">
+          <label for="fyp-name">First and last name</label>
+          <input type="text" id="fyp-name" name="name" required autocomplete="name">
+        </div>
+        <div class="fyp-field-row">
+          <div class="fyp-field">
+            <label for="fyp-email">Email</label>
+            <input type="email" id="fyp-email" name="email" required autocomplete="email">
+          </div>
+          <div class="fyp-field">
+            <label for="fyp-phone">Phone</label>
+            <input type="tel" id="fyp-phone" name="phone" required autocomplete="tel">
+          </div>
+        </div>
+        <div class="fyp-field">
+          <label for="fyp-whats">What's going on</label>
+          <textarea id="fyp-whats" name="whats_going_on" rows="3" placeholder="A few sentences is plenty." required></textarea>
+        </div>
+        <div class="fyp-field">
+          <label for="fyp-duration">How long has it been going on</label>
+          <input type="text" id="fyp-duration" name="duration" required>
+        </div>
+        <div class="fyp-field">
+          <label for="fyp-goal">What are you trying to get back to</label>
+          <textarea id="fyp-goal" name="get_back_to" rows="2" required></textarea>
+        </div>
+        <div class="fyp-field">
+          <span class="fyp-label">Have you had care for this already?</span>
+          <div class="fyp-radio-row">
+            <label class="fyp-radio"><input type="radio" name="prior_care" value="yes" required> Yes</label>
+            <label class="fyp-radio"><input type="radio" name="prior_care" value="no"> No</label>
+          </div>
+          <input type="text" id="fyp-prior-detail" name="prior_care_detail" class="fyp-prior-detail" placeholder="What, and roughly when?" hidden>
+        </div>
+        <div class="fyp-field">
+          <label for="fyp-referral">How did you hear about us</label>
+          <select id="fyp-referral" name="referral">
+            <option value="" selected>Select one (optional)</option>
+            <option value="google-search">Google or web search</option>
+            <option value="instagram">Instagram</option>
+            <option value="friend-family">Friend or family</option>
+            <option value="provider-referral">Referred by a doctor or provider</option>
+            <option value="current-client">A current or past client</option>
+            <option value="neighborhood">Saw us in the neighborhood</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- hidden, auto-filled from triage -->
+        <input type="hidden" name="recommended_program" id="fyp-hidden-program">
+        <input type="hidden" name="triage_answers" id="fyp-hidden-answers">
+        <input type="hidden" name="borderline_flag" id="fyp-hidden-borderline">
+        <input type="hidden" name="_subject" id="fyp-hidden-subject" value="New program application">
+
+        <label class="fyp-ack">
+          <input type="checkbox" id="fyp-ack" name="acknowledgment" value="acknowledged" required>
+          <span>I understand that programs start at $1,695, are paid upfront, and that the $249 assessment is booked separately.</span>
+        </label>
+
+        <button type="submit" class="btn-electric fyp-submit" id="fyp-submit">Submit application</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── SCREEN 5: CONFIRMATION ─── -->
+  <section class="fyp-screen" id="screen-confirm" hidden>
+    <div class="fyp-confirm">
+      <div class="fyp-check">&#10003;</div>
+      <h2 id="fyp-confirm-title">Thanks, we've got your application.</h2>
+      <p>Here's what happens next:</p>
+      <ol class="fyp-next">
+        <li>We review what you sent and make sure the recommended program is the right starting point.</li>
+        <li>We reach out within one business day to answer questions and get you set up.</li>
+        <li>The next step is booking your Performance &amp; Injury Assessment ($249), where we confirm the scope before anything is committed.</li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo">movewell</a>
+      <p>Sports Physical Therapy and Performance Training.</p>
+      <p>In‑person services – 820 N Orleans St, Suite 100, Chicago, IL 60610.</p>
+      <p>Online services – Anywhere.</p>
+      <p><a href="mailto:info@movewellsportsmed.com">info@movewellsportsmed.com</a></p>
+    </div>
+    <div class="footer-links">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h5>Social</h5>
+      <ul>
+        <li><a href="https://www.instagram.com/movewellsmp" target="_blank">Instagram</a></li>
+        <li><a href="https://g.page/r/CdeXJPS6-jxtEAE/review">Leave us a review</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2024 Movewell. All rights reserved.</span>
+    <span>820 N Orleans St, Suite 100</span>
+  </div>
+</footer>
+
+<script src="../js/scripts.js?v=112"></script>
+<script src="../js/find-your-program.js?v=112"></script>
+</body>
+</html>
