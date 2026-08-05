@@ -8,9 +8,6 @@
   'use strict';
 
   // ---- Preview access gate (shared secret in the URL) -------------------
-  // Open with ?key=movewell to unlock; remembered in this browser.
-  // Clear with ?key=off.  (GitHub Pages can't do true basic auth; this is
-  // the static-hosting equivalent Jimmy can swap for a real secret.)
   var ACCESS_KEY = 'movewell';
   (function gate() {
     var params = new URLSearchParams(location.search);
@@ -42,7 +39,7 @@
         { label: 'A new injury or a recent flare-up', value: 'acute' },
         { label: 'Something that keeps coming back', value: 'recurring' },
         { label: "I'm recovering from surgery", value: 'postop' },
-        { label: 'No injury, I want to get stronger or train better', value: 'performance' }
+        { label: 'No injury, I want to get stronger, train better, or have guidance in my corner during race prep', value: 'performance' }
       ]
     },
     q2: {
@@ -63,17 +60,17 @@
     q4: {
       prompt: 'What are you trying to get back to?',
       options: [
+        { label: 'Everyday life without worrying about it', value: 'daily' },
+        { label: 'General fitness and exercise-related hobbies', value: 'fitness' },
         { label: 'Running or endurance training', value: 'endurance' },
-        { label: 'Lifting or CrossFit', value: 'strength' },
-        { label: 'A specific sport or event', value: 'sport' },
-        { label: 'Everyday life without worrying about it', value: 'daily' }
+        { label: 'Lifting or higher-level fitness', value: 'strength' },
+        { label: 'A specific sport or event', value: 'sport' }
       ]
     }
   };
   var ORDER = ['q1', 'q2', 'q3', 'q4'];
 
   function skips(key, answers) {
-    // Q2 and Q3 are skipped for post-op and performance paths.
     return (key === 'q2' || key === 'q3') && (answers.q1 === 'postop' || answers.q1 === 'performance');
   }
   function nextQuestion(currentKey, answers) {
@@ -81,7 +78,7 @@
     for (var i = start; i < ORDER.length; i++) {
       if (!skips(ORDER[i], answers)) return ORDER[i];
     }
-    return null; // no more questions -> result
+    return null;
   }
   function plannedTotal(answers) {
     return ORDER.filter(function (k) { return !skips(k, answers); }).length;
@@ -98,7 +95,7 @@
     return 'RESTORE';
   }
 
-  // ---- Program data (name always before price in the UI) ----------------
+  // ---- Program data -----------------------------------------------------
   var FEAT_RESTORE = [
     'Eight weeks of progressive programming in the CoachRx app, updated as you adapt',
     'Direct messaging access to your provider between every visit',
@@ -123,25 +120,45 @@
   ];
   var DISCLAIMER = "This is a starting point based on what you've told us. Your assessment confirms the right scope, and we will tell you if something different fits better.";
 
+  var PROGRAMS = {
+    RESTORE: { name: 'Restore', price: '$1,695', meta: '8 weeks &middot; 6 sessions', tagline: 'For acute and minor injuries', feats: FEAT_RESTORE },
+    REBUILD: { name: 'Rebuild', price: '$2,695', meta: '12 weeks &middot; 10 sessions', tagline: 'For serious and recurring injuries', feats: FEAT_REBUILD },
+    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,295', meta: 'Custom-scoped', tagline: 'Post-op and long-horizon return to sport', feats: FEAT_RTP }
+  };
+  var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
+
   function featList(items) {
     return '<ul class="prog-feat">' + items.map(function (t) {
       return '<li><span class="prog-ck">&#10003;</span>' + t + '</li>';
     }).join('') + '</ul>';
   }
-  function card(name, priceHtml, tagline, feats) {
-    return '<div class="prog-card">' +
-      '<h3 class="prog-name" style="font-size:26px;">' + name + '</h3>' +
-      (tagline ? '<p class="prog-tagline">' + tagline + '</p>' : '') +
-      '<div class="prog-scroll" style="overflow:visible;max-height:none;">' +
-      featList(feats) +
-      '</div>' +
-      '<div class="prog-bottom"><span class="prog-price" style="float:none;font-size:30px;">' + priceHtml + '</span></div>' +
-      '</div>';
+
+  // The stage: all three programs in a line; the recommended one(s) pop
+  // forward, the others sit back but stay visible.
+  function stageHtml(featured) {
+    return '<div class="fyp-stage">' + STAGE_ORDER.map(function (k) {
+      var p = PROGRAMS[k];
+      var isF = featured.indexOf(k) !== -1;
+      return '<div class="prog-card fyp-stage-card ' + (isF ? 'is-featured' : 'is-muted') + '">' +
+        (isF ? '<span class="fyp-rec-tag">Recommended</span>' : '') +
+        '<h3 class="prog-name" style="font-size:24px;">' + p.name + '</h3>' +
+        '<p class="prog-tagline">' + p.tagline + '</p>' +
+        '<p class="prog-duration">' + p.meta + '</p>' +
+        '<div class="prog-scroll" style="overflow:visible;max-height:none;">' + featList(p.feats) + '</div>' +
+        '<div class="prog-bottom"><span class="prog-price" style="float:none;font-size:28px;">' + p.price + '</span></div>' +
+        '</div>';
+    }).join('') + '</div>';
   }
 
   // ---- Human labels (for prefill) ---------------------------------------
   var DURATION_LABEL = { under6: 'Less than 6 weeks', '6to12': '6 weeks to 3 months', over3mo: 'More than 3 months' };
-  var GOAL_LABEL = { endurance: 'Running or endurance training', strength: 'Lifting or CrossFit', sport: 'A specific sport or event', daily: 'Everyday life without worrying about it' };
+  var GOAL_LABEL = {
+    daily: 'Everyday life without worrying about it',
+    fitness: 'General fitness and exercise-related hobbies',
+    endurance: 'Running or endurance training',
+    strength: 'Lifting or higher-level fitness',
+    sport: 'A specific sport or event'
+  };
   var PROGRAM_LABEL = {
     RESTORE: 'Restore', REBUILD: 'Rebuild', RETURN_TO_PERFORMANCE: 'Return to Performance',
     RESTORE_OR_REBUILD: 'Restore or Rebuild (borderline)', OFF_RAMP: 'Off-ramp (training / online)'
@@ -179,7 +196,7 @@
     var q = QUESTIONS[state.qKey];
     var idx = ORDER.filter(function (k, i) {
       return i <= ORDER.indexOf(state.qKey) && !skips(k, state.answers);
-    }).length; // position in the asked sequence
+    }).length;
     var total = plannedTotal(state.answers);
     document.getElementById('fyp-bar').style.width = Math.round((idx / total) * 100) + '%';
     document.getElementById('fyp-qnum').textContent = 'Question ' + idx + ' of ' + total;
@@ -202,8 +219,7 @@
   function answer(value) {
     var key = state.qKey;
     state.answers[key] = value;
-    var qNum = key.charAt(1);
-    track('triage_q' + qNum + '_answered', { value: value });
+    track('triage_q' + key.charAt(1) + '_answered', { value: value });
     var nxt = nextQuestion(key, state.answers);
     if (nxt) { state.qKey = nxt; state.screen = 'triage'; }
     else {
@@ -217,64 +233,49 @@
   function renderResult() {
     var el = screens.result;
     var r = state.result;
-    var html = '<div class="fyp-result-head"><button type="button" class="fyp-back" id="fyp-result-back">&larr; Back</button></div>';
+    var topbar = '<div class="fyp-result-topbar"><button type="button" class="fyp-back" id="fyp-result-back">&larr; Back</button></div>';
 
-    if (r === 'RESTORE') {
-      html += resultBlock('Restore looks like the right starting point.',
-        '$1,695 · 6 one-on-one sessions · 8 weeks',
-        'For a mostly healthy athlete dealing with a minor sprain or strain, or someone finishing the last stretch of a rehab they started elsewhere. Focused work to close the gap and get back to training at full capacity.',
-        card('Restore', '$1,695', 'What runs the whole time', FEAT_RESTORE));
-    } else if (r === 'REBUILD') {
-      html += resultBlock('Rebuild looks like the right starting point.',
-        '$2,695 · 10 one-on-one sessions · 12 weeks',
-        'For anyone dealing with a recurring issue or coming back from something that took real capacity away. Twelve weeks to rebuild the strength and tissue tolerance to not just feel better, but genuinely trust your body under load again.',
-        card('Rebuild', '$2,695', 'What runs the whole time', FEAT_REBUILD) +
-        '<p class="fyp-result-desc" style="margin-top:12px;">Two-pay available (2 &times; $1,395).</p>');
-    } else if (r === 'RETURN_TO_PERFORMANCE') {
-      html += resultBlock('Return to Performance is the right path.',
-        'From $4,295, custom-quoted at your assessment',
-        'For the full return to sport, post-operative rehab, or anyone with a longer runway who wants to develop performance well beyond where they started. Scoped to your case at the assessment, with a defined horizon and clear exit criteria.',
-        card('Return to Performance', '<span class="pre">from</span>$4,295', 'What runs the whole time', FEAT_RTP) +
-        '<p class="fyp-result-desc" style="margin-top:12px;">Starts at 16 one-on-one sessions on a tapered cadence, with additional sessions available at $179 each as your plan needs them. Two-pay available (2 &times; $2,195).</p>');
-    } else if (r === 'RESTORE_OR_REBUILD') {
-      html += '<p class="fyp-eyebrow">Your recommendation</p>' +
-        '<h2 class="fyp-result-name">You\'re between two programs.</h2>' +
-        '<p class="fyp-result-price">Restore, $1,695 over 8 weeks, or Rebuild, $2,695 over 12 weeks.</p>' +
-        '<p class="fyp-result-desc">Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, eight weeks is enough. If the testing shows the capacity was never really there, twelve weeks is the honest answer. Your assessment is where we find out, and we will tell you which one before you commit to anything.</p>' +
-        '<div class="fyp-result-cards two">' +
-        card('Restore', '$1,695', '8 weeks · 6 sessions', FEAT_RESTORE) +
-        card('Rebuild', '$2,695', '12 weeks · 10 sessions', FEAT_REBUILD) +
-        '</div>' +
-        '<p class="fyp-disclaimer">' + DISCLAIMER + '</p>' +
-        '<div class="fyp-result-cta"><button type="button" class="btn-electric" id="fyp-to-apply">Apply and book your assessment</button></div>';
-      el.innerHTML = html;
-      wireResultButtons();
-      return;
-    } else if (r === 'OFF_RAMP') {
-      html += '<p class="fyp-eyebrow">Where you fit</p>' +
+    if (r === 'OFF_RAMP') {
+      el.innerHTML = topbar + '<div class="fyp-result-wrap">' +
+        '<p class="fyp-eyebrow">Where you fit</p>' +
         '<h2 class="fyp-result-name">You\'re not looking for rehab, you\'re looking for training.</h2>' +
         '<p class="fyp-result-desc">Our performance training runs in blocks of sessions rather than as a fixed-length program, because capacity work does not have a finish line. We also run online strength and conditioning for people who want the plan without the drive.</p>' +
         '<div class="fyp-offramp-actions">' +
         '<a class="btn-electric" href="../performance-training.html">Talk to us about training</a>' +
         '<a class="btn-ghost" href="../online-programming.html">See online coaching</a>' +
-        '</div>';
-      el.innerHTML = html;
+        '</div></div>';
       wireResultButtons();
       return;
     }
 
-    el.innerHTML = html;
-    wireResultButtons();
-  }
+    var featured, name, desc;
+    if (r === 'RESTORE') {
+      featured = ['RESTORE'];
+      name = 'Restore looks like the right starting point.';
+      desc = 'For a mostly healthy athlete dealing with a minor sprain or strain, or someone finishing the last stretch of a rehab they started elsewhere. Focused work to close the gap and get back to training at full capacity.';
+    } else if (r === 'REBUILD') {
+      featured = ['REBUILD'];
+      name = 'Rebuild looks like the right starting point.';
+      desc = 'For anyone dealing with a recurring issue or coming back from something that took real capacity away. Twelve weeks to rebuild the strength and tissue tolerance to not just feel better, but genuinely trust your body under load again.';
+    } else if (r === 'RETURN_TO_PERFORMANCE') {
+      featured = ['RTP'];
+      name = 'Return to Performance is the right path.';
+      desc = 'For the full return to sport, post-operative rehab, or anyone with a longer runway who wants to develop performance well beyond where they started. Scoped to your case at the assessment, with a defined horizon and clear exit criteria.';
+    } else { // RESTORE_OR_REBUILD
+      featured = ['RESTORE', 'REBUILD'];
+      name = "You're between two programs.";
+      desc = 'Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, eight weeks is enough. If the testing shows the capacity was never really there, twelve weeks is the honest answer. Your assessment is where we find out, and we will tell you which one before you commit to anything.';
+    }
 
-  function resultBlock(name, price, desc, cardsHtml) {
-    return '<p class="fyp-eyebrow">Your recommendation</p>' +
+    el.innerHTML = topbar + '<div class="fyp-result-wrap">' +
+      '<p class="fyp-eyebrow">Your recommendation</p>' +
       '<h2 class="fyp-result-name">' + name + '</h2>' +
-      '<p class="fyp-result-price">' + price + '</p>' +
       '<p class="fyp-result-desc">' + desc + '</p>' +
-      '<div class="fyp-result-cards">' + cardsHtml + '</div>' +
+      stageHtml(featured) +
       '<p class="fyp-disclaimer">' + DISCLAIMER + '</p>' +
-      '<div class="fyp-result-cta"><button type="button" class="btn-electric" id="fyp-to-apply">Apply and book your assessment</button></div>';
+      '<div class="fyp-result-cta"><button type="button" class="btn-electric" id="fyp-to-apply">Apply and book your assessment</button></div>' +
+      '</div>';
+    wireResultButtons();
   }
 
   function wireResultButtons() {
@@ -325,7 +326,6 @@
   document.getElementById('fyp-back').addEventListener('click', function () { history.back(); });
   document.getElementById('fyp-apply-back').addEventListener('click', function () { history.back(); });
 
-  // prior-care conditional field
   document.querySelectorAll('input[name="prior_care"]').forEach(function (r) {
     r.addEventListener('change', function () {
       var detail = document.getElementById('fyp-prior-detail');
@@ -352,9 +352,7 @@
           sessionStorage.removeItem('mw_fyp_state');
           history.pushState(clone(state), '');
           paint();
-        } else {
-          throw new Error('submit failed');
-        }
+        } else { throw new Error('submit failed'); }
       })
       .catch(function () {
         btn.disabled = false; btn.textContent = 'Submit application';
@@ -368,7 +366,7 @@
     else if (state.screen === 'result') track('triage_abandoned', { last_question: 'result:' + state.result });
   });
 
-  // ---- Boot: restore prior state so refresh keeps you in place ----------
+  // ---- Boot -------------------------------------------------------------
   restore();
   if (state.screen && state.screen !== 'intro') {
     history.replaceState(clone(state), '');

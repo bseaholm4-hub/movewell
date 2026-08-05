@@ -106,6 +106,53 @@
 }
 .fyp-result-cta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
+/* ---- Result "stage": three programs, recommended popped forward ---- */
+.fyp-result-topbar { text-align: left; margin-bottom: 6px; }
+.fyp-result-wrap { text-align: center; }
+.fyp-result-wrap .fyp-result-name { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4.4vw, 40px); line-height: 1.1; color: var(--fyp-navy); margin: 0 0 12px; }
+.fyp-result-wrap .fyp-result-desc { max-width: 640px; margin: 0 auto; }
+.fyp-result-wrap .fyp-disclaimer { max-width: 640px; margin: 26px auto 0; text-align: left; }
+.fyp-result-wrap .fyp-result-cta { justify-content: center; }
+
+.fyp-stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: center;                 /* muted cards sit lower, featured rises */
+  width: min(1080px, 94vw);
+  margin: 34px auto 6px;
+  position: relative; left: 50%;        /* break out beyond the 820px column */
+  transform: translateX(-50%);
+  padding: 16px 8px;
+}
+.fyp-stage-card { position: relative; text-align: left; transition: transform .3s ease, opacity .3s ease, box-shadow .3s ease, filter .3s ease; }
+.fyp-stage-card.is-muted { transform: scale(0.9); opacity: 0.5; filter: grayscale(0.4); }
+.fyp-stage-card.is-featured {
+  transform: scale(1.05) translateY(-8px);
+  z-index: 3;
+  border: 1.5px solid var(--fyp-navy);
+  box-shadow: 0 30px 66px rgba(0,31,63,0.26);
+}
+.fyp-stage-card .prog-price .pre {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--gray-400); margin-right: 5px; vertical-align: 2px;
+}
+.fyp-rec-tag {
+  position: absolute; top: -12px; left: 22px;
+  background: var(--fyp-navy); color: #fff;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 20px;
+}
+@media (prefers-reduced-motion: reduce) { .fyp-stage-card { transition: none; } }
+@media (max-width: 860px) {
+  .fyp-stage {
+    grid-template-columns: 1fr; width: 100%;
+    left: auto; transform: none; margin-left: auto; margin-right: auto; padding: 4px 0;
+  }
+  .fyp-stage-card.is-muted { transform: none; opacity: 0.6; filter: none; }
+  .fyp-stage-card.is-featured { transform: none; order: -1; }  /* recommended stacks first on mobile */
+}
+
 /* off-ramp */
 .fyp-offramp-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .btn-ghost {
