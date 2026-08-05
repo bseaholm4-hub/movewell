@@ -243,7 +243,9 @@
         '<div class="fyp-offramp-actions">' +
         '<a class="btn-electric" href="../performance-training.html">Talk to us about training</a>' +
         '<a class="btn-ghost" href="../online-programming.html">See online coaching</a>' +
-        '</div></div>';
+        '</div>' +
+        '<p class="fyp-offramp-note">In a race build and want a physical therapist in your corner through it? <a href="../contact.html?src=race-prep">Tell us</a> and we will talk.</p>' +
+        '</div>';
       wireResultButtons();
       return;
     }
