@@ -291,6 +291,21 @@
     });
   }
 
+  // Build a plain-English triage summary for the application email.
+  function readableTriage(a) {
+    function lbl(qKey, val) {
+      var opts = QUESTIONS[qKey].options;
+      for (var i = 0; i < opts.length; i++) if (opts[i].value === val) return opts[i].label;
+      return val;
+    }
+    var parts = [];
+    if (a.q1) parts.push('What brings you in: ' + lbl('q1', a.q1));
+    if (a.q2) parts.push('How long: ' + lbl('q2', a.q2));
+    if (a.q3) parts.push('Recent surgery, fracture, or rupture: ' + (a.q3 === 'yes' ? 'Yes' : 'No'));
+    if (a.q4) parts.push('Getting back to: ' + lbl('q4', a.q4));
+    return parts.join('  |  ');
+  }
+
   // ---- Application prefill ----------------------------------------------
   function prefillApplication() {
     var a = state.answers;
@@ -302,7 +317,7 @@
     var goal = document.getElementById('fyp-goal');
     if (!goal.value) goal.value = GOAL_LABEL[a.q4] || '';
     document.getElementById('fyp-hidden-program').value = PROGRAM_LABEL[state.result] || state.result;
-    document.getElementById('fyp-hidden-answers').value = JSON.stringify(a);
+    document.getElementById('fyp-hidden-answers').value = readableTriage(a);
     document.getElementById('fyp-hidden-borderline').value = (state.result === 'RESTORE_OR_REBUILD') ? 'true' : 'false';
     document.getElementById('fyp-hidden-subject').value =
       'New program application — ' + (PROGRAM_LABEL[state.result] || state.result);
