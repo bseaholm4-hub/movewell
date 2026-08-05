@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const submitBtn = form.querySelector('[type="submit"]');
 
   const routing = {
-    'physical-therapy': 'pricing/physical-therapy.html',
-    'performance-training': 'pricing/performance-training.html',
-    'online-performance-programming': 'pricing/online-performance-programming.html',
-    'online-rehab-coaching': 'pricing/online-rehab-coaching.html',
-    'explore': 'pricing/explore.html'
+    'physical-therapy': 'programs.html',
+    'performance-training': 'performance-training.html',
+    'online-performance-programming': 'online-programming.html',
+    'online-rehab-coaching': 'online-rehab.html',
+    'explore': 'services.html'
   };
 
   form.addEventListener('submit', function (e) {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const service = serviceSelect ? serviceSelect.value : 'explore';
     const name = nameInput ? nameInput.value.trim() : '';
-    const redirectUrl = routing[service] || 'pricing/explore.html';
+    const redirectUrl = routing[service] || 'services.html';
 
     // Build form data, injecting dynamic subject
     const data = new FormData(form);
