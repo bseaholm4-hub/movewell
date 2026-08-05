@@ -238,13 +238,13 @@
     if (r === 'OFF_RAMP') {
       el.innerHTML = topbar + '<div class="fyp-result-wrap">' +
         '<p class="fyp-eyebrow">Where you fit</p>' +
-        '<h2 class="fyp-result-name">You\'re not looking for rehab, you\'re looking for training.</h2>' +
-        '<p class="fyp-result-desc">Our performance training runs in blocks of sessions rather than as a fixed-length program, because capacity work does not have a finish line. We also run online strength and conditioning for people who want the plan without the drive.</p>' +
-        '<div class="fyp-offramp-actions">' +
-        '<a class="btn-electric" href="../performance-training.html">Talk to us about training</a>' +
-        '<a class="btn-ghost" href="../online-programming.html">See online coaching</a>' +
+        '<h2 class="fyp-result-name">You\'re not looking for rehab. Here\'s where you fit.</h2>' +
+        '<p class="fyp-result-desc">You\'re healthy and want to keep building. Here are the ways we work with people who aren\'t coming back from an injury.</p>' +
+        '<div class="fyp-paths">' +
+          '<a class="fyp-path" href="../performance-training.html"><h3>Performance Training</h3><p>Coached, in-person strength and conditioning, sold in blocks of sessions.</p><span class="go">See training</span></a>' +
+          '<a class="fyp-path" href="../in-your-corner.html"><h3>In Your Corner</h3><p>In a race build? A physical therapist keeping you healthy all the way to the start line.</p><span class="go">See In Your Corner</span></a>' +
+          '<a class="fyp-path" href="../online-programming.html"><h3>Online Coaching</h3><p>Custom programming you can do anywhere, no drive required.</p><span class="go">See online</span></a>' +
         '</div>' +
-        '<p class="fyp-offramp-note">In a race build and want a physical therapist in your corner through it? <a href="../contact.html?src=race-prep">Tell us</a> and we will talk.</p>' +
         '</div>';
       wireResultButtons();
       return;
