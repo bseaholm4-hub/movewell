@@ -123,9 +123,9 @@
   var DISCLAIMER = "This is a starting point based on what you've told us. Your assessment confirms the right scope, and we will tell you if something different fits better.";
 
   var PROGRAMS = {
-    RESTORE: { name: 'Restore', price: '$1,695', meta: '8 weeks &middot; 6 sessions', tagline: 'For acute and minor injuries', feats: FEAT_RESTORE },
-    REBUILD: { name: 'Rebuild', price: '$2,695', meta: '12 weeks &middot; 10 sessions', tagline: 'For serious and recurring injuries', feats: FEAT_REBUILD },
-    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,295', meta: 'Custom-scoped', tagline: 'Post-op and long-horizon return to sport', feats: FEAT_RTP }
+    RESTORE: { name: 'Restore', price: '$1,695', meta: '8 weeks &middot; 6 sessions', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
+    REBUILD: { name: 'Rebuild', price: '$2,695', meta: '12 weeks &middot; 10 sessions', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
+    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,295', meta: 'Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
   };
   var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
 
@@ -243,9 +243,8 @@
         '<h2 class="fyp-result-name">You\'re not looking for rehab. Here\'s where you fit.</h2>' +
         '<p class="fyp-result-desc">You\'re healthy and want to keep building. Here are the ways we work with people who aren\'t coming back from an injury.</p>' +
         '<div class="fyp-paths">' +
-          '<a class="fyp-path" href="/performance-training.html"><h3>Performance Training</h3><p>Coached, in-person strength and conditioning, sold in blocks of sessions.</p><span class="go">See training</span></a>' +
+          '<a class="fyp-path" href="/training.html"><h3>Performance Training</h3><p>Coached strength and conditioning, in person, online, or a hybrid of both.</p><span class="go">See training</span></a>' +
           '<a class="fyp-path" href="/in-your-corner.html"><h3>In Your Corner</h3><p>In a race build? A physical therapist keeping you healthy all the way to the start line.</p><span class="go">See In Your Corner</span></a>' +
-          '<a class="fyp-path" href="/online-programming.html"><h3>Online Coaching</h3><p>Custom programming you can do anywhere, no drive required.</p><span class="go">See online</span></a>' +
         '</div>' +
         '</div>';
       wireResultButtons();
@@ -312,7 +311,7 @@
   function prefillApplication() {
     var a = state.answers;
     document.getElementById('fyp-apply-eyebrow').textContent =
-      state.result === 'RESTORE_OR_REBUILD' ? 'Restore or Rebuild — confirmed at your assessment' :
+      state.result === 'RESTORE_OR_REBUILD' ? 'Restore or Rebuild, confirmed at your assessment' :
       'Your recommended program: ' + PROGRAM_LABEL[state.result];
     var dur = document.getElementById('fyp-duration');
     if (!dur.value) dur.value = DURATION_LABEL[a.q2] || '';
@@ -322,7 +321,7 @@
     document.getElementById('fyp-hidden-answers').value = readableTriage(a);
     document.getElementById('fyp-hidden-borderline').value = (state.result === 'RESTORE_OR_REBUILD') ? 'true' : 'false';
     document.getElementById('fyp-hidden-subject').value =
-      'New program application — ' + (PROGRAM_LABEL[state.result] || state.result);
+      'New program application: ' + (PROGRAM_LABEL[state.result] || state.result);
   }
 
   // ---- Navigation with history (browser back = one step) ----------------

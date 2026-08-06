@@ -11,10 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const routing = {
     'physical-therapy': 'programs.html',
-    'performance-training': 'performance-training.html',
-    'online-performance-programming': 'online-programming.html',
-    'online-rehab-coaching': 'online-rehab.html',
-    'explore': 'services.html'
+    'performance-training': 'training.html',
+    'explore': 'start.html'
   };
 
   form.addEventListener('submit', function (e) {
@@ -22,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const service = serviceSelect ? serviceSelect.value : 'explore';
     const name = nameInput ? nameInput.value.trim() : '';
-    const redirectUrl = routing[service] || 'services.html';
+    const redirectUrl = routing[service] || 'start.html';
 
     // Build form data, injecting dynamic subject
     const data = new FormData(form);
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
       .then(function (response) {
         if (response.ok) {
-          // Redirect to the service-specific pricing page
+          // Redirect to the matching offering page
           window.location.href = redirectUrl;
         } else {
           return response.json().then(function (err) {
