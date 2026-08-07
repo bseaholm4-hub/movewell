@@ -270,13 +270,14 @@
       desc = 'Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, eight weeks is enough. If the testing shows the capacity was never really there, twelve weeks is the honest answer. Your assessment is where we find out, and we will tell you which one before you commit to anything.';
     }
 
+    var priceStr = featured.map(function (k) { return PROGRAMS[k].price; }).join(' or ');
     el.innerHTML = topbar + '<div class="fyp-result-wrap">' +
       '<p class="fyp-eyebrow">Your recommendation</p>' +
       '<h2 class="fyp-result-name">' + name + '</h2>' +
       '<p class="fyp-result-desc">' + desc + '</p>' +
+      '<div class="fyp-result-cta"><span class="fyp-rec-price">' + priceStr + '</span><button type="button" class="btn-electric" id="fyp-to-apply">Get started</button></div>' +
       stageHtml(featured) +
       '<p class="fyp-disclaimer">' + DISCLAIMER + '</p>' +
-      '<div class="fyp-result-cta"><button type="button" class="btn-electric" id="fyp-to-apply">Get started</button></div>' +
       '</div>';
     wireResultButtons();
   }
