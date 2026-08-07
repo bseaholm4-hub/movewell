@@ -154,17 +154,17 @@
 }
 
 /* off-ramp: three self-select paths */
-.fyp-paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 860px; margin: 30px auto 0; text-align: left; }
+.fyp-paths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 680px; margin: 30px auto 0; text-align: left; }
 @media (max-width: 760px) { .fyp-paths { grid-template-columns: 1fr; } }
 .fyp-path {
   display: block; text-decoration: none;
   border: 1.5px solid var(--fyp-line); border-radius: 14px;
-  padding: 22px 22px 20px; background: #fff;
+  padding: 30px 28px 26px; background: #fff;
   transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease;
 }
 .fyp-path:hover { border-color: var(--fyp-sky); box-shadow: 0 12px 30px rgba(13,31,60,.08); transform: translateY(-2px); }
-.fyp-path h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--fyp-navy); margin: 0 0 6px; }
-.fyp-path p { margin: 0 0 14px; font-size: 14px; color: #4a5765; line-height: 1.5; }
+.fyp-path h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; color: var(--fyp-navy); margin: 0 0 8px; }
+.fyp-path p { margin: 0 0 16px; font-size: 15px; color: #4a5765; line-height: 1.55; }
 .fyp-path .go { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--fyp-logo); }
 .fyp-path .go::after { content: " \2192"; }
 .btn-ghost {

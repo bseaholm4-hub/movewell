@@ -41,7 +41,7 @@
         { label: 'A new injury or a recent flare-up', value: 'acute' },
         { label: 'Something that keeps coming back', value: 'recurring' },
         { label: "I'm recovering from surgery", value: 'postop' },
-        { label: 'No injury, I want to get stronger, train better, or have guidance in my corner during race prep', value: 'performance' }
+        { label: 'No injury, I want to get stronger, train better, or have guidance in my corner', value: 'performance' }
       ]
     },
     q2: {
@@ -244,7 +244,7 @@
         '<p class="fyp-result-desc">You\'re healthy and want to keep building. Here are the ways we work with people who aren\'t coming back from an injury.</p>' +
         '<div class="fyp-paths">' +
           '<a class="fyp-path" href="/training.html"><h3>Performance Training</h3><p>Coached strength and conditioning, in person, online, or a hybrid of both.</p><span class="go">See training</span></a>' +
-          '<a class="fyp-path" href="/in-your-corner.html"><h3>In Your Corner</h3><p>In a race build? A physical therapist keeping you healthy all the way to the start line.</p><span class="go">See In Your Corner</span></a>' +
+          '<a class="fyp-path" href="/in-your-corner.html"><h3>In Your Corner</h3><p>In a race build or a big training block? A physical therapist keeping you healthy the whole way through.</p><span class="go">See In Your Corner</span></a>' +
         '</div>' +
         '</div>';
       wireResultButtons();
