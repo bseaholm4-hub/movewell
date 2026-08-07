@@ -385,13 +385,16 @@
   });
 
   // ---- Boot -------------------------------------------------------------
-  restore();
-  if (state.screen && state.screen !== 'intro') {
-    history.replaceState(clone(state), '');
-    paint();
-  } else {
+  // Always start fresh at the intro on a new page load, so returning to this
+  // page (e.g. from "Learn more about Physical Therapy") restarts the flow
+  // rather than dropping you back on the result you left on.
+  function bootFresh() {
+    try { sessionStorage.removeItem('mw_fyp_state'); } catch (e) {}
     state = { screen: 'intro', qKey: null, answers: {}, result: null };
     history.replaceState(clone(state), '');
     show('intro');
   }
+  bootFresh();
+  // Also reset when the page is served from the back/forward (bfcache) cache.
+  window.addEventListener('pageshow', function (e) { if (e.persisted) bootFresh(); });
 })();
