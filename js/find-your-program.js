@@ -60,7 +60,7 @@
       ]
     },
     q4: {
-      prompt: 'What are you trying to get back to?',
+      prompt: 'What are you working toward?',
       options: [
         { label: 'Everyday life without worrying about it', value: 'daily' },
         { label: 'General fitness and exercise-related hobbies', value: 'fitness' },
@@ -303,7 +303,7 @@
     if (a.q1) parts.push('What brings you in: ' + lbl('q1', a.q1));
     if (a.q2) parts.push('How long: ' + lbl('q2', a.q2));
     if (a.q3) parts.push('Recent surgery, fracture, or rupture: ' + (a.q3 === 'yes' ? 'Yes' : 'No'));
-    if (a.q4) parts.push('Getting back to: ' + lbl('q4', a.q4));
+    if (a.q4) parts.push('Working toward: ' + lbl('q4', a.q4));
     return parts.join('  |  ');
   }
 
