@@ -276,7 +276,7 @@
       '<p class="fyp-result-desc">' + desc + '</p>' +
       stageHtml(featured) +
       '<p class="fyp-disclaimer">' + DISCLAIMER + '</p>' +
-      '<div class="fyp-result-cta"><button type="button" class="btn-electric" id="fyp-to-apply">Apply and book your assessment</button></div>' +
+      '<div class="fyp-result-cta"><button type="button" class="btn-electric" id="fyp-to-apply">Get started</button></div>' +
       '</div>';
     wireResultButtons();
   }
@@ -321,7 +321,7 @@
     document.getElementById('fyp-hidden-answers').value = readableTriage(a);
     document.getElementById('fyp-hidden-borderline').value = (state.result === 'RESTORE_OR_REBUILD') ? 'true' : 'false';
     document.getElementById('fyp-hidden-subject').value =
-      'New program application: ' + (PROGRAM_LABEL[state.result] || state.result);
+      'New program inquiry: ' + (PROGRAM_LABEL[state.result] || state.result);
   }
 
   // ---- Navigation with history (browser back = one step) ----------------
@@ -365,7 +365,7 @@
         if (res.ok) {
           var name = (document.getElementById('fyp-name').value || '').trim().split(' ')[0];
           document.getElementById('fyp-confirm-title').textContent =
-            name ? 'Thanks ' + name + ', we\'ve got your application.' : 'Thanks, we\'ve got your application.';
+            name ? 'Thanks ' + name + ', we\'ve got your details.' : 'Thanks, we\'ve got your details.';
           state.screen = 'confirm';
           sessionStorage.removeItem('mw_fyp_state');
           history.pushState(clone(state), '');
@@ -373,7 +373,7 @@
         } else { throw new Error('submit failed'); }
       })
       .catch(function () {
-        btn.disabled = false; btn.textContent = 'Submit application';
+        btn.disabled = false; btn.textContent = 'Send my details';
         alert('Something went wrong. Please try again or email us at info@movewellsportsmed.com');
       });
   });
