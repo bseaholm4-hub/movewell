@@ -275,9 +275,9 @@
       '<p class="fyp-eyebrow">Your recommendation</p>' +
       '<h2 class="fyp-result-name">' + name + '</h2>' +
       '<p class="fyp-result-desc">' + desc + '</p>' +
-      '<div class="fyp-result-cta"><span class="fyp-rec-price">' + priceStr + '</span><button type="button" class="btn-electric" id="fyp-to-apply">Get started</button></div>' +
       stageHtml(featured) +
       '<p class="fyp-disclaimer">' + DISCLAIMER + '</p>' +
+      '<div class="fyp-result-cta"><span class="fyp-rec-price">' + priceStr + '</span><button type="button" class="btn-electric" id="fyp-to-apply">Get started</button></div>' +
       '</div>';
     wireResultButtons();
   }

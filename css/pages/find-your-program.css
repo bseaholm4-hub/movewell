@@ -104,9 +104,11 @@
   background: var(--fyp-tint); border: 1px solid rgba(25,78,110,0.12);
   border-radius: 12px; font-size: 13.5px; line-height: 1.55; color: #4a5765;
 }
-.fyp-result-cta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-.fyp-result-wrap .fyp-result-cta { margin-top: 4px; margin-bottom: 4px; }
-.fyp-rec-price { font-family: var(--serif); font-size: 24px; color: var(--fyp-navy); }
+.fyp-result-cta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+/* Bottom CTA: the final step, made prominent so it can't be missed */
+.fyp-result-wrap .fyp-result-cta { margin-top: 26px; justify-content: center; }
+.fyp-result-wrap .fyp-result-cta .btn-electric { padding: 17px 44px; font-size: 15px; letter-spacing: 0.04em; }
+.fyp-rec-price { font-family: var(--serif); font-size: 26px; color: var(--fyp-navy); }
 .fyp-rec-price .pre { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gray-400); margin-right: 5px; vertical-align: 2px; }
 
 /* ---- Result "stage": three programs, recommended popped forward ---- */
