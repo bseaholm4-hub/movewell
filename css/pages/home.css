@@ -80,9 +80,11 @@
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
 }
-/* On hover, swap the photo-fill letters for a clean navy. */
+/* On hover, cover the photo fill with opaque navy. We do NOT remove the
+   background-image here: tearing down the fixed, clipped-to-text photo and
+   rebuilding it on hover-off is what caused the return lag. Leaving it painted
+   underneath means unhover just drops the navy and reveals it instantly. */
 .hero-pill-btn:hover .ko {
-  background-image: none;
   color: #001f3f;
   -webkit-text-fill-color: #001f3f;
 }
