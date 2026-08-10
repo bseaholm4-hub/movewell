@@ -1,36 +1,20 @@
-// Movewell site analytics — Google Analytics 4 (gtag.js)
-// Loaded in <head> on every page. Bootstraps GA4 and forwards the Find Your
-// Program funnel events (dispatched as `fyp:analytics` window events by
-// find-your-program.js) into GA4 as custom events. Nothing else needs editing:
-// adding a new track() call there automatically shows up in GA.
+// Movewell — bridge Find Your Program funnel events into GA4.
+// The GA4 base tag (gtag.js loader + config) is inlined in each page <head> so
+// it's detectable in the raw HTML. This file only forwards the site's
+// `fyp:analytics` window events to gtag as custom events, so any new track()
+// call in find-your-program.js shows up in GA automatically.
 (function () {
-  var GA_ID = 'G-6ZLCWLWRGH';
-
-  // Standard gtag bootstrap.
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', GA_ID);
-
-  // Load the gtag library asynchronously.
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  document.head.appendChild(s);
-
-  // Forward Find Your Program funnel events into GA4. The event detail is
-  // { event: '<name>', ...params }. GA4 reserves the `value` parameter for
-  // numeric revenue, so triage answers (strings) are remapped to `answer`.
   window.addEventListener('fyp:analytics', function (e) {
     var d = (e && e.detail) || {};
     var name = d.event;
-    if (!name || typeof gtag !== 'function') return;
+    if (!name || typeof window.gtag !== 'function') return;
     var params = {};
     for (var k in d) {
       if (k === 'event' || !Object.prototype.hasOwnProperty.call(d, k)) continue;
+      // GA4 reserves the `value` parameter for numeric revenue; triage answers
+      // are strings, so remap them to `answer`.
       params[k === 'value' ? 'answer' : k] = d[k];
     }
-    gtag('event', name, params);
+    window.gtag('event', name, params);
   });
 })();
