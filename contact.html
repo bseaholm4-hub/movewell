@@ -49,7 +49,7 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Bitter:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css?v=113">
-  <link rel="stylesheet" href="css/pages/contact.css?v=112">
+  <link rel="stylesheet" href="css/pages/contact.css?v=113">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
@@ -137,10 +137,18 @@
 
         <input type="hidden" name="_next" value="">
         <input type="hidden" name="_subject" value="">
-        <button type="submit" class="btn-apply">NEXT</button>
-        <p class="form-footer-note">We'll be in touch within 24 hours.</p>
+        <button type="submit" class="btn-apply">SUBMIT</button>
+        <p class="form-footer-note">We'll be in touch within 24 to 48 hours.</p>
         <p class="form-spam-note">Don't see our reply in that window? Please check your spam or junk folder, our emails occasionally land there.</p>
       </form>
+
+      <!-- CONFIRMATION (shown after successful submit) -->
+      <div class="contact-confirm" id="intake-confirm" hidden>
+        <div class="contact-confirm-check">&#10003;</div>
+        <h2>Thank you for submitting your form.</h2>
+        <p>We'll be in touch within the next 24 to 48 hours via email.</p>
+        <p>If you don't hear back from us in that window, please check your spam or junk folder, our emails occasionally land there.</p>
+      </div>
     </div>
   </section>
 
@@ -179,7 +187,7 @@
     </div>
   </footer>
   <script src="js/scripts.js?v=112"></script>
-<script src="js/intake.js?v=120"></script>
+<script src="js/intake.js?v=121"></script>
   <!-- SEARCH MODAL -->
   <div id="search-modal" class="search-modal">
     <div class="search-modal-content">

@@ -48,6 +48,10 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+/* display:flex above overrides the hidden attribute, so restore it explicitly */
+.contact-form[hidden] {
+  display: none;
+}
 
 .form-row {
   display: flex;
@@ -130,6 +134,38 @@
   color: var(--silver);
   margin-top: 0.6rem;
   line-height: 1.5;
+}
+
+/* Confirmation screen shown after a successful submit */
+.contact-confirm {
+  text-align: center;
+  padding: 2.5rem 1.5rem 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.contact-confirm-check {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background-color: #74b4db;
+  color: #001f3f;
+  font-size: 2rem;
+  line-height: 64px;
+  font-weight: 700;
+}
+.contact-confirm h2 {
+  color: #194e6e;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.contact-confirm p {
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--stone);
+  margin-bottom: 0.75rem;
 }
 
 /* Adjust for small screens */

@@ -8,19 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const serviceSelect = form.querySelector('[name="service"]');
   const nameInput = form.querySelector('[name="name"]');
   const submitBtn = form.querySelector('[type="submit"]');
-
-  const routing = {
-    'physical-therapy': 'programs.html',
-    'performance-training': 'training.html',
-    'explore': 'start.html'
-  };
+  const confirm = document.getElementById('intake-confirm');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // stop normal browser submission
 
     const service = serviceSelect ? serviceSelect.value : 'explore';
     const name = nameInput ? nameInput.value.trim() : '';
-    const redirectUrl = routing[service] || 'start.html';
 
     // Build form data, injecting dynamic subject
     const data = new FormData(form);
@@ -41,8 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
       .then(function (response) {
         if (response.ok) {
-          // Redirect to the matching offering page
-          window.location.href = redirectUrl;
+          // Show the thank-you screen in place of the form
+          if (confirm) {
+            form.hidden = true;
+            confirm.hidden = false;
+            confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
         } else {
           return response.json().then(function (err) {
             throw new Error(err.error || 'Submission failed');
@@ -53,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Form submission error:', err);
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'NEXT';
+          submitBtn.textContent = 'SUBMIT';
         }
         alert('Something went wrong. Please try again or email us directly at info@movewellsportsmed.com');
       });
