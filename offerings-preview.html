@@ -31,6 +31,8 @@
   .pv-arrow { margin-left: auto; color: #74b4db; font-size: 22px; }
   .pv h1 { font-family: var(--serif); font-weight: 400; font-size: 40px; color: #001f3f; margin: 0 0 6px; }
   .pv-sub { font-family: var(--sans); font-size: 15px; color: var(--gray-500); margin: 0 0 28px; }
+  .pv-group { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #194e6e; margin: 34px 0 12px; }
+  .pv-row + .pv-group { margin-top: 34px; }
 </style>
 </head>
 <body>
@@ -54,55 +56,64 @@
 
 <main class="pv">
   <h1>Offerings preview</h1>
-  <p class="pv-sub">All five updated offering pages, one place. Private draft for review.</p>
-  <div class="pv-note"><strong>Private &amp; unpublished.</strong> Every page here is set to <code>noindex</code> and is not linked anywhere in the public site or the intake form. Planned to go live together in mid-August.</div>
+  <p class="pv-sub">Every offering and funnel page, one place. Private index for your reference.</p>
+  <div class="pv-note"><strong>Private &amp; internal.</strong> Every page here is set to <code>noindex</code> and is not indexed by search. Click any card to open the live page. Prices and links match what is live now.</div>
 
+  <p class="pv-group">Live &amp; public</p>
   <div class="pv-row">
     <a class="pv-card" href="programs.html">
       <span class="pv-no">01</span>
       <span class="pv-body">
-        <p class="pv-t">The Programs (Physical Therapy)</p>
-        <p class="pv-d">Restore, Rebuild, Return to Performance &middot; the in-person clinical ladder.</p>
+        <p class="pv-t">Physical Therapy &mdash; The Programs</p>
+        <p class="pv-d">Restore $1,695 &middot; Rebuild $2,695 &middot; Return to Performance from $4,295. The in-person clinical ladder.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
-    <a class="pv-card" href="performance-training.html">
+    <a class="pv-card" href="find-your-program.html">
       <span class="pv-no">02</span>
       <span class="pv-body">
+        <p class="pv-t">Find Your Program <span style="font-weight:400;color:#194e6e;font-size:12px;letter-spacing:.04em;">&middot; triage flow</span></p>
+        <p class="pv-d">The four-question triage that routes to the right program before intake. Public front door for PT.</p>
+      </span>
+      <span class="pv-arrow">&rarr;</span>
+    </a>
+    <a class="pv-card" href="training.html">
+      <span class="pv-no">03</span>
+      <span class="pv-body">
         <p class="pv-t">Performance Training</p>
-        <p class="pv-d">In-person, coached, sold in 12- and 24-session blocks.</p>
+        <p class="pv-d">In Person / Online / Hybrid tabs. In-person 12-session ($1,680) and 24-session ($3,000) blocks; hybrid adds programming at $199/mo.</p>
+      </span>
+      <span class="pv-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <p class="pv-group">Private / unlisted</p>
+  <div class="pv-row">
+    <a class="pv-card" href="in-your-corner.html">
+      <span class="pv-no">04</span>
+      <span class="pv-body">
+        <p class="pv-t">In Your Corner <span style="font-weight:400;color:#b0771d;font-size:12px;letter-spacing:.04em;">&middot; secret menu</span></p>
+        <p class="pv-d">PT maintenance through a demanding training block. $399/mo or $199/session. Unlisted, but reachable from the Find Your Program off-ramp.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
     <a class="pv-card" href="online-rehab.html">
-      <span class="pv-no">03</span>
-      <span class="pv-body">
-        <p class="pv-t">Online Rehab Coaching</p>
-        <p class="pv-d">Remote plan of care, 12-week term, $449/mo.</p>
-      </span>
-      <span class="pv-arrow">&rarr;</span>
-    </a>
-    <a class="pv-card" href="online-programming.html">
-      <span class="pv-no">04</span>
-      <span class="pv-body">
-        <p class="pv-t">Online Performance Programming</p>
-        <p class="pv-d">Custom programming, 3-month and 6-month committed blocks.</p>
-      </span>
-      <span class="pv-arrow">&rarr;</span>
-    </a>
-    <a class="pv-card" href="in-your-corner.html">
       <span class="pv-no">05</span>
       <span class="pv-body">
-        <p class="pv-t">In Your Corner <span style="font-weight:400;color:#b0771d;font-size:12px;letter-spacing:.04em;">&middot; secret menu</span></p>
-        <p class="pv-d">PT maintenance for runners in a race build. $349/mo or $199/session.</p>
+        <p class="pv-t">Online Rehab Coaching <span style="font-weight:400;color:#b0771d;font-size:12px;letter-spacing:.04em;">&middot; not launched</span></p>
+        <p class="pv-d">Remote coaching. 3-month $449/mo, 6-month $399/mo, ongoing $349/mo. Held back until you are ready to publish.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
-    <a class="pv-card" href="preview/find-your-program.html?key=movewell">
+  </div>
+
+  <p class="pv-group">Funnel &amp; utility</p>
+  <div class="pv-row">
+    <a class="pv-card" href="start.html">
       <span class="pv-no">06</span>
       <span class="pv-body">
-        <p class="pv-t">Find Your Program <span style="font-weight:400;color:#194e6e;font-size:12px;letter-spacing:.04em;">&middot; triage flow</span></p>
-        <p class="pv-d">The four-question triage that routes to the right program before intake.</p>
+        <p class="pv-t">Start hub</p>
+        <p class="pv-d">The &ldquo;How can we help?&rdquo; page: PT &rarr; triage, Performance &rarr; training. Where the Get Started buttons point.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
@@ -110,31 +121,23 @@
       <span class="pv-no">07</span>
       <span class="pv-body">
         <p class="pv-t">Intake form</p>
-        <p class="pv-d">The contact / application form all paths route through.</p>
+        <p class="pv-d">The contact form all paths route through. Ends in the thank-you screen.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
-    <a class="pv-card" href="preview/faq-programs.html">
+    <a class="pv-card" href="faq.html">
       <span class="pv-no">08</span>
       <span class="pv-body">
-        <p class="pv-t">FAQ &mdash; program model <span style="font-weight:400;color:#194e6e;font-size:12px;letter-spacing:.04em;">&middot; draft copy</span></p>
-        <p class="pv-d">Revised payment/insurance answers (no superbills, HSA/FSA) + new program questions.</p>
+        <p class="pv-t">FAQ</p>
+        <p class="pv-d">Program-model answers: no superbills, HSA/FSA supported.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
-    <a class="pv-card" href="start.html">
+    <a class="pv-card" href="privacy.html">
       <span class="pv-no">09</span>
       <span class="pv-body">
-        <p class="pv-t">Start hub <span style="font-weight:400;color:#b0771d;font-size:12px;letter-spacing:.04em;">&middot; new, staged</span></p>
-        <p class="pv-d">The &ldquo;where do you want to start?&rdquo; page: PT &rarr; triage, Training &rarr; training page, Online Rehab Coaching. Where all Get Started buttons will point.</p>
-      </span>
-      <span class="pv-arrow">&rarr;</span>
-    </a>
-    <a class="pv-card" href="training.html">
-      <span class="pv-no">10</span>
-      <span class="pv-body">
-        <p class="pv-t">Training page <span style="font-weight:400;color:#b0771d;font-size:12px;letter-spacing:.04em;">&middot; new, staged</span></p>
-        <p class="pv-d">In Person / Online / Hybrid tabs with the offering cards. Hybrid is the $199/mo add-on.</p>
+        <p class="pv-t">Privacy</p>
+        <p class="pv-d">Plain-language privacy and analytics note, linked in every footer.</p>
       </span>
       <span class="pv-arrow">&rarr;</span>
     </a>
