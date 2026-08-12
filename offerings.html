@@ -34,10 +34,9 @@
   .off-foot { margin-top: 40px; text-align: center; }
   .off-foot p { font-family: var(--sans); font-size: 15px; color: var(--gray-500); margin: 0 0 16px; }
   .off-eval { background: #001f3f; border-radius: 20px; padding: 22px 26px; margin: 0 0 30px; }
-  .off-eval-top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  .off-eval-label { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8fbfe6; }
-  .off-eval-price { font-family: var(--serif); font-size: 28px; color: #fff; line-height: 1; }
-  .off-eval-text { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: #cdd9e8; margin: 9px 0 0; }
+  .off-eval-label { display: block; font-family: var(--serif); font-size: 22px; color: #fff; margin-bottom: 8px; }
+  .off-eval-text { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: #cdd9e8; margin: 0 0 12px; }
+  .off-eval-price { display: block; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #8fbfe6; }
 </style>
 </head>
 <body>
@@ -65,11 +64,9 @@
   <p class="off-sub">Here is everything we offer, from getting you out of pain to building performance that lasts. Read through any one to see how it runs and what it costs, then reach out when you find the fit.</p>
 
   <div class="off-eval">
-    <div class="off-eval-top">
-      <span class="off-eval-label">Initial Evaluation</span>
-      <span class="off-eval-price">$249</span>
-    </div>
+    <span class="off-eval-label">Initial Evaluation</span>
     <p class="off-eval-text">Every program and offering begins here. In one 90-minute visit we learn your history, test your baseline with objective measures, and scope the right plan for where you are. Nothing is committed until we do.</p>
+    <span class="off-eval-price">$249 &middot; 90-minute visit</span>
   </div>
 
   <div class="off-row">
