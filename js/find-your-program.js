@@ -120,7 +120,7 @@
     'Regular VALD testing with a report card after every test, at a cadence set for your case',
     'Criteria-based return-to-sport clearance, decided on your data rather than the calendar'
   ];
-  var DISCLAIMER = "This is a starting point based on what you've told us. Your evaluation confirms the right scope, and we will tell you if something different fits better.";
+  var DISCLAIMER = "This is a starting point based on what you've told us. Your assessment confirms the right scope, and we will tell you if something different fits better.";
 
   var PROGRAMS = {
     RESTORE: { name: 'Restore', price: '$1,695', meta: '8 weeks &middot; 6 sessions', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
@@ -263,11 +263,11 @@
     } else if (r === 'RETURN_TO_PERFORMANCE') {
       featured = ['RTP'];
       name = 'Return to Performance is the right path.';
-      desc = 'For the full return to sport, post-operative rehab, or anyone with a longer runway who wants to develop performance well beyond where they started. Scoped to your case at the evaluation, with a defined horizon and clear exit criteria.';
+      desc = 'For the full return to sport, post-operative rehab, or anyone with a longer runway who wants to develop performance well beyond where they started. Scoped to your case at the assessment, with a defined horizon and clear exit criteria.';
     } else { // RESTORE_OR_REBUILD
       featured = ['RESTORE', 'REBUILD'];
       name = "You're between two programs.";
-      desc = 'Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, eight weeks is enough. If the testing shows the capacity was never really there, twelve weeks is the honest answer. Your evaluation is where we find out, and we will tell you which one before you commit to anything.';
+      desc = 'Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, eight weeks is enough. If the testing shows the capacity was never really there, twelve weeks is the honest answer. Your assessment is where we find out, and we will tell you which one before you commit to anything.';
     }
 
     el.innerHTML = topbar + '<div class="fyp-result-wrap">' +
@@ -311,7 +311,7 @@
   function prefillApplication() {
     var a = state.answers;
     document.getElementById('fyp-apply-eyebrow').textContent =
-      state.result === 'RESTORE_OR_REBUILD' ? 'Restore or Rebuild, confirmed at your evaluation' :
+      state.result === 'RESTORE_OR_REBUILD' ? 'Restore or Rebuild, confirmed at your assessment' :
       'Your recommended program: ' + PROGRAM_LABEL[state.result];
     var dur = document.getElementById('fyp-duration');
     if (!dur.value) dur.value = DURATION_LABEL[a.q2] || '';
