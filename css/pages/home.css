@@ -62,14 +62,13 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   transition: all 0.3s ease;
 }
-/* The letters are filled with the hero photo, aligned to the viewport so they
-   read as the exact pixels sitting behind the pill (true see-through look). */
+/* The letters read as light sky-blue via a gradient clipped to the text. We use
+   a gradient rather than a fixed, clipped photo on purpose: a fixed background
+   forces an expensive re-clip/repaint every time the pill moves or changes
+   state (the hover lift), which caused a visible lag on hover in and out. A
+   gradient moves with the element and repaints instantly. */
 .hero-pill-btn .ko {
-  background-image: url('../../assets/images/Tezza-8422-new.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center bottom;
+  background-image: linear-gradient(180deg, #9fd2ee 0%, #5aa6d0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -80,10 +79,8 @@
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
 }
-/* On hover, cover the photo fill with opaque navy. We do NOT remove the
-   background-image here: tearing down the fixed, clipped-to-text photo and
-   rebuilding it on hover-off is what caused the return lag. Leaving it painted
-   underneath means unhover just drops the navy and reveals it instantly. */
+/* On hover the letters go solid navy. Now that the fill is a cheap gradient,
+   this swap and the lift are smooth with no repaint lag. */
 .hero-pill-btn:hover .ko {
   color: #001f3f;
   -webkit-text-fill-color: #001f3f;
