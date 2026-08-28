@@ -104,10 +104,14 @@ if (document.getElementById('map')) {
     zoom: 16,
     scrollWheelZoom: false
   });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19
   }).addTo(map);
+  // Desaturate the tiles to a clean light gray that matches the site. The
+  // marker sits in a separate pane, so the navy pin stays full color.
+  const tilePane = map.getPane('tilePane');
+  if (tilePane) tilePane.style.filter = 'grayscale(1) contrast(0.9) brightness(1.05)';
 
   const pin = L.divIcon({
     className: '',
