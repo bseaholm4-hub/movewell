@@ -98,7 +98,7 @@ window.addEventListener('scroll', () => {
 
 // Interactive map — 820 N Orleans St, Suite 100, Chicago, IL 60610
 if (document.getElementById('map')) {
-  const movewellLatLng = [41.8966, -87.6366];
+  const movewellLatLng = [41.89723, -87.63830];
   const map = L.map('map', {
     center: movewellLatLng,
     zoom: 16,
