@@ -152,3 +152,70 @@ if (track) {
     track.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 }
+
+// Assessment bar: slides up after the user scrolls past ~half the page,
+// dismissible for the session. Present on programs, find-your-program, services.
+(function () {
+  var bar = document.getElementById('mw-assess-bar');
+  if (!bar) return;
+
+  var KEY = 'mw_assess_dismissed';
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+
+  var xBtn = document.getElementById('mw-assess-x');
+  if (xBtn) {
+    xBtn.addEventListener('click', function () {
+      dismissed = true;
+      bar.classList.remove('is-visible');
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    });
+  }
+
+  // Suppress the bar where it would compete with a form or a page's own CTA:
+  // the Find Your Program result, application, and confirmation screens.
+  function screenSuppressed() {
+    var ids = ['screen-result', 'screen-application', 'screen-confirm'];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && !el.hasAttribute('hidden')) return true;
+    }
+    return false;
+  }
+
+  // Height of the bottom strip the bar occupies. Once the footer scrolls up
+  // into this strip we hide the bar so it never covers the footer.
+  var BAR_ZONE = 96;
+
+  function update() {
+    if (dismissed || screenSuppressed()) { bar.classList.remove('is-visible'); return; }
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var vh = window.innerHeight;
+    // Only hide for the footer once it actually reaches the bar's strip, not
+    // the moment it enters the viewport. This keeps a reliable band on short
+    // pages where the footer comes into view well before you reach the bottom.
+    var footer = document.querySelector('.site-footer');
+    var footerInBarZone = footer && footer.getBoundingClientRect().top < (vh - BAR_ZONE);
+    // Show once the user has scrolled a bit into the page.
+    var scrolledEnough = y > vh * 0.4;
+    if (scrolledEnough && !footerInBarZone) {
+      bar.classList.add('is-visible');
+    } else {
+      bar.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+
+  // React to Find Your Program screen changes so the bar hides over forms/CTAs.
+  if (window.MutationObserver) {
+    var mo = new MutationObserver(update);
+    ['screen-result', 'screen-application', 'screen-confirm'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) mo.observe(el, { attributes: true, attributeFilter: ['hidden'] });
+    });
+  }
+
+  update();
+})();

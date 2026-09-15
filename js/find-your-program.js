@@ -101,31 +101,33 @@
   var FEAT_RESTORE = [
     'Eight weeks of progressive programming in the CoachRx app, updated as you adapt',
     'Direct messaging access to your provider between every visit',
-    'Six one-on-one sessions across the eight weeks, front-loaded and tapering as your programming takes over',
+    'Six one-on-one sessions across the two months, weekly to start and spacing out as your programming takes over',
     'Video demonstrations and coaching cues for each exercise',
     'Entry and exit testing on our VALD force plates, with a report card so you can see exactly how far you came'
   ];
   var FEAT_REBUILD = [
-    'Twelve weeks of progressive programming in the CoachRx app, updated as you adapt',
+    'Sixteen weeks of progressive programming in the CoachRx app, updated as you adapt',
     'Direct messaging access to your provider between every visit',
-    'Ten one-on-one sessions across the twelve weeks, front-loaded and tapering as your programming takes over',
+    'Twelve one-on-one sessions across the four months, weekly for the first six weeks and every other week after that as your programming takes over',
     'Video demonstrations and coaching cues for each exercise',
-    'Entry, midpoint, and exit VALD testing, each with its own report card',
+    'Entry, week-eight, and exit VALD testing, each with its own report card',
+    'A monthly progress review with your provider so the plan changes when you do',
     'Criteria-based progression so you advance based on what the testing shows, not guesswork'
   ];
   var FEAT_RTP = [
-    'Programming in the CoachRx app for the full length of your plan',
+    'Programming in the CoachRx app for the full six-month plan, extended if your case needs it',
     'Direct messaging access and provider coordination throughout',
-    'A 16-session minimum on a tapered cadence, weekly early and spreading out as you take over the work',
-    'Regular VALD testing with a report card after every test, at a cadence set for your case',
+    'A 16-session minimum on a tapered cadence, weekly for the first two months and spreading out as you take over the work',
+    'VALD testing roughly every eight weeks with a report card after every test, plus clearance testing before you\'re released',
+    'A monthly progress review with your provider',
     'Criteria-based return-to-sport clearance, decided on your data rather than the calendar'
   ];
   var DISCLAIMER = "This is a starting point based on what you've told us. Your assessment confirms the right scope, and we will tell you if something different fits better.";
 
   var PROGRAMS = {
-    RESTORE: { name: 'Restore', price: '$1,695', meta: '8 weeks &middot; 6 sessions', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
-    REBUILD: { name: 'Rebuild', price: '$2,695', meta: '12 weeks &middot; 10 sessions', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
-    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,295', meta: 'Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
+    RESTORE: { name: 'Restore', price: '$1,795', monthly: 'About $898 a month', meta: '2 Months', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
+    REBUILD: { name: 'Rebuild', price: '$3,195', monthly: 'About $799 a month', meta: '4 Months', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
+    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,395', monthly: 'About $733 a month at the minimum scope', meta: '6 Months &middot; Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
   };
   var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
 
@@ -147,7 +149,7 @@
         '<p class="prog-tagline">' + p.tagline + '</p>' +
         '<p class="prog-duration">' + p.meta + '</p>' +
         '<div class="prog-scroll" style="overflow:visible;max-height:none;">' + featList(p.feats) + '</div>' +
-        '<div class="prog-bottom"><span class="prog-price" style="float:none;font-size:28px;">' + p.price + '</span></div>' +
+        '<div class="prog-bottom"><span class="prog-price" style="float:none;font-size:28px;">' + p.price + '</span><p class="prog-monthly">' + p.monthly + '</p></div>' +
         '</div>';
     }).join('') + '</div>';
   }
@@ -259,15 +261,15 @@
     } else if (r === 'REBUILD') {
       featured = ['REBUILD'];
       name = 'Rebuild looks like the right starting point.';
-      desc = 'For anyone dealing with a recurring issue or coming back from something that took real capacity away. Twelve weeks to rebuild the strength and tissue tolerance to not just feel better, but genuinely trust your body under load again.';
+      desc = 'For anyone dealing with a recurring issue or coming back from something that took real capacity away. Four months to rebuild the strength and tissue tolerance to not just feel better, but genuinely trust your body under load again.';
     } else if (r === 'RETURN_TO_PERFORMANCE') {
       featured = ['RTP'];
       name = 'Return to Performance is the right path.';
-      desc = 'For the full return to sport, post-operative rehab, or anyone with a longer runway who wants to develop performance well beyond where they started. Scoped to your case at the assessment, with a defined horizon and clear exit criteria.';
+      desc = 'For post-operative rehab, a full return to sport, or anyone with a longer runway who wants to come back stronger than they started. A six-month plan scoped to your case at the assessment, with a defined horizon and clear exit criteria.';
     } else { // RESTORE_OR_REBUILD
       featured = ['RESTORE', 'REBUILD'];
       name = "You're between two programs.";
-      desc = 'Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, eight weeks is enough. If the testing shows the capacity was never really there, twelve weeks is the honest answer. Your assessment is where we find out, and we will tell you which one before you commit to anything.';
+      desc = 'Something that has been going on for a month or two can go either way. If the tissue is healing well and the capacity underneath is intact, two months is enough. If the testing shows the capacity was never really there, four months is the honest answer. Your assessment is where we find out, and we will tell you which one before you commit to anything.';
     }
 
     el.innerHTML = topbar + '<div class="fyp-result-wrap">' +
