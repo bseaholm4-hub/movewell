@@ -196,9 +196,14 @@ if (track) {
     // pages where the footer comes into view well before you reach the bottom.
     var footer = document.querySelector('.site-footer');
     var footerInBarZone = footer && footer.getBoundingClientRect().top < (vh - BAR_ZONE);
+    // Retract once the page's own assessment block (the navy Recovery &
+    // Performance Assessment box) comes into view, so the bar never doubles up
+    // with the stronger, more detailed CTA the page already makes.
+    var progFoot = document.querySelector('.prog-foot');
+    var progFootInView = progFoot && progFoot.getBoundingClientRect().top < (vh - 120);
     // Show once the user has scrolled a bit into the page.
     var scrolledEnough = y > vh * 0.4;
-    if (scrolledEnough && !footerInBarZone) {
+    if (scrolledEnough && !footerInBarZone && !progFootInView) {
       bar.classList.add('is-visible');
     } else {
       bar.classList.remove('is-visible');
