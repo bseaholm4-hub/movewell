@@ -117,7 +117,7 @@
   var FEAT_RTP = [
     'Programming in the CoachRx app for the full six-month plan, extended if your case needs it',
     'Direct messaging access and provider coordination throughout',
-    'A 16-session minimum on a tapered cadence, weekly for the first two months and spreading out as you take over the work',
+    'A 20-session minimum on a tapered cadence, weekly for the first two months and spreading out as you take over the work',
     'VALD testing roughly every eight weeks with a report card after every test, plus clearance testing before you\'re released',
     'A monthly progress review with your provider',
     'Criteria-based return-to-sport clearance, decided on your data rather than the calendar'
@@ -127,7 +127,7 @@
   var PROGRAMS = {
     RESTORE: { name: 'Restore', price: '$1,795', monthly: '~$898 a month', meta: '2 Months', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
     REBUILD: { name: 'Rebuild', price: '$3,195', monthly: '~$799 a month', meta: '4 Months', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
-    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,395', monthly: '~$733 a month at the minimum scope', meta: '6 Months &middot; Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
+    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$5,000', monthly: '~$833 a month at the minimum scope', meta: '6 Months &middot; Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
   };
   var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
 
