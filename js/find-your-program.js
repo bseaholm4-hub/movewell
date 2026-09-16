@@ -115,9 +115,9 @@
     'Criteria-based progression so you advance based on what the testing shows, not guesswork'
   ];
   var FEAT_RTP = [
-    'Programming in the CoachRx app for the full six-month plan, extended if your case needs it',
+    'Programming in the CoachRx app for the full six months',
     'Direct messaging access and provider coordination throughout',
-    'A 20-session minimum on a tapered cadence, weekly for the first two months and spreading out as you take over the work',
+    'Twenty-four one-on-one sessions on a tapered cadence, weekly early and spreading out as you take over the work',
     'VALD testing roughly every eight weeks with a report card after every test, plus clearance testing before you\'re released',
     'A monthly progress review with your provider',
     'Criteria-based return-to-sport clearance, decided on your data rather than the calendar'
@@ -127,7 +127,7 @@
   var PROGRAMS = {
     RESTORE: { name: 'Restore', price: '$1,795', monthly: '~$898 a month', meta: '2 Months', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
     REBUILD: { name: 'Rebuild', price: '$3,195', monthly: '~$799 a month', meta: '4 Months', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
-    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$5,000', monthly: '~$833 a month at the minimum scope', meta: '6 Months &middot; Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
+    RTP: { name: 'Return to Performance', price: '$6,000', monthly: '~$1,000 a month across the six months', meta: '6 Months &middot; 24 Sessions', tagline: 'Return to Sport and Long-Horizon Performance', feats: FEAT_RTP }
   };
   var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
 
@@ -265,7 +265,7 @@
     } else if (r === 'RETURN_TO_PERFORMANCE') {
       featured = ['RTP'];
       name = 'Return to Performance is the right path.';
-      desc = 'For post-operative rehab, a full return to sport, or anyone with a longer runway who wants to come back stronger than they started. A six-month plan scoped to your case at the assessment, with a defined horizon and clear exit criteria.';
+      desc = 'For a full return to sport, later-stage post-operative rehab, or anyone with a longer runway who wants to come back stronger than they started. A structured six-month plan with clear testing checkpoints and criteria-based exit.';
     } else { // RESTORE_OR_REBUILD
       featured = ['RESTORE', 'REBUILD'];
       name = "You're between two programs.";
