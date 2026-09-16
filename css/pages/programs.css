@@ -259,13 +259,8 @@
 }
 .prog-foot strong { color: #74b4db; font-weight: 600; }
 .prog-eval-pill {
-  font-size: 11px;
   font-weight: 700;
-  color: #001f3f;
-  background: #fff;
-  border: none;
-  padding: 2px 9px;
-  border-radius: 20px;
+  color: #74b4db;
   white-space: nowrap;
 }
 
