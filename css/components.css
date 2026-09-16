@@ -344,6 +344,12 @@
   .wyb-q { font-size: 18px; padding: 14px 18px; }
   .wyb-a { padding: 14px 18px 18px; }
 }
+/* When the accordion sits under "What your program actually looks like",
+   left-align it with that heading instead of centering it. */
+.journeys-wyb {
+  max-width: 1000px;
+  margin: 30px 0 0;
+}
 
 /* Persistent, dismissible assessment bar */
 .mw-assess-bar {
