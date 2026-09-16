@@ -125,9 +125,9 @@
   var DISCLAIMER = "This is a starting point based on what you've told us. Your assessment confirms the right scope, and we will tell you if something different fits better.";
 
   var PROGRAMS = {
-    RESTORE: { name: 'Restore', price: '$1,795', monthly: 'About $898 a month', meta: '2 Months', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
-    REBUILD: { name: 'Rebuild', price: '$3,195', monthly: 'About $799 a month', meta: '4 Months', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
-    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,395', monthly: 'About $733 a month at the minimum scope', meta: '6 Months &middot; Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
+    RESTORE: { name: 'Restore', price: '$1,795', monthly: '~$898 a month', meta: '2 Months', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
+    REBUILD: { name: 'Rebuild', price: '$3,195', monthly: '~$799 a month', meta: '4 Months', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
+    RTP: { name: 'Return to Performance', price: '<span class="pre">from</span>$4,395', monthly: '~$733 a month at the minimum scope', meta: '6 Months &middot; Custom-Scoped', tagline: 'Post-Op and Long-Horizon Return to Sport', feats: FEAT_RTP }
   };
   var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
 

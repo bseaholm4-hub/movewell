@@ -353,7 +353,18 @@
    left-align it with that heading instead of centering it. */
 .journeys-wyb {
   max-width: 1000px;
-  margin: 30px 0 0;
+  margin: 14px 0 0;
+}
+/* Make the "What your program actually looks like" collapsible match the
+   buying tabs: same card shell, heading, chevron, and horizontal summary. */
+.journeys-collapse.wyb-item > summary {
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 26px;
+}
+.journeys-collapse.wyb-item .journeys-body {
+  padding: 18px 26px 24px;
 }
 
 /* Persistent, dismissible assessment bar */

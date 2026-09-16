@@ -282,7 +282,7 @@
 }
 
 /* ─── JOURNEYS ─── */
-.journeys-section { max-width: 1460px; margin: 0 auto; padding: 24px 24px 80px; }
+.journeys-section { max-width: 1048px; margin: 0 auto; padding: 24px 24px 80px; }
 
 /* Collapsible "Real examples" */
 .journeys-collapse > summary {
