@@ -302,9 +302,15 @@
   gap: 14px;
 }
 .wyb-item {
-  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  background: #fff;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 31, 63, 0.07);
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+.wyb-item[open] {
+  border-color: rgba(25, 78, 110, 0.28);
+  box-shadow: 0 14px 34px rgba(13, 31, 60, 0.08);
 }
 .wyb-q {
   list-style: none;
@@ -312,26 +318,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  background: #194e6e;
-  color: #fff;
+  gap: 20px;
+  padding: 22px 26px;
   font-family: var(--serif);
-  font-size: 21px;
-  line-height: 1.25;
-  padding: 15px 22px;
-  transition: background .18s ease;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.1;
+  color: #001f3f;
 }
 .wyb-q::-webkit-details-marker { display: none; }
 .wyb-q::marker { content: ''; }
-.wyb-q:hover { background: #1c5980; }
+.wyb-item[open] .wyb-q { border-bottom: 1px solid var(--gray-200); }
 .wyb-chev {
   flex: none;
+  color: #194e6e;
   transition: transform .22s ease;
 }
 .wyb-item[open] .wyb-chev { transform: rotate(180deg); }
 .wyb-a {
-  background: #f1f6fb;
-  padding: 16px 22px 20px;
+  padding: 18px 26px 22px;
 }
 .wyb-a p {
   font-family: var(--sans);
@@ -341,8 +346,8 @@
   margin: 0;
 }
 @media (max-width: 640px) {
-  .wyb-q { font-size: 18px; padding: 14px 18px; }
-  .wyb-a { padding: 14px 18px 18px; }
+  .wyb-q { font-size: 22px; padding: 18px 18px; }
+  .wyb-a { padding: 16px 18px 18px; }
 }
 /* When the accordion sits under "What your program actually looks like",
    left-align it with that heading instead of centering it. */
