@@ -133,7 +133,7 @@
 
   function featList(items) {
     return '<ul class="prog-feat">' + items.map(function (t) {
-      return '<li><span class="prog-ck">&#10003;</span>' + t + '</li>';
+      return '<li><span class="prog-ck">&#10003;</span><span>' + t + '</span></li>';
     }).join('') + '</ul>';
   }
 
