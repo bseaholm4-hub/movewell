@@ -101,14 +101,14 @@
   var FEAT_RESTORE = [
     'Eight weeks of progressive programming in the CoachRx app, updated as you adapt',
     'Direct messaging access to your provider between every visit',
-    'Six one-on-one sessions across the two months, weekly to start and spacing out as your programming takes over',
+    '<strong>Six one-on-one sessions</strong> across the two months, weekly to start and spacing out as your programming takes over',
     'Video demonstrations and coaching cues for each exercise',
     'Entry and exit testing on our VALD force plates, with a report card so you can see exactly how far you came'
   ];
   var FEAT_REBUILD = [
     'Sixteen weeks of progressive programming in the CoachRx app, updated as you adapt',
     'Direct messaging access to your provider between every visit',
-    'Twelve one-on-one sessions across the four months, weekly for the first six weeks and every other week after that as your programming takes over',
+    '<strong>Twelve one-on-one sessions</strong> across the four months, weekly for the first six weeks and every other week after that as your programming takes over',
     'Video demonstrations and coaching cues for each exercise',
     'Entry, week-eight, and exit VALD testing, each with its own report card',
     'A monthly progress review with your provider so the plan changes when you do',
@@ -117,7 +117,7 @@
   var FEAT_RTP = [
     'Programming in the CoachRx app for the full six months',
     'Direct messaging access and provider coordination throughout',
-    'Twenty-four one-on-one sessions on a tapered cadence, weekly early and spreading out as you take over the work',
+    '<strong>Twenty-four one-on-one sessions</strong> on a tapered cadence, weekly early and spreading out as you take over the work',
     'VALD testing roughly every eight weeks with a report card after every test, plus clearance testing before you\'re released',
     'A monthly progress review with your provider',
     'Criteria-based return-to-sport clearance, decided on your data rather than the calendar'
