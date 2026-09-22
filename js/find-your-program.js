@@ -125,9 +125,9 @@
   var DISCLAIMER = "This is a starting point based on what you've told us. Your assessment confirms the right scope, and we will tell you if something different fits better.";
 
   var PROGRAMS = {
-    RESTORE: { name: 'Restore', price: '$1,795', monthly: '~$898 a month &middot; roughly 3 sessions a month', meta: '2 Months &middot; 6 Sessions', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
-    REBUILD: { name: 'Rebuild', price: '$3,195', monthly: '~$799 a month &middot; roughly 3 sessions a month', meta: '4 Months &middot; 12 Sessions', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
-    RTP: { name: 'Return to Performance', price: '$6,000', monthly: '~$1,000 a month &middot; roughly 4 sessions a month', meta: '6 Months &middot; 24 Sessions', tagline: 'Return to Sport and Long-Horizon Performance', feats: FEAT_RTP }
+    RESTORE: { name: 'Restore', price: '$1,795', monthly: 'Pay in full, or monthly across the two months', meta: '2 Months &middot; 6 Sessions', tagline: 'For Acute and Minor Injuries', feats: FEAT_RESTORE },
+    REBUILD: { name: 'Rebuild', price: '$3,195', monthly: 'Pay in full, or monthly across the four months', meta: '4 Months &middot; 12 Sessions', tagline: 'For Serious and Recurring Injuries', feats: FEAT_REBUILD },
+    RTP: { name: 'Return to Performance', price: '$6,000', monthly: 'Pay in full, or monthly across the six months', meta: '6 Months &middot; 24 Sessions', tagline: 'Return to Sport and Long-Horizon Performance', feats: FEAT_RTP }
   };
   var STAGE_ORDER = ['RESTORE', 'REBUILD', 'RTP'];
 
