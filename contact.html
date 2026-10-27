@@ -49,7 +49,7 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Bitter:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css?v=120">
-  <link rel="stylesheet" href="css/pages/contact.css?v=113">
+  <link rel="stylesheet" href="css/pages/contact.css?v=114">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
@@ -75,7 +75,9 @@
   <!-- HERO SECTION -->
   <section class="contact-hero">
     <div class="contact-header">
-      <p class="contact-subhead">Prefer to email us directly? <a href="mailto:info@movewellsportsmed.com">info@movewellsportsmed.com</a></p>
+      <h1 class="contact-headline">Have a question? Let's talk.</h1>
+      <p class="contact-subhead">Send a quick note, or ask for a free 10-minute call to see if we are the right fit. No commitment. We reply within 24 to 48 hours.</p>
+      <p class="contact-subhead" style="margin-top:12px;">Prefer to email us directly? <a href="mailto:info@movewellsportsmed.com">info@movewellsportsmed.com</a></p>
     </div>
   </section>
 
@@ -83,59 +85,35 @@
   <section class="contact-section" id="contact">
     <div class="contact-wrapper">
       <form class="contact-form" action="https://formspree.io/f/xykvqejv" method="POST" id="intake-form">
+        <div class="form-group">
+          <label for="name">NAME</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
         <div class="form-row">
-                      <div class="form-group">
-              <label for="name">NAME</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" required />
-            </div>
+          <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">PHONE <span class="label-optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" />
+          </div>
         </div>
         <div class="form-group">
-          <label for="email">EMAIL</label>
-          <input type="email" id="email" name="email" placeholder="you@email.com" required />
+          <label for="message">HOW CAN WE HELP?</label>
+          <textarea id="message" name="message" rows="3" placeholder="A sentence or two about what is going on, or what you want to ask."></textarea>
         </div>
-        
-        
-        <hr class="form-divider" />
-
-                    <div class="form-group">
-              <label for="service">WHAT ARE YOU LOOKING FOR?</label>
-              <select id="service" name="service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="physical-therapy">Physical Therapy (in person: pain, injury, rehab)</option>
-                <option value="performance-training">Performance Training (in person, online, or hybrid)</option>
-                <option value="explore">Not sure yet</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="goal">WHAT'S YOUR MAIN GOAL RIGHT NOW?</label>
-              <input type="text" id="goal" name="goal" placeholder="Your goal..." />
-            </div>
-            <div class="form-group">
-              <label for="ready">HOW SOON ARE YOU READY TO START?</label>
-              <select id="ready" name="ready" required>
-                <option value="" disabled selected>Select timing</option>
-                <option value="ready-now">Ready now</option>
-                <option value="next-weeks">In the next few weeks</option>
-                <option value="exploring">Just exploring</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="referral">HOW DID YOU HEAR ABOUT US?</label>
-              <select id="referral" name="referral" required>
-                <option value="" disabled selected>Select one</option>
-                <option value="google-search">Google or web search</option>
-                <option value="instagram">Instagram</option>
-                <option value="friend-family">Friend or family</option>
-                <option value="provider-referral">Referred by a doctor or provider</option>
-                <option value="current-client">A current or past client</option>
-                <option value="neighborhood">Saw us in the neighborhood</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+        <div class="form-group">
+          <label for="followup">HOW SHOULD WE FOLLOW UP? <span class="label-optional">(optional)</span></label>
+          <select id="followup" name="followup">
+            <option value="email" selected>Email is great</option>
+            <option value="free-call">I'd like a free 10-minute call</option>
+          </select>
+        </div>
 
         <input type="hidden" name="_next" value="">
         <input type="hidden" name="_subject" value="">
-        <button type="submit" class="btn-apply">SUBMIT</button>
+        <button type="submit" class="btn-apply">Send</button>
         <p class="form-footer-note">We'll be in touch within 24 to 48 hours.</p>
         <p class="form-spam-note">Don't see our reply in that window? Please check your spam or junk folder, our emails occasionally land there.</p>
       </form>
@@ -185,7 +163,7 @@
     </div>
   </footer>
   <script src="js/scripts.js?v=117"></script>
-<script src="js/intake.js?v=121"></script>
+<script src="js/intake.js?v=122"></script>
   <!-- SEARCH MODAL -->
   <div id="search-modal" class="search-modal">
     <div class="search-modal-content">

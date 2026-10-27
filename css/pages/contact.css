@@ -75,6 +75,18 @@
   color: var(--stone);
 }
 
+.label-optional {
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--silver);
+  text-transform: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
 .form-group input,
 .form-group textarea,
 .form-group select {
