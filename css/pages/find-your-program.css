@@ -29,6 +29,12 @@
 /* ---- Intro ---- */
 .fyp-intro .programs-headline { margin-bottom: 20px; }
 .fyp-intro-cta { margin-top: 30px; }
+.fyp-browse-link {
+  display: inline-block; margin-top: 16px;
+  font-family: var(--sans); font-size: 14.5px; color: var(--fyp-sky, #194e6e);
+  font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent;
+}
+.fyp-browse-link:hover { border-bottom-color: currentColor; }
 
 /* ---- Triage ---- */
 .fyp-triage { max-width: 620px; }
@@ -136,7 +142,7 @@
 .fyp-stage .prog-divider { margin: 12px 0; }
 .fyp-stage .prog-feat li { font-size: 13px; line-height: 1.4; padding: 3px 0; }
 .fyp-stage-card { position: relative; text-align: left; transition: transform .3s ease, opacity .3s ease, box-shadow .3s ease, filter .3s ease; }
-.fyp-stage-card.is-muted { transform: scale(0.9); opacity: 0.5; filter: grayscale(0.4); }
+.fyp-stage-card.is-muted { transform: scale(0.9); opacity: 0.72; filter: grayscale(0.15); }
 .fyp-stage-card.is-featured {
   transform: scale(1.05) translateY(-8px);
   z-index: 3;
@@ -159,7 +165,7 @@
     grid-template-columns: 1fr; width: 100%;
     left: auto; transform: none; margin-left: auto; margin-right: auto; padding: 4px 0;
   }
-  .fyp-stage-card.is-muted { transform: none; opacity: 0.6; filter: none; }
+  .fyp-stage-card.is-muted { transform: none; opacity: 0.78; filter: none; }
   .fyp-stage-card.is-featured { transform: none; order: -1; }  /* recommended stacks first on mobile */
 }
 
