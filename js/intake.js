@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('intake-form');
   if (!form) return;
 
-  const followupSelect = form.querySelector('[name="followup"]');
+  const prefSelect = form.querySelector('[name="contact_pref"]');
   const nameInput = form.querySelector('[name="name"]');
   const submitBtn = form.querySelector('[type="submit"]');
   const confirm = document.getElementById('intake-confirm');
@@ -13,13 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // stop normal browser submission
 
-    const followup = followupSelect ? followupSelect.value : 'email';
+    const pref = prefSelect ? prefSelect.value : 'text';
     const name = nameInput ? nameInput.value.trim() : '';
 
     // Build form data, injecting dynamic subject
     const data = new FormData(form);
-    const tag = followup === 'free-call' ? 'wants a free call' : 'inquiry';
-    data.set('_subject', `New MoveWell ${tag} — ${name}`);
+    data.set('_subject', `New MoveWell inquiry (prefers ${pref}) — ${name}`);
     // Remove _next so Formspree doesn't try to redirect on its own
     data.delete('_next');
 

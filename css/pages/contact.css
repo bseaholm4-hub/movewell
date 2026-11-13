@@ -82,6 +82,13 @@
   text-transform: none;
 }
 
+.form-field-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--silver);
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 90px;
