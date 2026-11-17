@@ -128,19 +128,23 @@
 .fyp-stage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: center;                 /* muted cards sit lower, featured rises */
+  gap: 28px;
+  align-items: stretch;                 /* equal-height cards so prices line up */
   width: min(1080px, 94vw);
-  margin: 18px auto 4px;
+  margin: 46px auto 8px;
   position: relative; left: 50%;        /* break out beyond the 820px column */
   transform: translateX(-50%);
-  padding: 8px 8px;
+  padding: 22px 12px 14px;              /* top room for the raised cards + badges */
 }
-/* compact the stage cards so the recommendation + price + CTA sit higher */
-.fyp-stage .prog-card { padding: 22px 22px 20px; }
+/* roomier stage cards: give the features and price space to breathe */
+.fyp-stage .prog-card { padding: 30px 26px 26px; }
+.fyp-stage .prog-name { margin-bottom: 4px; }
+.fyp-stage .prog-duration { margin-bottom: 4px; }
+.fyp-stage .prog-scroll { margin-top: 14px; }
 .fyp-stage .prog-desc { margin-bottom: 10px; }
 .fyp-stage .prog-divider { margin: 12px 0; }
-.fyp-stage .prog-feat li { font-size: 13px; line-height: 1.4; padding: 3px 0; }
+.fyp-stage .prog-feat li { font-size: 13.5px; line-height: 1.5; padding: 7px 0; }
+.fyp-stage .prog-bottom { margin-top: 20px; padding-top: 18px; }
 .fyp-stage-card { position: relative; text-align: left; transition: transform .3s ease, opacity .3s ease, box-shadow .3s ease, filter .3s ease; }
 .fyp-stage-card.is-muted { transform: scale(0.9); opacity: 0.72; filter: grayscale(0.15); }
 .fyp-stage-card.is-featured {
