@@ -103,14 +103,14 @@
     'Direct messaging access to your provider between every visit',
     '<strong>Six one-on-one sessions</strong>, more frequent early on and spacing out as your body adapts to the work you put in',
     'Video demonstrations and coaching cues for each exercise',
-    'Entry and exit testing on our VALD force plates, with a report card so you can see exactly how far you came'
+    'Entry and exit testing to measure your progress and outcomes, with a report card so you can see exactly how far you came'
   ];
   var FEAT_REBUILD = [
     'Sixteen weeks of progressive programming in the CoachRx app, updated as you adapt',
     'Direct messaging access to your provider between every visit',
     '<strong>Twelve one-on-one sessions</strong>, more frequent early on and spacing out as your body adapts to the work you put in',
     'Video demonstrations and coaching cues for each exercise',
-    'Entry, week-eight, and exit VALD testing, each with its own report card',
+    'Entry testing and regular retesting to measure progress and outcomes, each with its own report card',
     'A monthly progress review with your provider so the plan changes when you do',
     'Criteria-based progression so you advance based on what the testing shows, not guesswork'
   ];
@@ -118,7 +118,7 @@
     'Programming in the CoachRx app for the full six months',
     'Direct messaging access and provider coordination throughout',
     '<strong>Twenty-four one-on-one sessions</strong>, more frequent early on and spacing out as your body adapts to the work you put in',
-    'VALD testing roughly every eight weeks with a report card after every test, plus clearance testing before you\'re released',
+    'Regular retesting to measure progress and outcomes, with a report card after every test, plus clearance testing before you\'re released',
     'A monthly progress review with your provider',
     'Criteria-based return-to-sport clearance, decided on your data rather than the calendar'
   ];

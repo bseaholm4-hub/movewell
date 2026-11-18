@@ -28,9 +28,15 @@
 <link rel="stylesheet" href="css/main.css?v=120">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <style>
-  .service-card-link { margin: 2px 0 0; }
-  .service-card-link a { font-family: var(--sans, sans-serif); font-weight: 600; font-size: 14.5px; color: #194e6e; text-decoration: none; letter-spacing: .01em; }
-  .service-card-link a:hover { text-decoration: underline; }
+  .service-card-link { margin: 22px 0 0; }
+  .service-card-link a {
+    display: inline-block;
+    font-family: var(--sans, sans-serif); font-weight: 600; font-size: 14.5px;
+    letter-spacing: .02em; color: #194e6e; text-decoration: none;
+    padding: 13px 26px; border: 1.5px solid #194e6e; border-radius: 100px;
+    background: #fff; transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+  }
+  .service-card-link a:hover { background: #194e6e; color: #fff; text-decoration: none; box-shadow: 0 10px 24px rgba(25,78,110,.18); }
 </style>
 </head>
 <body>
